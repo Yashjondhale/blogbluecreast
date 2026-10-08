@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/JsonLd";
 import { DEFAULT_SITE_SETTINGS, SITE_URL } from "@/lib/constants";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -119,7 +120,26 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
         <SiteLayout>{children}</SiteLayout>
+        {/* Monetag Push Notifications Service Worker Registration */}
+        <Script
+          id="monetag-sw-registration"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && 'serviceWorker' in navigator && !window.location.pathname.startsWith('/studio')) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+                    // Service worker registered successfully
+                  }).catch(function(err) {
+                    console.debug('Monetag SW registration error:', err);
+                  });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
 }
+
