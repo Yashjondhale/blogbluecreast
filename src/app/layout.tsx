@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { CookieConsent } from "@/components/layout/CookieConsent";
+import { SiteLayout } from "@/components/layout/SiteLayout";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/JsonLd";
 import { DEFAULT_SITE_SETTINGS, SITE_URL } from "@/lib/constants";
 
@@ -120,20 +118,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
-        {/* WCAG Skip Link */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-[#0B3D91] focus:px-4 focus:py-2 focus:text-white"
-        >
-          Skip to main content
-        </a>
-
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <CookieConsent />
+        <SiteLayout>{children}</SiteLayout>
       </body>
     </html>
   );
