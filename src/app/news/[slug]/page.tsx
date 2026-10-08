@@ -2,10 +2,24 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2, Clock, Newspaper, Radio, Share2, Tag } from "lucide-react";
-import { getAllNews, getNewsBySlug } from "@/sanity/dataService";
+import {
+  ArrowLeft,
+  Calendar,
+  CheckCircle2,
+  Clock,
+  Newspaper,
+  Radio,
+  Share2,
+  Sparkles,
+  Tag,
+} from "lucide-react";
+import { getAllAuthors, getAllNews, getNewsBySlug } from "@/sanity/dataService";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { ReadingProgressBar } from "@/components/post/ReadingProgressBar";
+import { AuthorCard } from "@/components/post/AuthorCard";
 import { SocialShare } from "@/components/post/SocialShare";
+import { AdSlot } from "@/components/post/AdSlot";
+import { NewsletterCTA } from "@/components/post/NewsletterCTA";
 import { SITE_URL } from "@/lib/constants";
 
 interface NewsPageProps {
@@ -68,11 +82,16 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
     notFound();
   }
 
-  const allNews = await getAllNews();
+  const [allNews, authors] = await Promise.all([
+    getAllNews(),
+    getAllAuthors(),
+  ]);
+
   const relatedNews = allNews.filter((n) => n.slug !== article.slug).slice(0, 3);
   const articleUrl = `${SITE_URL}/news/${article.slug}`;
+  const author = article.author || authors[0];
 
-  // JSON-LD NewsArticle structured data
+  // Structured JSON-LD schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -83,8 +102,8 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
     "dateModified": article.updatedAt || article.publishedAt,
     "author": {
       "@type": "Person",
-      "name": article.author?.name || "BlueCrest Newsroom",
-      "url": article.author ? `${SITE_URL}/author/${article.author.slug}` : SITE_URL,
+      "name": author.name,
+      "url": `${SITE_URL}/author/${author.slug}`,
     },
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -108,19 +127,20 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    timeZoneName: "short",
   });
 
   return (
     <>
+      <ReadingProgressBar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Navigation / Breadcrumb */}
-        <div className="mb-6 flex items-center justify-between">
+      {/* Main Full-Width Outer Container (Same as /blog/[slug]) */}
+      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        {/* Breadcrumb Navigation */}
+        <div className="mb-8 flex items-center justify-between">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -130,155 +150,245 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
           />
           <Link
             href="/news"
-            className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 hover:text-[#1E90FF] dark:text-slate-400"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#1E90FF] dark:text-slate-400"
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Back to Newsroom
           </Link>
         </div>
 
-        {/* Article Header */}
-        <header className="mb-8">
-          <div className="flex flex-wrap items-center gap-2 mb-3">
+        {/* Post Header (Centered, matching /blog/[slug]) */}
+        <header className="mx-auto max-w-4xl text-center mb-10">
+          <div className="flex items-center justify-center gap-2 mb-4">
             {article.isBreaking && (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white shadow-xs">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3.5 py-1 text-xs font-bold text-white shadow-xs">
                 <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
                 BREAKING
               </span>
             )}
-            <span className="rounded-lg bg-blue-50 px-2.5 py-1 text-xs font-bold text-[#1E90FF] dark:bg-blue-950/60 dark:text-blue-400">
+            <Link
+              href="/news"
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#1E90FF] transition-colors hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60"
+            >
               {article.category}
+            </Link>
+          </div>
+
+          <h1 className="font-serif text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl sm:leading-tight dark:text-slate-100">
+            {article.title}
+          </h1>
+
+          <p className="mt-4 text-lg sm:text-xl leading-relaxed text-slate-600 dark:text-slate-300">
+            {article.summary}
+          </p>
+
+          {/* Byline / Author Bar */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-slate-500 border-y border-slate-200/80 py-4 dark:border-slate-800/80 dark:text-slate-400">
+            <Link
+              href={`/author/${author.slug}`}
+              className="flex items-center gap-2 font-medium text-slate-900 hover:text-[#1E90FF] dark:text-slate-100"
+            >
+              <div className="relative h-8 w-8 overflow-hidden rounded-full ring-1 ring-slate-200 dark:ring-slate-700">
+                <Image
+                  src={author.avatar}
+                  alt={author.name}
+                  fill
+                  sizes="32px"
+                  className="object-cover"
+                />
+              </div>
+              <span>Reported by {author.name}</span>
+            </Link>
+
+            <span>&bull;</span>
+
+            <span className="flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" />
+              Published {formattedDate} IST
             </span>
-            <span className="text-xs text-slate-500 dark:text-slate-400">
+
+            <span>&bull;</span>
+
+            <span className="flex items-center gap-1.5">
+              <Clock className="h-4 w-4" />
+              {article.readingTime || 3} min read
+            </span>
+
+            <span>&bull;</span>
+
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
               {article.source || "BlueCrest Wire"}
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-slate-900 dark:text-slate-100">
-            {article.title}
-          </h1>
-
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-500 dark:text-slate-400 border-y border-slate-200/80 py-3 dark:border-slate-800/80">
-            {article.author && (
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-800 dark:text-slate-200">
-                  Reported by {article.author.name}
-                </span>
-              </div>
-            )}
-            <div className="flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5" />
-              <time dateTime={article.publishedAt}>{formattedDate}</time>
-            </div>
-            {article.readingTime && (
-              <span>• {article.readingTime} min quick read</span>
-            )}
+          {/* Social Share Bar Top */}
+          <div className="mt-4 flex justify-center">
+            <SocialShare title={article.title} url={articleUrl} />
           </div>
         </header>
 
-        {/* Hero Image */}
+        {/* Featured Main Image (Identical to /blog/[slug] max-w-5xl) */}
         {article.mainImage && (
-          <figure className="mb-8">
-            <div className="relative aspect-16/9 w-full overflow-hidden rounded-3xl bg-slate-100 dark:bg-slate-800 shadow-md">
-              <Image
-                src={article.mainImage.url}
-                alt={article.mainImage.alt || article.title}
-                fill
-                priority
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-cover"
-              />
-            </div>
+          <div className="relative mx-auto max-w-5xl aspect-16/9 overflow-hidden rounded-3xl bg-slate-100 mb-12 shadow-lg dark:bg-slate-800">
+            <Image
+              src={article.mainImage.url}
+              alt={article.mainImage.alt || article.title}
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-cover"
+            />
             {article.mainImage.caption && (
-              <figcaption className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
+              <div className="absolute bottom-0 inset-x-0 bg-black/60 px-4 py-2 text-center text-xs text-slate-200 backdrop-blur-xs">
                 {article.mainImage.caption}
-              </figcaption>
+              </div>
             )}
-          </figure>
-        )}
-
-        {/* Quick Highlights Box */}
-        {article.highlights && article.highlights.length > 0 && (
-          <aside
-            aria-label="Key Takeaways"
-            className="mb-8 rounded-2xl border border-blue-500/20 bg-blue-50/50 p-6 dark:border-blue-500/30 dark:bg-blue-950/20"
-          >
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0B3D91] dark:text-[#1E90FF] mb-3">
-              <Radio className="h-4 w-4" />
-              Key Highlights & TL;DR
-            </div>
-            <ul className="space-y-2">
-              {article.highlights.map((h, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-2.5 text-sm font-medium text-slate-800 dark:text-slate-200 leading-snug"
-                >
-                  <CheckCircle2 className="h-4 w-4 text-[#1E90FF] shrink-0 mt-0.5" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
-          </aside>
-        )}
-
-        {/* Article Summary Lead */}
-        <p className="font-serif text-lg sm:text-xl font-medium leading-relaxed text-slate-800 dark:text-slate-200 mb-6 border-l-4 border-[#1E90FF] pl-4">
-          {article.summary}
-        </p>
-
-        {/* Main Body Content */}
-        {article.content && (
-          <div className="prose prose-slate dark:prose-invert max-w-none text-base leading-relaxed text-slate-700 dark:text-slate-300 mb-8">
-            <p>{article.content}</p>
           </div>
         )}
 
-        {/* Tags */}
-        {article.tags && article.tags.length > 0 && (
-          <div className="mt-8 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-200 dark:border-slate-800">
-            <Tag className="h-4 w-4 text-slate-400" />
-            {article.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+        {/* Layout Grid: Content (Col 1-8) + Sidebar (Col 9-12) - max-w-6xl */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
+          {/* Main Article Body */}
+          <main className="lg:col-span-8">
+            {/* Quick Highlights Box */}
+            {article.highlights && article.highlights.length > 0 && (
+              <aside
+                aria-label="Key Highlights"
+                className="mb-8 rounded-3xl border border-blue-500/20 bg-gradient-to-br from-blue-50/60 to-slate-50 p-6 sm:p-8 dark:border-blue-500/30 dark:from-blue-950/20 dark:to-slate-900"
               >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        )}
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0B3D91] dark:text-[#1E90FF] mb-4">
+                  <Radio className="h-4 w-4 animate-pulse text-red-500" />
+                  Key Highlights & Executive TL;DR
+                </div>
+                <ul className="space-y-3">
+                  {article.highlights.map((h, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 text-sm sm:text-base font-medium text-slate-800 dark:text-slate-200 leading-snug"
+                    >
+                      <CheckCircle2 className="h-4 w-4 text-[#1E90FF] shrink-0 mt-1" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            )}
 
-        {/* Social Share */}
-        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
-          <SocialShare title={article.title} url={articleUrl} />
+            {/* Article Content / Body */}
+            <div className="prose prose-slate lg:prose-lg dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+              <p className="font-serif text-xl sm:text-2xl font-medium leading-relaxed text-slate-900 dark:text-slate-100 border-l-4 border-[#1E90FF] pl-4 py-1 mb-6">
+                {article.summary}
+              </p>
+
+              {article.content && (
+                <div className="space-y-4">
+                  <p>{article.content}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Mid-Article Reserved Ad Slot */}
+            <div className="mt-8">
+              <AdSlot slotId="news-article-slot" format="in-article" />
+            </div>
+
+            {/* Tags Cloud */}
+            {article.tags && article.tags.length > 0 && (
+              <div className="mt-10 pt-6 border-t border-slate-200/80 dark:border-slate-800/80">
+                <span className="text-xs font-semibold tracking-wider text-slate-500 uppercase mr-3 dark:text-slate-400">
+                  Tags:
+                </span>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {article.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-lg bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                    >
+                      #{t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Bottom Social Share */}
+            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+              <SocialShare title={article.title} url={articleUrl} />
+            </div>
+          </main>
+
+          {/* Sticky Sidebar (Col 9-12) */}
+          <aside className="hidden lg:block lg:col-span-4 space-y-8">
+            {/* Author Profile Card */}
+            <div className="sticky top-24 space-y-8">
+              <AuthorCard author={author} />
+
+              {/* Wire Updates Widget */}
+              <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900/60">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1E90FF] mb-4">
+                  <Newspaper className="h-4 w-4" />
+                  Live Wire Updates
+                </div>
+                <div className="space-y-4">
+                  {relatedNews.slice(0, 3).map((item) => (
+                    <div key={item.slug} className="border-b border-slate-100 pb-3 last:border-0 last:pb-0 dark:border-slate-800">
+                      <span className="text-[10px] font-bold text-[#1E90FF] uppercase">
+                        {item.category}
+                      </span>
+                      <h4 className="mt-1 font-serif text-xs font-bold text-slate-900 hover:text-[#1E90FF] dark:text-slate-100 leading-snug">
+                        <Link href={`/news/${item.slug}`}>{item.title}</Link>
+                      </h4>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-center">
+                  <Link
+                    href="/news"
+                    className="text-xs font-bold text-[#1E90FF] hover:underline"
+                  >
+                    View Full News Wire &rarr;
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sidebar Ad Slot */}
+              <AdSlot slotId="news-sidebar-slot" format="sidebar" />
+            </div>
+          </aside>
         </div>
 
-        {/* Related News Wire */}
+        {/* Related News Wire Grid */}
         {relatedNews.length > 0 && (
-          <section className="mt-14 pt-10 border-t border-slate-200 dark:border-slate-800">
-            <div className="mb-6 flex items-center justify-between">
-              <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-slate-100">
-                More from Daily News Wire
-              </h2>
+          <section className="mt-16 pt-12 border-t border-slate-200/80 dark:border-slate-800/80 max-w-6xl mx-auto">
+            <div className="mb-8 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold tracking-wider text-[#1E90FF] uppercase">
+                  More From Today
+                </span>
+                <h2 className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
+                  Related Wire Reports
+                </h2>
+              </div>
               <Link
                 href="/news"
-                className="text-xs font-semibold text-[#1E90FF] hover:underline"
+                className="text-xs font-bold text-[#1E90FF] hover:underline"
               >
-                View All News &rarr;
+                All News Wire &rarr;
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedNews.map((n) => (
                 <div
                   key={n.slug}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs dark:border-slate-800/80 dark:bg-slate-900/60"
+                  className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs transition-all hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800/80 dark:bg-slate-900/60"
                 >
                   <span className="text-[10px] font-bold text-[#1E90FF] uppercase">
                     {n.category}
                   </span>
-                  <h3 className="mt-1 font-serif text-sm font-bold text-slate-900 line-clamp-2 hover:text-[#1E90FF] dark:text-slate-100">
+                  <h3 className="mt-2 font-serif text-base font-bold text-slate-900 hover:text-[#1E90FF] dark:text-slate-100">
                     <Link href={`/news/${n.slug}`}>{n.title}</Link>
                   </h3>
-                  <p className="mt-2 text-xs text-slate-500 line-clamp-2 dark:text-slate-400">
+                  <p className="mt-2 text-xs leading-relaxed text-slate-600 line-clamp-3 dark:text-slate-400">
                     {n.summary}
                   </p>
                 </div>
@@ -286,7 +396,12 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
             </div>
           </section>
         )}
-      </div>
+
+        {/* Full-Width Newsletter CTA */}
+        <section className="mt-16 max-w-6xl mx-auto">
+          <NewsletterCTA />
+        </section>
+      </article>
     </>
   );
 }
