@@ -1,13 +1,17 @@
 import { authorType } from "./author";
 import { categoryType } from "./category";
+import { careerType } from "./career";
 import { newsType } from "./news";
 import { postType } from "./post";
+import { serviceType } from "./service";
 import { siteSettingsType } from "./siteSettings";
 import { tagType } from "./tag";
 
 export const schemaTypes = [
-  newsType,
   postType,
+  newsType,
+  careerType,
+  serviceType,
   authorType,
   categoryType,
   tagType,
