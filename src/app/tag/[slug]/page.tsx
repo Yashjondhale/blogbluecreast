@@ -12,6 +12,8 @@ interface TagPageProps {
   searchParams: Promise<{ page?: string }>;
 }
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const tags = await getAllTags();
   return tags.map((t) => ({ slug: t.slug }));

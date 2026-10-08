@@ -1,18 +1,17 @@
 import { Author, Category, NewsArticle, Post, Tag } from "@/types";
-import { client } from "./client";
+import { client, fetchOptions } from "./client";
 import { projectId } from "./env";
 import { MOCK_AUTHORS, MOCK_CATEGORIES, MOCK_NEWS, MOCK_POSTS, MOCK_TAGS } from "./mockData";
 
 const isSanityConfigured =
-  projectId &&
+  Boolean(projectId) &&
   projectId !== "demoprojectid" &&
-  projectId.length > 5 &&
-  process.env.SANITY_API_READ_TOKEN !== undefined;
+  projectId.length > 5;
 
 export async function getAllPosts(): Promise<Post[]> {
   if (isSanityConfigured) {
     try {
-      const query = `*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+      const query = `*[_type == "post"] | order(publishedAt desc) {
         _id,
         title,
         "slug": slug.current,
@@ -36,36 +35,38 @@ export async function getAllPosts(): Promise<Post[]> {
         trending,
         body
       }`;
-      const data = await client.fetch<Post[]>(query);
+      const data = await client.fetch<Post[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data.map((p) => {
-          const fallback = MOCK_POSTS.find((m) => m.slug === p.slug);
-          return {
-            ...p,
-            mainImage: {
-              url:
-                p.mainImage?.url ||
-                fallback?.mainImage.url ||
-                "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-              alt: p.mainImage?.alt || fallback?.mainImage.alt || p.title,
-              caption: p.mainImage?.caption || fallback?.mainImage.caption,
-            },
-            author: p.author
-              ? {
-                  ...p.author,
-                  avatar:
-                    p.author.avatar ||
-                    fallback?.author.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-                }
-              : fallback?.author || MOCK_AUTHORS[0],
-            category: p.category || fallback?.category || MOCK_CATEGORIES[0],
-            tags: p.tags || fallback?.tags || [],
-          };
-        });
+        return data
+          .filter((p) => p && p.title && p.slug)
+          .map((p) => {
+            const fallback = MOCK_POSTS.find((m) => m.slug === p.slug);
+            return {
+              ...p,
+              mainImage: {
+                url:
+                  p.mainImage?.url ||
+                  fallback?.mainImage.url ||
+                  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+                alt: p.mainImage?.alt || fallback?.mainImage.alt || p.title,
+                caption: p.mainImage?.caption || fallback?.mainImage.caption,
+              },
+              author: p.author
+                ? {
+                    ...p.author,
+                    avatar:
+                      p.author.avatar ||
+                      fallback?.author.avatar ||
+                      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                  }
+                : fallback?.author || MOCK_AUTHORS[0],
+              category: p.category || fallback?.category || MOCK_CATEGORIES[0],
+              tags: p.tags || fallback?.tags || [],
+            };
+          });
       }
-    } catch {
-      // Fallback gracefully
+    } catch (err) {
+      console.warn("Failed to fetch posts from Sanity, using fallback:", err);
     }
   }
   return MOCK_POSTS;
@@ -183,6 +184,32 @@ export async function getRelatedPosts(
 }
 
 export async function getAllCategories(): Promise<Category[]> {
+  if (isSanityConfigured) {
+    try {
+      const query = `*[_type == "category"] | order(title asc) {
+        _id,
+        title,
+        "slug": slug.current,
+        color,
+        description
+      }`;
+      const data = await client.fetch<Category[]>(query, {}, fetchOptions);
+      if (data && data.length > 0) {
+        return data
+          .filter((c) => c && c.title && c.slug)
+          .map((c) => {
+            const fallback = MOCK_CATEGORIES.find((m) => m.slug === c.slug);
+            return {
+              ...c,
+              color: c.color || fallback?.color || "#1E90FF",
+              description: c.description || fallback?.description || "",
+            };
+          });
+      }
+    } catch (err) {
+      console.warn("Failed to fetch categories from Sanity, using fallback:", err);
+    }
+  }
   return MOCK_CATEGORIES;
 }
 
@@ -192,6 +219,41 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
 }
 
 export async function getAllAuthors(): Promise<Author[]> {
+  if (isSanityConfigured) {
+    try {
+      const query = `*[_type == "author"] | order(name asc) {
+        _id,
+        name,
+        "slug": slug.current,
+        role,
+        bio,
+        "avatar": avatar.asset->url,
+        expertise,
+        credentials,
+        socials
+      }`;
+      const data = await client.fetch<Author[]>(query, {}, fetchOptions);
+      if (data && data.length > 0) {
+        return data
+          .filter((a) => a && a.name && a.slug)
+          .map((a) => {
+            const fallback = MOCK_AUTHORS.find((m) => m.slug === a.slug);
+            return {
+              ...a,
+              role: a.role || fallback?.role || "Contributor",
+              bio: a.bio || fallback?.bio || "",
+              avatar:
+                a.avatar ||
+                fallback?.avatar ||
+                "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+              socials: a.socials || fallback?.socials || {},
+            };
+          });
+      }
+    } catch (err) {
+      console.warn("Failed to fetch authors from Sanity, using fallback:", err);
+    }
+  }
   return MOCK_AUTHORS;
 }
 
@@ -201,6 +263,21 @@ export async function getAuthorBySlug(slug: string): Promise<Author | null> {
 }
 
 export async function getAllTags(): Promise<Tag[]> {
+  if (isSanityConfigured) {
+    try {
+      const query = `*[_type == "tag"] | order(title asc) {
+        _id,
+        title,
+        "slug": slug.current
+      }`;
+      const data = await client.fetch<Tag[]>(query, {}, fetchOptions);
+      if (data && data.length > 0) {
+        return data.filter((t) => t && t.title && t.slug);
+      }
+    } catch (err) {
+      console.warn("Failed to fetch tags from Sanity, using fallback:", err);
+    }
+  }
   return MOCK_TAGS;
 }
 
@@ -222,7 +299,7 @@ export async function searchPosts(query: string): Promise<Post[]> {
 export async function getAllNews(): Promise<NewsArticle[]> {
   if (isSanityConfigured) {
     try {
-      const query = `*[_type == "news" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+      const query = `*[_type == "news"] | order(publishedAt desc) {
         _id,
         title,
         "slug": slug.current,
@@ -243,34 +320,36 @@ export async function getAllNews(): Promise<NewsArticle[]> {
         isBreaking,
         tags
       }`;
-      const data = await client.fetch<NewsArticle[]>(query);
+      const data = await client.fetch<NewsArticle[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data.map((n) => {
-          const fallback = MOCK_NEWS.find((m) => m.slug === n.slug);
-          return {
-            ...n,
-            mainImage: {
-              url:
-                n.mainImage?.url ||
-                fallback?.mainImage?.url ||
-                "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-              alt: n.mainImage?.alt || fallback?.mainImage?.alt || n.title,
-              caption: n.mainImage?.caption || fallback?.mainImage?.caption,
-            },
-            author: n.author
-              ? {
-                  ...n.author,
-                  avatar:
-                    n.author.avatar ||
-                    fallback?.author?.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-                }
-              : fallback?.author || MOCK_AUTHORS[0],
-          };
-        });
+        return data
+          .filter((n) => n && n.title && n.slug)
+          .map((n) => {
+            const fallback = MOCK_NEWS.find((m) => m.slug === n.slug);
+            return {
+              ...n,
+              mainImage: {
+                url:
+                  n.mainImage?.url ||
+                  fallback?.mainImage?.url ||
+                  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+                alt: n.mainImage?.alt || fallback?.mainImage?.alt || n.title,
+                caption: n.mainImage?.caption || fallback?.mainImage?.caption,
+              },
+              author: n.author
+                ? {
+                    ...n.author,
+                    avatar:
+                      n.author.avatar ||
+                      fallback?.author?.avatar ||
+                      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                  }
+                : fallback?.author || MOCK_AUTHORS[0],
+            };
+          });
       }
-    } catch {
-      // Fallback to mock data gracefully
+    } catch (err) {
+      console.warn("Failed to fetch news from Sanity, using fallback:", err);
     }
   }
   return MOCK_NEWS;
@@ -290,3 +369,4 @@ export async function getLatestNews(limit = 6): Promise<NewsArticle[]> {
   const all = await getAllNews();
   return all.slice(0, limit);
 }
+

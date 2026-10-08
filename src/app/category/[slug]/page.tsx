@@ -12,6 +12,8 @@ interface CategoryPageProps {
   searchParams: Promise<{ page?: string }>;
 }
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const categories = await getAllCategories();
   return categories.map((c) => ({ slug: c.slug }));

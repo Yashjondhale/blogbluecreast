@@ -7,4 +7,4 @@ export const dataset =
 export const projectId =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "demoprojectid";
 
-export const useCdn = process.env.NODE_ENV === "production";
+export const useCdn = false;

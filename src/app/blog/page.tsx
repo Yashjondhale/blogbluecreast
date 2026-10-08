@@ -10,6 +10,8 @@ interface BlogArchiveProps {
   searchParams: Promise<{ page?: string; category?: string }>;
 }
 
+export const revalidate = 60;
+
 export async function generateMetadata({ searchParams }: BlogArchiveProps): Promise<Metadata> {
   const { page = "1", category } = await searchParams;
   const canonicalUrl = category
