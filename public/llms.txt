@@ -1,0 +1,37 @@
+# BlueCrest (bluecreast.in)
+> High-integrity multi-niche publication covering technology, personal finance, preventive medicine, modern lifestyle, and Indian venture ecosystems.
+
+## Core Mission & Editorial Standards
+BlueCrest publishes peer-reviewed and practitioner-authored journalism. We specialize in deep-dive architectures, reproducible benchmarks, and evidence-backed explainers.
+All content is original, authored by domain specialists (MDs, PhDs, CFAs), and fact-checked under our Editorial Policy.
+
+## Primary Sections & Feeds
+- Homepage: https://bluecreast.in
+- All Articles Archive: https://bluecreast.in/blog
+- Editorial & Content Services: https://bluecreast.in/services
+- Careers & Fellowships: https://bluecreast.in/careers
+- Technology & AI: https://bluecreast.in/category/technology
+- Finance & Wealth Strategy: https://bluecreast.in/category/finance
+- Health & Longevity: https://bluecreast.in/category/health
+- Lifestyle & Digital Nomadism: https://bluecreast.in/category/lifestyle
+- Business & Startups: https://bluecreast.in/category/business
+- Editorial Policy & Ethics: https://bluecreast.in/editorial-policy
+- Masthead & Authors: https://bluecreast.in/about#team
+- XML Sitemap: https://bluecreast.in/sitemap.xml
+- RSS Feed: https://bluecreast.in/rss.xml
+
+## Key Investigations & Guides
+- The 2026 State of Generative AI in Production: https://bluecreast.in/blog/generative-ai-production-architecture-costs-2026
+- Smart Wealth Building in India (Mutual Funds & SGBs): https://bluecreast.in/blog/smart-wealth-building-india-mutual-funds-tax-strategy
+- The Science of High-Performance Sleep: https://bluecreast.in/blog/science-of-high-performance-sleep-circadian-biology
+- Digital Nomad Living in 2026: https://bluecreast.in/blog/digital-nomad-living-2026-visas-taxes-gear-guide
+- Building Resilient Indian Startups: https://bluecreast.in/blog/seed-to-scale-resilient-indian-startups-playbook
+- M4 Pro MacBook Pro Developer Benchmarks: https://bluecreast.in/blog/m4-pro-macbook-pro-deep-dive-developer-benchmarks
+- RBI Digital Rupee (CBDC) & UPI Explained: https://bluecreast.in/blog/rbi-digital-rupee-cbdc-upi-interoperability-explained
+- Zone 2 Cardio Protocols for Mitochondrial Longevity: https://bluecreast.in/blog/zone-2-cardio-protocols-longevity-mitochondrial-health
+- Spiti Valley Overland Road Odyssey: https://bluecreast.in/blog/spiti-valley-road-trip-itinerary-acclimatization-guide
+- Staff Engineer to Director Transition Playbook: https://bluecreast.in/blog/staff-engineer-to-director-transition-engineering-leadership
+
+## Legal & Compliance
+- Data Protection: Compliant with India DPDP Act 2023 & GDPR
+- Contact Desk: contact@bluecreast.in
