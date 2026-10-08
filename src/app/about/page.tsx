@@ -98,13 +98,6 @@ export default async function AboutPage() {
     },
   ];
 
-  const impactStats = [
-    { value: "250K+", label: "Monthly High-Intent Readers" },
-    { value: "99.8%", label: "Verified Fact-Checking Accuracy" },
-    { value: "100%", label: "Practitioner-Reviewed Desk" },
-    { value: "0", label: "Sponsored Coverage Compromises" },
-  ];
-
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
       <div className="mb-6">
@@ -176,24 +169,6 @@ export default async function AboutPage() {
               <span className="rounded-lg bg-white/80 px-2.5 py-1 border border-slate-200 dark:bg-slate-800 dark:border-slate-700">✓ Peer-Reviewed Medicine</span>
               <span className="rounded-lg bg-white/80 px-2.5 py-1 border border-slate-200 dark:bg-slate-800 dark:border-slate-700">✓ Actionable Insights</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Numbers */}
-      <section aria-label="Key Impact Metrics" className="mb-20">
-        <div className="rounded-3xl border border-slate-200/80 bg-slate-900 p-8 sm:p-12 text-white shadow-xl dark:border-slate-800">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
-            {impactStats.map((stat, idx) => (
-              <div key={idx} className={idx > 0 ? "pt-6 lg:pt-0" : ""}>
-                <div className="font-serif text-3xl sm:text-5xl font-extrabold text-[#1E90FF]">
-                  {stat.value}
-                </div>
-                <div className="mt-2 text-xs sm:text-sm font-medium text-slate-300">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
