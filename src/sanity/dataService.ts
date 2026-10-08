@@ -37,7 +37,33 @@ export async function getAllPosts(): Promise<Post[]> {
         body
       }`;
       const data = await client.fetch<Post[]>(query);
-      if (data && data.length > 0) return data;
+      if (data && data.length > 0) {
+        return data.map((p) => {
+          const fallback = MOCK_POSTS.find((m) => m.slug === p.slug);
+          return {
+            ...p,
+            mainImage: {
+              url:
+                p.mainImage?.url ||
+                fallback?.mainImage.url ||
+                "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+              alt: p.mainImage?.alt || fallback?.mainImage.alt || p.title,
+              caption: p.mainImage?.caption || fallback?.mainImage.caption,
+            },
+            author: p.author
+              ? {
+                  ...p.author,
+                  avatar:
+                    p.author.avatar ||
+                    fallback?.author.avatar ||
+                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                }
+              : fallback?.author || MOCK_AUTHORS[0],
+            category: p.category || fallback?.category || MOCK_CATEGORIES[0],
+            tags: p.tags || fallback?.tags || [],
+          };
+        });
+      }
     } catch {
       // Fallback gracefully
     }
@@ -218,7 +244,31 @@ export async function getAllNews(): Promise<NewsArticle[]> {
         tags
       }`;
       const data = await client.fetch<NewsArticle[]>(query);
-      if (data && data.length > 0) return data;
+      if (data && data.length > 0) {
+        return data.map((n) => {
+          const fallback = MOCK_NEWS.find((m) => m.slug === n.slug);
+          return {
+            ...n,
+            mainImage: {
+              url:
+                n.mainImage?.url ||
+                fallback?.mainImage?.url ||
+                "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+              alt: n.mainImage?.alt || fallback?.mainImage?.alt || n.title,
+              caption: n.mainImage?.caption || fallback?.mainImage?.caption,
+            },
+            author: n.author
+              ? {
+                  ...n.author,
+                  avatar:
+                    n.author.avatar ||
+                    fallback?.author?.avatar ||
+                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                }
+              : fallback?.author || MOCK_AUTHORS[0],
+          };
+        });
+      }
     } catch {
       // Fallback to mock data gracefully
     }

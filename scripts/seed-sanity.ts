@@ -5,7 +5,7 @@
  */
 
 import { createClient } from "@sanity/client";
-import { MOCK_AUTHORS, MOCK_CATEGORIES, MOCK_POSTS, MOCK_TAGS } from "../src/sanity/mockData";
+import { MOCK_AUTHORS, MOCK_CATEGORIES, MOCK_NEWS, MOCK_POSTS, MOCK_TAGS } from "../src/sanity/mockData";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
@@ -89,6 +89,25 @@ async function seed() {
         seoTitle: post.seoTitle,
         seoDescription: post.seoDescription,
         body: post.body,
+      });
+    }
+
+    // 5. Seed Daily News
+    console.log("⚡ Seeding daily news desk articles...");
+    for (const newsItem of MOCK_NEWS) {
+      await client.createOrReplace({
+        _id: newsItem._id || `news-${newsItem.slug}`,
+        _type: "news",
+        title: newsItem.title,
+        slug: { _type: "slug", current: newsItem.slug },
+        summary: newsItem.summary,
+        highlights: newsItem.highlights,
+        newsCategory: newsItem.category,
+        publishedAt: newsItem.publishedAt,
+        source: newsItem.source,
+        sourceUrl: newsItem.sourceUrl,
+        author: { _type: "reference", _ref: newsItem.author?._id || `author-aarav` },
+        isBreaking: newsItem.isBreaking,
       });
     }
 

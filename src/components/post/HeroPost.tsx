@@ -15,8 +15,11 @@ export function HeroPost({ post }: HeroPostProps) {
         {/* Large Image Column */}
         <div className="relative aspect-[16/10] lg:aspect-auto lg:col-span-7 min-h-[320px] sm:min-h-[420px] overflow-hidden bg-slate-900">
           <Image
-            src={post.mainImage.url}
-            alt={post.mainImage.alt}
+            src={
+              post.mainImage?.url ||
+              "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80"
+            }
+            alt={post.mainImage?.alt || post.title}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 60vw"

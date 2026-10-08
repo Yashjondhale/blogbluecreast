@@ -18,8 +18,11 @@ export function PostCard({ post, priority = false }: PostCardProps) {
         className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-slate-800"
       >
         <Image
-          src={post.mainImage.url}
-          alt={post.mainImage.alt}
+          src={
+            post.mainImage?.url ||
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+          }
+          alt={post.mainImage?.alt || post.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={priority}
