@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getAllCategories, getCategoryBySlug, getPostsByCategory } from "@/sanity/dataService";
 import { PostCard } from "@/components/post/PostCard";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 interface CategoryPageProps {
@@ -55,6 +56,12 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <CollectionPageJsonLd
+        title={`${category.title} Articles & Insights - BlueCrest`}
+        description={category.description}
+        url={`${SITE_URL}/category/${category.slug}`}
+        itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}
+      />
       <Breadcrumbs
         items={[
           { label: "Categories", href: "/blog" },

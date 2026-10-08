@@ -7,6 +7,7 @@ import { NewsCard } from "@/components/news/NewsCard";
 import { NewsSubmitTip } from "@/components/news/NewsSubmitTip";
 import { NewsletterCTA } from "@/components/post/NewsletterCTA";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 export const revalidate = 60; // 60s ISR for fast daily news updates
@@ -51,6 +52,12 @@ export default async function NewsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <CollectionPageJsonLd
+        title="Daily News Desk | BlueCrest Wire"
+        description="Daily breaking news, market movements, technological breakthroughs, and policy analyses."
+        url={`${SITE_URL}/news`}
+        itemUrls={allNews.map((n) => `${SITE_URL}/news/${n.slug}`)}
+      />
       {/* Breadcrumbs */}
       <div className="mb-6">
         <Breadcrumbs

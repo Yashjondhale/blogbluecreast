@@ -1,10 +1,15 @@
 import { Metadata } from "next";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - BlueCrest",
   description: "Privacy policy complying with India's Digital Personal Data Protection Act 2023 and GDPR standards.",
+  alternates: {
+    canonical: `${SITE_URL}/privacy-policy`,
+  },
 };
+
 
 export default function PrivacyPolicyPage() {
   return (

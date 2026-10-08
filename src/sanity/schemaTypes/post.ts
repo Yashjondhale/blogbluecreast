@@ -4,17 +4,25 @@ export const postType = defineType({
   name: "post",
   title: "Post",
   type: "document",
+  groups: [
+    { name: "content", title: "Content", default: true },
+    { name: "editorial", title: "Editorial & Attribution" },
+    { name: "seo", title: "SEO & Social Sharing" },
+  ],
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
+      group: "content",
       validation: (Rule) => Rule.required().min(10).max(120),
     }),
+
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      group: "content",
       options: {
         source: "title",
         maxLength: 96,
@@ -25,6 +33,7 @@ export const postType = defineType({
       name: "excerpt",
       title: "Excerpt / Summary",
       type: "text",
+      group: "content",
       rows: 3,
       description: "Brief hook for index cards and meta descriptions (120-160 chars recommended)",
       validation: (Rule) => Rule.required().min(30).max(250),
@@ -33,6 +42,7 @@ export const postType = defineType({
       name: "mainImage",
       title: "Featured Main Image",
       type: "image",
+      group: "content",
       options: {
         hotspot: true,
       },
@@ -51,10 +61,12 @@ export const postType = defineType({
       ],
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "category",
       title: "Primary Category",
       type: "reference",
+      group: "editorial",
       to: [{ type: "category" }],
       validation: (Rule) => Rule.required(),
     }),
@@ -62,12 +74,14 @@ export const postType = defineType({
       name: "tags",
       title: "Tags",
       type: "array",
+      group: "editorial",
       of: [{ type: "reference", to: [{ type: "tag" }] }],
     }),
     defineField({
       name: "author",
       title: "Author (E-E-A-T)",
       type: "reference",
+      group: "editorial",
       to: [{ type: "author" }],
       validation: (Rule) => Rule.required(),
     }),
@@ -75,6 +89,7 @@ export const postType = defineType({
       name: "publishedAt",
       title: "Published At",
       type: "datetime",
+      group: "editorial",
       initialValue: () => new Date().toISOString(),
       validation: (Rule) => Rule.required(),
     }),
@@ -82,29 +97,35 @@ export const postType = defineType({
       name: "updatedAt",
       title: "Last Updated At",
       type: "datetime",
+      group: "editorial",
     }),
     defineField({
       name: "readingTime",
       title: "Estimated Reading Time (minutes)",
       type: "number",
+      group: "editorial",
       description: "Estimated reading time in minutes (calculated automatically if left blank)",
     }),
     defineField({
       name: "featured",
       title: "Featured on Homepage Hero",
       type: "boolean",
+      group: "editorial",
       initialValue: false,
     }),
     defineField({
       name: "trending",
       title: "Mark as Trending",
       type: "boolean",
+      group: "editorial",
       initialValue: false,
     }),
     defineField({
       name: "body",
       title: "Post Body (Portable Text)",
       type: "array",
+      group: "content",
+
       of: [
         {
           type: "block",
@@ -264,32 +285,48 @@ export const postType = defineType({
       ],
       validation: (Rule) => Rule.required(),
     }),
-    // SEO Fields Group
+    // SEO & Social Fields Group
     defineField({
       name: "seoTitle",
       title: "SEO Meta Title (Overrides Post Title)",
       type: "string",
-      description: "Optimal length: 50-60 characters",
+      group: "seo",
+      description: "Appears in Google search snippets and browser tab. Recommended: 50-60 characters.",
+      validation: (Rule) => Rule.max(70).warning("Longer titles may get truncated in Google search results."),
     }),
     defineField({
       name: "seoDescription",
       title: "SEO Meta Description",
       type: "text",
-      rows: 2,
-      description: "Optimal length: 140-160 characters",
+      group: "seo",
+      rows: 3,
+      description: "Compelling summary that appears below title in search results. Recommended: 140-160 characters.",
+      validation: (Rule) => Rule.max(180).warning("Descriptions above 160 characters are usually truncated by Google."),
+    }),
+    defineField({
+      name: "ogImage",
+      title: "Custom Social Share Image (Open Graph)",
+      type: "image",
+      group: "seo",
+      options: { hotspot: true },
+      description: "Custom preview banner for Twitter/X, LinkedIn, and Facebook (1200x630 recommended). Defaults to Featured Main Image if empty.",
     }),
     defineField({
       name: "canonicalUrl",
       title: "Custom Canonical URL (Optional)",
       type: "url",
-      description: "Leave empty to automatically use the post's permalink on bluecreast.in",
+      group: "seo",
+      description: "Leave empty to automatically use the post's permalink on bluecreast.in. Only set if republished from another source.",
     }),
     defineField({
       name: "noindex",
       title: "Noindex (Hide from Google Search)",
       type: "boolean",
+      group: "seo",
       initialValue: false,
+      description: "Enable this if you want search crawlers NOT to index this article.",
     }),
+
   ],
   preview: {
     select: {

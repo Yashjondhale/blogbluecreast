@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Tag as TagIcon } from "lucide-react";
 import { getAllTags, getPostsByTag } from "@/sanity/dataService";
 import { PostCard } from "@/components/post/PostCard";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 interface TagPageProps {
@@ -50,6 +51,12 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <CollectionPageJsonLd
+        title={`Articles Tagged #${tag.title} - BlueCrest`}
+        description={`Read all articles and discussions tagged #${tag.title} on BlueCrest.`}
+        url={`${SITE_URL}/tag/${tag.slug}`}
+        itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}
+      />
       <Breadcrumbs
         items={[
           { label: "Tags", href: "/blog" },

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { getAllAuthors } from "@/sanity/dataService";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { AboutPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -100,6 +101,7 @@ export default async function AboutPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+      <AboutPageJsonLd />
       <div className="mb-6">
         <Breadcrumbs items={[{ label: "About BlueCrest" }]} />
       </div>

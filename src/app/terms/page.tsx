@@ -1,10 +1,15 @@
 import { Metadata } from "next";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms of Service - BlueCrest",
   description: "Terms and conditions governing the use of the BlueCrest website and publications.",
+  alternates: {
+    canonical: `${SITE_URL}/terms`,
+  },
 };
+
 
 export default function TermsPage() {
   return (

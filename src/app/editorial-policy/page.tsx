@@ -1,12 +1,17 @@
 import { Metadata } from "next";
 import { CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Editorial Policy & Standards - BlueCrest",
   description:
     "Our commitment to rigorous reporting, fact-checking methodology, transparent AI disclosures, and corrections protocol.",
+  alternates: {
+    canonical: `${SITE_URL}/editorial-policy`,
+  },
 };
+
 
 export default function EditorialPolicyPage() {
   return (

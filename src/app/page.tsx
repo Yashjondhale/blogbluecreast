@@ -14,10 +14,37 @@ import { NewsCard } from "@/components/news/NewsCard";
 import { BreakingNewsTicker } from "@/components/news/BreakingNewsTicker";
 import { NewsletterCTA } from "@/components/post/NewsletterCTA";
 import { AdSlot } from "@/components/post/AdSlot";
+import { Metadata } from "next";
+import { DEFAULT_SITE_SETTINGS, SITE_URL } from "@/lib/constants";
 
 export const revalidate = 60; // ISR revalidation every 60 seconds
 
+export const metadata: Metadata = {
+  title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+  description: DEFAULT_SITE_SETTINGS.description,
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+    description: DEFAULT_SITE_SETTINGS.description,
+    url: SITE_URL,
+    siteName: DEFAULT_SITE_SETTINGS.siteName,
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent("BlueCrest - Modern Journalism & Research")}`,
+        width: 1200,
+        height: 630,
+        alt: "BlueCrest Modern Publication",
+      },
+    ],
+  },
+};
+
 export default async function HomePage() {
+
   const [featuredPosts, trendingPosts, latestPosts, categories, breakingNews, latestNews] =
     await Promise.all([
       getFeaturedPosts(),

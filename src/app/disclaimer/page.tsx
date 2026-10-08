@@ -1,11 +1,16 @@
 import { Metadata } from "next";
 import { AlertTriangle, ShieldCheck } from "lucide-react";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Editorial & Legal Disclaimer - BlueCrest",
   description: "Financial, medical, and general educational disclaimers for BlueCrest articles.",
+  alternates: {
+    canonical: `${SITE_URL}/disclaimer`,
+  },
 };
+
 
 export default function DisclaimerPage() {
   return (

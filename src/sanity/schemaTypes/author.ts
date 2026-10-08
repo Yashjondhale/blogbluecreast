@@ -75,7 +75,21 @@ export const authorType = defineType({
         { name: "website", type: "url", title: "Personal Website" },
       ],
     }),
+    defineField({
+      name: "seoTitle",
+      title: "SEO Meta Title (Overrides Profile Name)",
+      type: "string",
+      description: "Custom page title for Google search results (e.g., 'Dr. Aarav Mehta - AI Systems & Architecture | BlueCrest')",
+    }),
+    defineField({
+      name: "seoDescription",
+      title: "SEO Meta Description",
+      type: "text",
+      rows: 2,
+      description: "Custom meta description for the author profile snippet in search engines.",
+    }),
   ],
+
   preview: {
     select: {
       title: "name",

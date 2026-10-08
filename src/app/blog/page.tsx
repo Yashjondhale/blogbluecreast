@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Filter, Search } from "lucide-react";
 import { getAllCategories, getPaginatedPosts } from "@/sanity/dataService";
 import { PostCard } from "@/components/post/PostCard";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 interface BlogArchiveProps {
@@ -27,6 +28,12 @@ export async function generateMetadata({ searchParams }: BlogArchiveProps): Prom
     alternates: {
       canonical: canonicalUrl,
     },
+    openGraph: {
+      title: category ? `BlueCrest - ${category} Archive` : "Complete Editorial Archive - BlueCrest",
+      description: "Investigative reporting and practical frameworks across technology, finance, and health.",
+      url: canonicalUrl,
+      type: "website",
+    },
   };
 }
 
@@ -40,9 +47,20 @@ export default async function BlogArchivePage({ searchParams }: BlogArchiveProps
     getPaginatedPosts(currentPage, pageSize, category),
   ]);
 
+  const pageUrl = category
+    ? `${SITE_URL}/blog?category=${category}&page=${currentPage}`
+    : `${SITE_URL}/blog?page=${currentPage}`;
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <CollectionPageJsonLd
+        title="BlueCrest Editorial Archive"
+        description="Comprehensive archive of technical analyses, finance guides, and lifestyle investigations."
+        url={pageUrl}
+        itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}
+      />
       <Breadcrumbs items={[{ label: "All Articles" }]} />
+
 
       {/* Header */}
       <div className="border-b border-slate-200/80 pb-8 dark:border-slate-800/80">
