@@ -6,12 +6,18 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 
 export default defineConfig({
   basePath: "/studio",
-  name: "bluecrest-studio",
+  name: "bluecrest",
   title: "BlueCrest Editorial Desk",
-  projectId: projectId || "demo_project_id",
+  projectId: projectId || "27dtb4gi",
   dataset: dataset || "production",
   plugins: [structureTool({ structure })],
   schema: {
     types: schemaTypes,
+  },
+  releases: {
+    enabled: false,
+  },
+  scheduledDrafts: {
+    enabled: false,
   },
 });
