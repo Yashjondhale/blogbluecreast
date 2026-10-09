@@ -1,7 +1,9 @@
 import { SiteSettings } from "@/types";
 
-export const SITE_URL = "https://bluecreast.in";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.bluecreast.in";
 export const FORMSPREE_ENDPOINT = "https://formspree.io/f/myekwpoo";
+
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   siteName: "BlueCrest",

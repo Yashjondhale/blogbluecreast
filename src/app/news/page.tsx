@@ -135,8 +135,9 @@ export default async function NewsPage() {
           <div className="flex items-center gap-2">
             <Newspaper className="h-4 w-4 text-[#1E90FF]" />
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-              Today's Wire & Reports
+              Today&apos;s Wire & Reports
             </h2>
+
           </div>
           <span className="text-xs text-slate-500 dark:text-slate-400">
             Updated continuously • Indian Standard Time (IST)
