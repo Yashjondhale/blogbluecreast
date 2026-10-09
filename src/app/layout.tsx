@@ -120,6 +120,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
         <SiteLayout>{children}</SiteLayout>
+        {/* Monetag Ads Tag */}
+        <Script
+          src="https://5gvci.com/act/files/tag.min.js?z=11987919"
+          strategy="afterInteractive"
+          data-cfasync="false"
+        />
         {/* Monetag Push Notifications Service Worker Registration */}
         <Script
           id="monetag-sw-registration"
