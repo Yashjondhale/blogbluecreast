@@ -8,6 +8,8 @@ import {
 } from "@/sanity/dataService";
 import { SITE_URL } from "@/lib/constants";
 
+export const revalidate = 60;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, categories, tags, authors, news] = await Promise.all([
     getAllPosts(),

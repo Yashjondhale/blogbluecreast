@@ -16,14 +16,18 @@ export async function POST(req: NextRequest) {
       revalidatePath(`/blog/${slug}`);
       revalidatePath("/blog");
       revalidatePath("/");
+      revalidatePath("/sitemap.xml");
+      revalidatePath("/news-sitemap.xml");
       return NextResponse.json({
         revalidated: true,
-        message: `Revalidated /blog/${slug} and archives`,
+        message: `Revalidated /blog/${slug}, archives, and sitemaps`,
       });
     }
 
     revalidatePath("/", "layout");
-    return NextResponse.json({ revalidated: true, message: "Revalidated full site layout" });
+    revalidatePath("/sitemap.xml");
+    revalidatePath("/news-sitemap.xml");
+    return NextResponse.json({ revalidated: true, message: "Revalidated full site layout and sitemaps" });
   } catch (err: unknown) {
     return NextResponse.json(
       { message: "Error revalidating", error: err instanceof Error ? err.message : String(err) },
