@@ -120,7 +120,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
         <SiteLayout>{children}</SiteLayout>
-        {/* Monetag Ads Tag - Zone 11999639 */}
+        {/* Monetag Ads Tag - Zone 11999639 (OnClick / Popunder) */}
         <Script
           id="monetag-zone-11999639"
           strategy="afterInteractive"
@@ -128,6 +128,18 @@ export default function RootLayout({
             __html: `
               if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/studio')) {
                 (function(s){s.dataset.zone='11999639',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+              }
+            `,
+          }}
+        />
+        {/* Monetag Ads Tag - Zone 11999755 (In-Page Push / MultiTag) */}
+        <Script
+          id="monetag-zone-11999755"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/studio')) {
+                (function(s){s.dataset.zone='11999755',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
               }
             `,
           }}
