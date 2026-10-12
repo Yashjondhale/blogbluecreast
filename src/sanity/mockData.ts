@@ -119,9 +119,241 @@ export const MOCK_TAGS: Tag[] = [
   { _id: "tag-public-policy", title: "Public Policy", slug: "public-policy" },
   { _id: "tag-social-justice", title: "Social Justice", slug: "social-justice" },
   { _id: "tag-new-delhi", title: "New Delhi", slug: "new-delhi" },
+  { _id: "tag-energy-markets", title: "Energy Markets", slug: "energy-markets" },
+  { _id: "tag-macroeconomics", title: "Macroeconomics", slug: "macroeconomics" },
+  { _id: "tag-oil-gas", title: "Oil & Gas", slug: "oil-gas" },
+  { _id: "tag-sanctions", title: "Sanctions", slug: "sanctions" },
 ];
 
 export const MOCK_POSTS: Post[] = [
+  {
+    _id: "post-us-russia-diesel",
+    title: "America Buying Russian Diesel: Why the Policy Shift Reshapes Global Energy Markets",
+    slug: "us-russia-diesel-energy-markets-analysis",
+    excerpt: "Washington's decision to permit 300,000 metric tons of Russian diesel reveals the tension between domestic inflation and foreign sanctions, reshaping global refining economics and India's trade positioning.",
+    mainImage: {
+      url: "/russian-diesel-energy-markets.jpg",
+      alt: "Commercial oil tanker docked at a deepwater industrial petroleum terminal at twilight beside refinery distillation towers",
+      caption: "A commercial petroleum tanker discharging distillate feedstock at an industrial deepwater terminal. (Source: BlueCrest Creative Desk)",
+      width: 1600,
+      height: 900,
+    },
+    category: MOCK_CATEGORIES[1],
+    tags: [
+      { _id: "tag-energy-markets", title: "Energy Markets", slug: "energy-markets" },
+      { _id: "tag-macroeconomics", title: "Macroeconomics", slug: "macroeconomics" },
+      { _id: "tag-oil-gas", title: "Oil & Gas", slug: "oil-gas" },
+      { _id: "tag-sanctions", title: "Sanctions", slug: "sanctions" },
+    ],
+    author: MOCK_AUTHORS[1],
+    publishedAt: "2026-10-12T16:00:00.000Z",
+    updatedAt: "2026-10-12T18:00:00.000Z",
+    readingTime: 8,
+    seoTitle: "US Russian Oil Imports: Global Energy Market Impact",
+    seoDescription: "Explore how U.S. Russian diesel imports impact sanctions, global fuel prices, and India's crude bill. Read BlueCrest's authoritative macroeconomic analysis.",
+    canonicalUrl: "https://bluecreast.in/blog/us-russia-diesel-energy-markets-analysis",
+    featured: true,
+    trending: true,
+    views: 24180,
+    body: [
+      {
+        _key: "rd-b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c1",
+            _type: "span",
+            text: "The global energy architecture has entered a consequential phase of realignment as Washington maneuvers to secure Russian ultra-low sulfur diesel (ULSD) volumes to arrest escalating domestic fuel benchmarks. The pivot is politically and economically striking: since February 2022, the United States, alongside the G7 coalition, instituted an aggressive web of economic containment, secondary sanctions, and price-cap mechanisms engineered specifically to depress the Kremlin's hydrocarbon revenues.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b2",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c2",
+            _type: "span",
+            text: "According to market disclosures on October 12, 2026, the executive administration framed an extraordinary bilateral conduit authorizing the offloading of over 300,000 metric tons of refined Russian middle distillates into the domestic market, with additional delivery tranches mapped through Q4 2026. While pitched as a surgical anti-inflationary dampener for domestic supply chains, the transaction exposes the structural limits of economic sanctions when confronted with acute domestic energy bottlenecks.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b3",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "rd-c3",
+            _type: "span",
+            text: "Refining Economics and the Domestic Diesel Bottleneck",
+          },
+        ],
+      },
+      {
+        _key: "rd-b4",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c4",
+            _type: "span",
+            text: "To evaluate why Washington would permit Russian diesel inflows, one must examine the mechanics of the diesel crack spread—the refining margin calculated between the cost of crude feedstock and the market price of finished distillates.\n\nDiesel is the operational bloodstream of modern industrial capitalism. Unlike finished motor gasoline, which largely serves personal mobility, middle distillates (specifically ULSD) power Class 8 heavy-duty freight trucks, freight rail, agricultural machinery, maritime barges, and domestic manufacturing hubs. When distillate inventories deplete, transport costs compound across every tier of wholesale and consumer commerce.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b5",
+        _type: "table",
+        table: {
+          headers: ["Metric", "Volume / Valuation", "Operational Context"],
+          rows: [
+            ["Initial Announced Volume", "~300,000 Metric Tons", "~2.23 Million Barrels ULSD"],
+            ["Estimated Cargo Valuation", "~$400 Million (Gross)", "Subject to prevailing spot discounts"],
+            ["US Daily Diesel Consumption", "~3.9 – 4.1 Million bpd", "Represents ~0.55 days of domestic transport use"],
+            ["Kremlin Direct Fiscal Take", "~30% – 40% of net margin", "Constrained by transport surcharges & MET levies"],
+          ],
+        },
+      },
+      {
+        _key: "rd-b6",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c6",
+            _type: "span",
+            text: "While 300,000 metric tons represents roughly 2.23 million barrels—just over half a day of aggregate domestic U.S. diesel consumption—its marginal utility is disproportionate. In tightly calibrated regional wholesale hubs such as New York Harbor (NYMEX ULSD delivery), physical prompt cargo injections can immediately suppress backwardation and reduce prompt delivery premiums.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b7",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "rd-c7",
+            _type: "span",
+            text: "The Sanctions Dilemma: Economic Containment vs. Domestic Inflation",
+          },
+        ],
+      },
+      {
+        _key: "rd-b8",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c8",
+            _type: "span",
+            text: "Since the passage of the 2022 executive orders and the G7 $60/barrel crude price cap (complemented by the $100/barrel premium product cap), the premise of Western energy statecraft was clear: decouple Western economies from Russian hydrocarbon reliance while maintaining physical volumes on world markets to avoid global price spikes.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b9",
+        _type: "callout",
+        callout: {
+          tone: "warning",
+          title: "Key Insight / Editorial Takeaway",
+          text: "Selective sanction carve-outs driven by domestic price pressures erode the institutional credibility of secondary sanctions. When the primary architect of a multilateral embargo grants itself exemptions for domestic price stabilization, international compliance regimes transition from legal imperatives to discretionary policies.",
+        },
+      },
+      {
+        _key: "rd-b10",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "rd-c10",
+            _type: "span",
+            text: "Russian Fiscal Realities and Logistical Constraints",
+          },
+        ],
+      },
+      {
+        _key: "rd-b11",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c11",
+            _type: "span",
+            text: "From Moscow’s vantage point, the commercial arrangement delivers a high-profile diplomatic headline, but its underlying fiscal and structural benefits must be evaluated against ongoing domestic headwinds.\n\nWhile an initial shipment valuation of $400 million represents meaningful gross revenue, the net contribution to the Russian federal budget is constrained. Upstream mineral extraction taxes (MET), export customs levies, and state damping payments determine the sovereign capture rate, typically filtering between 30% and 40% of realized export prices into central coffers.\n\nFurthermore, repeated Ukrainian drone strikes against primary distillation units and hydrocrackers have temporarily constrained Russian domestic refining throughput by 8% to 12%, making sustained export flows dependent on constrained repair logistics and aging shadow tanker availability.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b12",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "rd-c12",
+            _type: "span",
+            text: "Multi-Regional Repercussions: Europe and India",
+          },
+        ],
+      },
+      {
+        _key: "rd-b13",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c13",
+            _type: "span",
+            text: "Across Brussels and Kyiv, the announcement generates profound disquiet. European member states endured severe macroeconomic shocks between 2022 and 2024 to systematically dismantle Russian pipeline gas and maritime crude imports, substituting them with high-cost alternatives. Witnessing Washington authorize Russian refined fuel imports risks fracturing trans-Atlantic diplomatic consensus.\n\nFor New Delhi, this development carries profound macroeconomic significance. India has served as a critical balancer in global energy flows, importing Russian Urals crude at discounted rates, processing it within coastal super-refineries in Gujarat, and re-exporting compliant refined fuels westward. A direct U.S. procurement channel for Russian petroleum effectively neutralizes diplomatic criticisms previously directed at Indian refiners, while helping stabilize the global crude benchmark and softening India's current account deficit.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b14",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "rd-c14",
+            _type: "span",
+            text: "Strategic Outlook",
+          },
+        ],
+      },
+      {
+        _key: "rd-b15",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "rd-c15",
+            _type: "span",
+            text: "The decision to facilitate Russian diesel inflows into the American energy complex reflects an unyielding reality of macroeconomics: the politics of domestic inflation invariably dominate the geopolitics of foreign policy.\n\nWhile economic sanctions remain powerful instruments of asymmetric leverage, their efficacy is constrained by inelastic consumer demand for foundational commodities. For enterprise treasurers, institutional investors, and global logistics operators, the signal is unambiguous: global energy supply chains have decoupled from predictable multilateral doctrines, entering a volatile era where tactical bilateral expediency supersedes diplomatic orthodoxy.",
+          },
+        ],
+      },
+      {
+        _key: "rd-b16",
+        _type: "faqBlock",
+        faq: [
+          {
+            question: "Does this arrangement mean all U.S. sanctions on Russian oil and gas have been lifted?",
+            answer: "No. The transaction represents a targeted, conditional regulatory carve-out tailored specifically to refined diesel shipments to mitigate domestic fuel inflation. Broader financial sanctions, technology embargoes, and restrictions across the Russian financial system and major state-owned energy entities remain formally active.",
+          },
+          {
+            question: "How does 300,000 metric tons of diesel affect pump prices in the United States?",
+            answer: "The immediate retail impact will be modest—estimated at a regional softening of 5 to 10 cents per gallon across Atlantic coastal markets. Because 300,000 metric tons equals approximately 2.2 million barrels (or roughly half a day of national transport demand), its primary impact is psychological and financial, dampening prompt futures spikes rather than permanently shifting long-term supply balances.",
+          },
+          {
+            question: "How does this development alter India's crude purchasing strategy?",
+            answer: "The development validates India's pragmatic energy procurement framework. With Washington actively accommodating Russian fuel supplies to insulate its domestic economy, diplomatic resistance against Indian refiners processing discounted Russian crude diminishes significantly, reinforcing India's strategic autonomy in bilateral energy contracts.",
+          },
+        ],
+      },
+    ],
+  },
   {
     _id: "post-jantar-mantar",
     title: "Jantar Mantar Protests: Unpacking the Latest Demands and Socio-Political Fallout",
