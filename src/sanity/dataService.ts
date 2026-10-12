@@ -37,7 +37,7 @@ export async function getAllPosts(): Promise<Post[]> {
       }`;
       const data = await client.fetch<Post[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data
+        const mapped = data
           .filter((p) => p && p.title && p.slug)
           .map((p) => {
             const fallback = MOCK_POSTS.find((m) => m.slug === p.slug);
@@ -64,6 +64,13 @@ export async function getAllPosts(): Promise<Post[]> {
               tags: p.tags || fallback?.tags || [],
             };
           });
+
+        const existingSlugs = new Set(mapped.map((p) => p.slug));
+        const missingLocal = MOCK_POSTS.filter((m) => !existingSlugs.has(m.slug));
+        const combined = [...mapped, ...missingLocal];
+        return combined.sort(
+          (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        );
       }
     } catch (err) {
       console.warn("Failed to fetch posts from Sanity, using fallback:", err);
@@ -234,7 +241,7 @@ export async function getAllAuthors(): Promise<Author[]> {
       }`;
       const data = await client.fetch<Author[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data
+        const mapped = data
           .filter((a) => a && a.name && a.slug)
           .map((a) => {
             const fallback = MOCK_AUTHORS.find((m) => m.slug === a.slug);
@@ -249,6 +256,10 @@ export async function getAllAuthors(): Promise<Author[]> {
               socials: a.socials || fallback?.socials || {},
             };
           });
+
+        const existingSlugs = new Set(mapped.map((a) => a.slug));
+        const missingLocal = MOCK_AUTHORS.filter((m) => !existingSlugs.has(m.slug));
+        return [...mapped, ...missingLocal];
       }
     } catch (err) {
       console.warn("Failed to fetch authors from Sanity, using fallback:", err);
@@ -272,7 +283,10 @@ export async function getAllTags(): Promise<Tag[]> {
       }`;
       const data = await client.fetch<Tag[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data.filter((t) => t && t.title && t.slug);
+        const mapped = data.filter((t) => t && t.title && t.slug);
+        const existingSlugs = new Set(mapped.map((t) => t.slug));
+        const missingLocal = MOCK_TAGS.filter((m) => !existingSlugs.has(m.slug));
+        return [...mapped, ...missingLocal];
       }
     } catch (err) {
       console.warn("Failed to fetch tags from Sanity, using fallback:", err);
@@ -322,7 +336,7 @@ export async function getAllNews(): Promise<NewsArticle[]> {
       }`;
       const data = await client.fetch<NewsArticle[]>(query, {}, fetchOptions);
       if (data && data.length > 0) {
-        return data
+        const mapped = data
           .filter((n) => n && n.title && n.slug)
           .map((n) => {
             const fallback = MOCK_NEWS.find((m) => m.slug === n.slug);
@@ -347,6 +361,13 @@ export async function getAllNews(): Promise<NewsArticle[]> {
                 : fallback?.author || MOCK_AUTHORS[0],
             };
           });
+
+        const existingSlugs = new Set(mapped.map((n) => n.slug));
+        const missingLocal = MOCK_NEWS.filter((m) => !existingSlugs.has(m.slug));
+        const combined = [...mapped, ...missingLocal];
+        return combined.sort(
+          (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        );
       }
     } catch (err) {
       console.warn("Failed to fetch news from Sanity, using fallback:", err);
