@@ -60,10 +60,13 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
-            4. Cookie Choices & Analytics
+            4. Cookie Choices, Advertising & Analytics
           </h2>
           <p>
-            We do not track you across unrelated external websites. Non-essential analytical telemetry is gated behind our on-site Cookie Consent banner and is only engaged upon affirmative consent.
+            We partner with third-party advertising partners, including <strong>Google AdSense</strong>, to display relevant advertisements when you visit our website. Google and its partners use cookies (such as the DoubleClick cookie) to serve ads based on your visit to this and other websites on the internet.
+          </p>
+          <p className="mt-2">
+            You may opt out of personalized advertising by visiting Google&apos;s <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#1E90FF] underline">Ads Settings</a> or by visiting <a href="https://aboutads.info" target="_blank" rel="noopener noreferrer" className="text-[#1E90FF] underline">aboutads.info</a>.
           </p>
         </section>
 
