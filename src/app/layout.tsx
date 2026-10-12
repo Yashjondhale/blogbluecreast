@@ -117,6 +117,13 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <WebsiteJsonLd />
         <OrganizationJsonLd />
+        {/* Google AdSense */}
+        <Script
+          id="google-adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9565997739811298"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
         <SiteLayout>{children}</SiteLayout>
