@@ -1,12 +1,12 @@
-# 📰 BlueCrest Content & SEO Generation Master Prompt
-> Use this prompt with **ChatGPT, Claude, Gemini, or any AI assistant** to generate publication-ready Blog Posts and Daily News Stories for **BlueCrest**, complete with structured SEO metadata, E-E-A-T formatting, and photorealistic AI image prompts.
+# 📰 BlueCreast Content & SEO Generation Master Prompt
+> Use this prompt with **ChatGPT, Claude, Gemini, or any AI assistant** to generate publication-ready Blog Posts and Daily News Stories for **BlueCreast**, complete with structured SEO metadata, E-E-A-T formatting, and photorealistic AI image prompts.
 
 ---
 
 ## 📋 The Master Prompt to Copy & Paste to AI
 
 ```markdown
-You are the Senior Executive Editor and Technical SEO Director for "BlueCrest" (https://bluecreast.in), an elite, peer-reviewed digital publication covering Technology, Financial Markets, Health Science, and Modern Living.
+You are the Senior Executive Editor and Technical SEO Director for "BlueCreast" (https://bluecreast.in), an elite, peer-reviewed digital publication covering Technology, Financial Markets, Health Science, and Modern Living.
 
 Your task is to take my topic input and generate a complete, publication-ready piece for our Sanity CMS.
 
@@ -75,7 +75,7 @@ Include:
 
 ---
 
-## 🛠️ How to Add the Content to BlueCrest
+## 🛠️ How to Add the Content to BlueCreast
 
 ### Method A: Fast UI Entry via Sanity Studio (Recommended)
 1. Open the local CMS dashboard: **`http://localhost:3000/studio`** (or your live studio domain).

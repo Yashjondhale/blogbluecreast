@@ -44,7 +44,7 @@ export async function GET(request: NextRequest) {
                 BC
               </div>
               <span style={{ fontSize: "32px", fontWeight: "800", letterSpacing: "-0.5px" }}>
-                Blue<span style={{ color: "#1E90FF" }}>Crest</span>
+                Blue<span style={{ color: "#1E90FF" }}>Creast</span>
               </span>
             </div>
 

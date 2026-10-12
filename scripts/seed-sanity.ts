@@ -1,5 +1,5 @@
 /**
- * BlueCrest Sanity CMS Seeding Script
+ * BlueCreast Sanity CMS Seeding Script
  * Run with: npm run seed
  * Requires: NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_API_WRITE_TOKEN in .env.local
  */
@@ -13,7 +13,7 @@ const token = process.env.SANITY_API_WRITE_TOKEN;
 
 if (!projectId || !token) {
   console.log("⚠️  NEXT_PUBLIC_SANITY_PROJECT_ID or SANITY_API_WRITE_TOKEN missing.");
-  console.log("ℹ️  BlueCrest already ships with offline-first mock dataset enabled.");
+  console.log("ℹ️  BlueCreast already ships with offline-first mock dataset enabled.");
   console.log("ℹ️  To push data to your live Sanity project, add both tokens in .env.local and re-run.");
   process.exit(0);
 }
@@ -27,7 +27,7 @@ const client = createClient({
 });
 
 async function seed() {
-  console.log("🚀 Starting BlueCrest Sanity CMS seed...");
+  console.log("🚀 Starting BlueCreast Sanity CMS seed...");
 
   try {
     // 1. Seed Categories

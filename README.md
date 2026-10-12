@@ -1,4 +1,4 @@
-# BlueCrest (bluecreast.in)
+# BlueCreast (bluecreast.in)
 
 > Production-ready, high-performance, multi-niche publication built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Sanity CMS**.
 
@@ -6,7 +6,7 @@
 
 ## 🚀 Live Overview & Core Features
 
-- **Brand & Domain**: BlueCrest (`bluecreast.in`)
+- **Brand & Domain**: BlueCreast (`bluecreast.in`)
 - **Editorial Coverage**: Technology & AI, Wealth & Markets, Preventive Medicine, Digital Nomadism, and Startup Leadership.
 - **Embedded CMS**: Sanity Studio available directly at `/studio`.
 - **Search System**: Global Command Palette (`Cmd/Ctrl+K`) + `/search` route.
