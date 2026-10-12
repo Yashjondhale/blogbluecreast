@@ -1,8 +1,8 @@
-# BlueCrest (bluecreast.in)
+# BlueCreast (bluecreast.in)
 > High-integrity multi-niche publication covering technology, personal finance, preventive medicine, modern lifestyle, and Indian venture ecosystems.
 
 ## Core Mission & Editorial Standards
-BlueCrest publishes peer-reviewed and practitioner-authored journalism. We specialize in deep-dive architectures, reproducible benchmarks, and evidence-backed explainers.
+BlueCreast publishes peer-reviewed and practitioner-authored journalism. We specialize in deep-dive architectures, reproducible benchmarks, and evidence-backed explainers.
 All content is original, authored by domain specialists (MDs, PhDs, CFAs), and fact-checked under our Editorial Policy.
 
 ## Primary Sections & Feeds

@@ -239,7 +239,7 @@ export function ContactPageJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact BlueCrest Editorial & Press",
+    name: "Contact BlueCreast Editorial & Press",
     description: "Submit editorial pitches, press releases, corrections, and partnerships.",
     url: `${SITE_URL}/contact`,
     mainEntity: {
@@ -276,7 +276,7 @@ export function AboutPageJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About BlueCrest",
+    name: "About BlueCreast",
     description: "Independent multi-niche publication built on empirical research, technical precision, and verified practitioner expertise.",
     url: `${SITE_URL}/about`,
     mainEntity: {

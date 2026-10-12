@@ -2,7 +2,7 @@ import type { StructureResolver } from "sanity/structure";
 
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title("BlueCrest Editorial Desk")
+    .title("BlueCreast Editorial Desk")
     .items([
       S.documentTypeListItem("post").title("📰 Articles / Longform Posts"),
       S.documentTypeListItem("news").title("⚡ Daily News Desk"),

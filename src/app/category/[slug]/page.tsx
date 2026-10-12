@@ -30,13 +30,13 @@ export async function generateMetadata({ params, searchParams }: CategoryPagePro
   const canonicalUrl = `${SITE_URL}/category/${category.slug}${page !== "1" ? `?page=${page}` : ""}`;
 
   return {
-    title: `${category.title} Articles & News - BlueCrest`,
+    title: `${category.title} Articles & News - BlueCreast`,
     description: category.description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${category.title} Articles & Insights - BlueCrest`,
+      title: `${category.title} Articles & Insights - BlueCreast`,
       description: category.description,
       url: canonicalUrl,
     },
@@ -57,7 +57,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <CollectionPageJsonLd
-        title={`${category.title} Articles & Insights - BlueCrest`}
+        title={`${category.title} Articles & Insights - BlueCreast`}
         description={category.description}
         url={`${SITE_URL}/category/${category.slug}`}
         itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}

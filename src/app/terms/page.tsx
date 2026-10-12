@@ -3,8 +3,8 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - BlueCrest",
-  description: "Terms and conditions governing the use of the BlueCrest website and publications.",
+  title: "Terms of Service - BlueCreast",
+  description: "Terms and conditions governing the use of the BlueCreast website and publications.",
   alternates: {
     canonical: `${SITE_URL}/terms`,
   },
@@ -29,7 +29,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p>
-            By visiting, accessing, or reading content on bluecreast.in (&quot;BlueCrest&quot;), you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service.
+            By visiting, accessing, or reading content on bluecreast.in (&quot;BlueCreast&quot;), you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service.
           </p>
         </section>
 
@@ -38,7 +38,7 @@ export default function TermsPage() {
             2. Intellectual Property & Copyright
           </h2>
           <p>
-            All original analyses, articles, architectural diagrams, software code samples, and graphics published on BlueCrest are the exclusive intellectual property of BlueCrest and its credentialed authors, protected under Indian and international copyright treaties. Fair use quoting is permitted provided clear attribution and a direct link to the original article canonical URL is provided.
+            All original analyses, articles, architectural diagrams, software code samples, and graphics published on BlueCreast are the exclusive intellectual property of BlueCreast and its credentialed authors, protected under Indian and international copyright treaties. Fair use quoting is permitted provided clear attribution and a direct link to the original article canonical URL is provided.
           </p>
         </section>
 
@@ -47,7 +47,7 @@ export default function TermsPage() {
             3. Disclaimer of Informational Use
           </h2>
           <p>
-            All content published on BlueCrest is strictly for general informational, educational, and journalistic purposes. It does not constitute professional financial, medical, or legal counsel.
+            All content published on BlueCreast is strictly for general informational, educational, and journalistic purposes. It does not constitute professional financial, medical, or legal counsel.
           </p>
         </section>
       </div>

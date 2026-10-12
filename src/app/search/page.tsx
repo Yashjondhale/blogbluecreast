@@ -5,8 +5,8 @@ import { PostCard } from "@/components/post/PostCard";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Search Articles & Topics - BlueCrest",
-  description: "Search BlueCrest's archive of technology, finance, health, and lifestyle articles.",
+  title: "Search Articles & Topics - BlueCreast",
+  description: "Search BlueCreast's archive of technology, finance, health, and lifestyle articles.",
   robots: {
     index: false,
     follow: true,

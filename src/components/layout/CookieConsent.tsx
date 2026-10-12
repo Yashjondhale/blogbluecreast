@@ -56,7 +56,7 @@ export function CookieConsent() {
             </div>
 
             <p className="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-              BlueCrest respects your privacy under the Digital Personal Data Protection Act (DPDP) and GDPR. We use cookies and privacy-respecting telemetry solely to optimize reading experience and analyze readership metrics.
+              BlueCreast respects your privacy under the Digital Personal Data Protection Act (DPDP) and GDPR. We use cookies and privacy-respecting telemetry solely to optimize reading experience and analyze readership metrics.
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-2.5">

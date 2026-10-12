@@ -13,14 +13,14 @@ import { ServicesProposalForm } from "./ServicesProposalForm";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Commercial Editorial & Research Services | BlueCrest Studio",
+  title: "Commercial Editorial & Research Services | BlueCreast Studio",
   description:
-    "Partner with BlueCrest for sponsored technical whitepapers, architectural benchmarking, content licensing, and native editorial placements.",
+    "Partner with BlueCreast for sponsored technical whitepapers, architectural benchmarking, content licensing, and native editorial placements.",
   alternates: {
     canonical: `${SITE_URL}/services`,
   },
   openGraph: {
-    title: "BlueCrest Editorial & Research Services",
+    title: "BlueCreast Editorial & Research Services",
     description:
       "Sponsored research whitepapers, architecture teardowns, executive licensing, and technical advisory for enterprise leaders.",
     url: `${SITE_URL}/services`,
@@ -33,7 +33,7 @@ const services = [
     icon: <FileText className="h-6 w-6 text-[#1E90FF]" />,
     title: "Sponsored Research & Whitepapers",
     desc: "Comprehensive benchmark studies, cloud economics analyses, and industry whitepapers researched with academic rigor by verified PhDs and Staff Engineers.",
-    deliverables: ["15-30 Page PDF Report", "Executive Summary", "Interactive Web Visualizations", "BlueCrest Co-Branding"],
+    deliverables: ["15-30 Page PDF Report", "Executive Summary", "Interactive Web Visualizations", "BlueCreast Co-Branding"],
   },
   {
     icon: <Code2 className="h-6 w-6 text-purple-600" />,
@@ -50,7 +50,7 @@ const services = [
   {
     icon: <BookOpen className="h-6 w-6 text-orange-600" />,
     title: "Content Syndication & Licensing",
-    desc: "License BlueCrest's award-winning essays, clinical sleep protocols, and Indian equity market explainers for your enterprise portal.",
+    desc: "License BlueCreast's award-winning essays, clinical sleep protocols, and Indian equity market explainers for your enterprise portal.",
     deliverables: ["Full Reprint Rights", "Editorial Attribution Badges", "Custom Localized Translations", "Quarterly Retainers"],
   },
   {
@@ -62,7 +62,7 @@ const services = [
   {
     icon: <Headphones className="h-6 w-6 text-sky-500" />,
     title: "Newsletter & Media Sponsorships",
-    desc: "Place your brand directly in front of targeted decision-makers in The BlueCrest Dispatch, our curated Sunday morning newsletter.",
+    desc: "Place your brand directly in front of targeted decision-makers in The BlueCreast Dispatch, our curated Sunday morning newsletter.",
     deliverables: ["Exclusive Primary Sponsor Slot", "Guaranteed 42%+ Open Rates", "Zero Ad-Blocker Interference", "Post-Campaign Telemetry"],
   },
 ];
@@ -74,13 +74,13 @@ export default function ServicesPage() {
     serviceType: "Editorial Research and Publishing Services",
     provider: {
       "@type": "Organization",
-      name: "BlueCrest",
+      name: "BlueCreast",
       url: SITE_URL,
       logo: `${SITE_URL}/logo.svg`,
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "BlueCrest Publishing Services",
+      name: "BlueCreast Publishing Services",
       itemListElement: services.map((s, idx) => ({
         "@type": "Offer",
         itemOffered: {
@@ -104,7 +104,7 @@ export default function ServicesPage() {
       {/* Hero Header */}
       <div className="max-w-3xl mx-auto text-center mb-16">
         <span className="text-xs font-bold tracking-wider text-[#1E90FF] uppercase">
-          BlueCrest Commercial Desk
+          BlueCreast Commercial Desk
         </span>
         <h1 className="mt-2 font-serif text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100">
           Editorial Rigor for Modern Technology & Finance Leaders.

@@ -38,7 +38,7 @@ export const categoryType = defineType({
       name: "seoTitle",
       title: "SEO Meta Title (Overrides Category Title)",
       type: "string",
-      description: "Custom title for search engines (e.g. 'Technology News & Distributed Systems Guides | BlueCrest')",
+      description: "Custom title for search engines (e.g. 'Technology News & Distributed Systems Guides | BlueCreast')",
     }),
     defineField({
       name: "seoDescription",

@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: NewsPageProps): Promise<Metad
   const ogImage = article.mainImage?.url || `${SITE_URL}/og-default.png`;
 
   return {
-    title: `${article.title} | BlueCrest News`,
+    title: `${article.title} | BlueCreast News`,
     description: article.summary,
     alternates: {
       canonical: url,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: NewsPageProps): Promise<Metad
       title: article.title,
       description: article.summary,
       url,
-      siteName: "BlueCrest",
+      siteName: "BlueCreast",
       type: "article",
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt || article.publishedAt,
@@ -107,7 +107,7 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
     },
     "publisher": {
       "@type": "NewsMediaOrganization",
-      "name": "BlueCrest",
+      "name": "BlueCreast",
       "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
@@ -216,7 +216,7 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
             <span>&bull;</span>
 
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              {article.source || "BlueCrest Wire"}
+              {article.source || "BlueCreast Wire"}
             </span>
           </div>
 

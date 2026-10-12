@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const title = searchParams.get("title") || "BlueCrest - Modern Journalism & Insights";
+    const title = searchParams.get("title") || "BlueCreast - Modern Journalism & Insights";
     const category = searchParams.get("category") || "Editorial Analysis";
 
     return new ImageResponse(

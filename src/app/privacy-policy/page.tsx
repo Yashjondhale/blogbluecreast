@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - BlueCrest",
+  title: "Privacy Policy - BlueCreast",
   description: "Privacy policy complying with India's Digital Personal Data Protection Act 2023 and GDPR standards.",
   alternates: {
     canonical: `${SITE_URL}/privacy-policy`,
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             1. Overview & Commitment
           </h2>
           <p>
-            BlueCrest (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;, operating via bluecreast.in) is dedicated to safeguarding the privacy and digital autonomy of our readers. This Privacy Policy details how we handle information collected during your interaction with our articles, newsletters, and interactive features.
+            BlueCreast (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;, operating via bluecreast.in) is dedicated to safeguarding the privacy and digital autonomy of our readers. This Privacy Policy details how we handle information collected during your interaction with our articles, newsletters, and interactive features.
           </p>
         </section>
 
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
             2. Personal Data We Collect
           </h2>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Newsletter Subscriptions:</strong> Your email address when you voluntarily subscribe to The BlueCrest Dispatch with double opt-in.</li>
+            <li><strong>Newsletter Subscriptions:</strong> Your email address when you voluntarily subscribe to The BlueCreast Dispatch with double opt-in.</li>
             <li><strong>Contact Inquiries:</strong> Your name, email, and message text submitted via our contact desk.</li>
             <li><strong>Aggregated Technical Metrics:</strong> Anonymized telemetry such as browser version, operating system, approximate geographic country (India, US, etc.), and page view counts to assess content performance.</li>
           </ul>
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
             3. India DPDP Act 2023 Compliance
           </h2>
           <p>
-            In accordance with India&apos;s Digital Personal Data Protection Act (DPDP Act, 2023), BlueCrest functions as a Data Fiduciary. We process personal data solely for specific, legitimate, and lawful purposes with reader consent. Readers retain full rights to:
+            In accordance with India&apos;s Digital Personal Data Protection Act (DPDP Act, 2023), BlueCreast functions as a Data Fiduciary. We process personal data solely for specific, legitimate, and lawful purposes with reader consent. Readers retain full rights to:
           </p>
           <ul className="list-disc pl-6 space-y-2 mt-2">
             <li>Request a summary of personal data held about them.</li>

@@ -91,7 +91,7 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
 
             <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800">
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                {news.source || "BlueCrest Newsroom"}
+                {news.source || "BlueCreast Newsroom"}
               </span>
               <Link
                 href={`/news/${news.slug}`}
@@ -146,7 +146,7 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
       </div>
 
       <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-3 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
-        <span>{news.source || "BlueCrest Wire"}</span>
+        <span>{news.source || "BlueCreast Wire"}</span>
         <Link
           href={`/news/${news.slug}`}
           className="inline-flex items-center gap-1 font-semibold text-[#1E90FF] hover:underline"

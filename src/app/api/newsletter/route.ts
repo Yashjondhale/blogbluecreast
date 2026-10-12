@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const { email } = result.data;
 
     // Log subscription intent for double opt-in dispatch
-    console.log(`[Newsletter Subscription] ${email} opted in to The BlueCrest Dispatch`);
+    console.log(`[Newsletter Subscription] ${email} opted in to The BlueCreast Dispatch`);
 
     // In production: hook into Resend Audiences or Buttondown API
     // e.g. if (process.env.BUTTONDOWN_API_KEY) { ... }

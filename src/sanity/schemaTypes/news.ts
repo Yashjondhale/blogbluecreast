@@ -82,7 +82,7 @@ export const newsType = defineType({
       title: "Wire / News Source",
       type: "string",
       group: "wire",
-      initialValue: "BlueCrest Newsroom",
+      initialValue: "BlueCreast Newsroom",
     }),
     defineField({
       name: "sourceUrl",

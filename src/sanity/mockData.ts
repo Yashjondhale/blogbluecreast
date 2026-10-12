@@ -8,7 +8,7 @@ export const MOCK_AUTHORS: Author[] = [
     role: "Chief Technology Editor & AI Architect",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
     avatarAlt: "Portrait of Dr. Aarav Mehta",
-    bio: "Dr. Aarav Mehta leads technical research at BlueCrest. Former Principal Engineer at AWS and PhD holder in Distributed Systems from IIT Bombay, Aarav writes about artificial intelligence, system scalability, and developer infrastructure.",
+    bio: "Dr. Aarav Mehta leads technical research at BlueCreast. Former Principal Engineer at AWS and PhD holder in Distributed Systems from IIT Bombay, Aarav writes about artificial intelligence, system scalability, and developer infrastructure.",
     expertise: ["Artificial Intelligence", "Cloud Architecture", "Next.js & Frontend", "Distributed Systems"],
     credentials: "PhD Distributed Systems (IIT Bombay), Ex-AWS Principal Engineer, 14+ years experience",
     socials: {
@@ -55,7 +55,7 @@ export const MOCK_AUTHORS: Author[] = [
     role: "Editorial Desk Lead & Public Policy Analyst",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
     avatarAlt: "Portrait of Aaradhya Pathak",
-    bio: "Aaradhya Pathak covers civic movements, socio-political discourse, and executive policy reforms for the BlueCrest Editorial Desk.",
+    bio: "Aaradhya Pathak covers civic movements, socio-political discourse, and executive policy reforms for the BlueCreast Editorial Desk.",
     expertise: ["Public Policy", "Civic Movements", "Governance", "Social Justice"],
     credentials: "MA Public Policy & Governance, Former Senior Bureau Correspondent, 9+ years experience",
     socials: {
@@ -850,7 +850,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Business & Leadership",
     isBreaking: true,
     publishedAt: "2026-10-12T10:00:00.000Z",
-    source: "BlueCrest Public Policy Desk",
+    source: "BlueCreast Public Policy Desk",
     sourceUrl: "https://bluecreast.in",
     readingTime: 4,
     summary:
@@ -877,7 +877,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Technology",
     isBreaking: true,
     publishedAt: "2026-10-08T09:30:00.000Z",
-    source: "BlueCrest Tech Desk",
+    source: "BlueCreast Tech Desk",
     sourceUrl: "https://bluecreast.in",
     readingTime: 3,
     summary:
@@ -904,7 +904,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Markets & Finance",
     isBreaking: false,
     publishedAt: "2026-10-08T07:15:00.000Z",
-    source: "BlueCrest Markets Desk",
+    source: "BlueCreast Markets Desk",
     readingTime: 4,
     summary:
       "The Reserve Bank of India has expanded real-time sovereign payments bilateral linkages, slashing cross-border remittance fees by up to 80% for expat families and small exporters.",
@@ -930,7 +930,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Science & Health",
     isBreaking: true,
     publishedAt: "2026-10-07T16:45:00.000Z",
-    source: "BlueCrest Science Desk",
+    source: "BlueCreast Science Desk",
     readingTime: 3,
     summary:
       "Peer-reviewed university lab trials demonstrate lithium-sulfur ceramic electrolytes enduring 2,500 rapid charge cycles with negligible degradation and non-flammable safety profile.",
@@ -956,7 +956,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Markets & Finance",
     isBreaking: false,
     publishedAt: "2026-10-07T11:20:00.000Z",
-    source: "BlueCrest Markets Desk",
+    source: "BlueCreast Markets Desk",
     readingTime: 3,
     summary:
       "Strong corporate earnings, capital expenditure cycles, and uninterrupted monthly retail SIP participation propel benchmark indices to historic summits.",
@@ -982,7 +982,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Technology",
     isBreaking: false,
     publishedAt: "2026-10-06T18:00:00.000Z",
-    source: "BlueCrest Tech Desk",
+    source: "BlueCreast Tech Desk",
     readingTime: 4,
     summary:
       "Independent researchers have released an open 70B parameter reasoning model that matches commercial proprietary models across HumanEval and SWE-bench benchmarks.",
@@ -1008,7 +1008,7 @@ export const MOCK_NEWS: NewsArticle[] = [
     category: "Startups & Business",
     isBreaking: false,
     publishedAt: "2026-10-05T14:10:00.000Z",
-    source: "BlueCrest Wire",
+    source: "BlueCreast Wire",
     readingTime: 3,
     summary:
       "Pilot production runs of 28nm legacy automotive and industrial microcontrollers yield successful test passes at the Dholera semiconductor fab cluster.",

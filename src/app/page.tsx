@@ -20,13 +20,13 @@ import { DEFAULT_SITE_SETTINGS, SITE_URL } from "@/lib/constants";
 export const revalidate = 60; // ISR revalidation every 60 seconds
 
 export const metadata: Metadata = {
-  title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+  title: "BlueCreast | Modern Tech, Finance, Health & Lifestyle Journalism",
   description: DEFAULT_SITE_SETTINGS.description,
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+    title: "BlueCreast | Modern Tech, Finance, Health & Lifestyle Journalism",
     description: DEFAULT_SITE_SETTINGS.description,
     url: SITE_URL,
     siteName: DEFAULT_SITE_SETTINGS.siteName,
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/api/og?title=${encodeURIComponent("BlueCrest - Modern Journalism & Research")}`,
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent("BlueCreast - Modern Journalism & Research")}`,
         width: 1200,
         height: 630,
-        alt: "BlueCrest Modern Publication",
+        alt: "BlueCreast Modern Publication",
       },
     ],
   },

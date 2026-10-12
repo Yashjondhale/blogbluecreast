@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
   if (!author) return { title: "Author Not Found" };
 
   return {
-    title: `${author.name} - Author & Editorial Profile - BlueCrest`,
+    title: `${author.name} - Author & Editorial Profile - BlueCreast`,
     description: author.bio,
     alternates: {
       canonical: `${SITE_URL}/author/${author.slug}`,

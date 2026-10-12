@@ -6,11 +6,11 @@ export const FORMSPREE_ENDPOINT = "https://formspree.io/f/myekwpoo";
 
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
-  siteName: "BlueCrest",
+  siteName: "BlueCreast",
   siteUrl: SITE_URL,
   tagline: "Insightful Journalism, Tech Trends, and Modern Living",
   description:
-    "BlueCrest is a premier multi-niche publication delivering expert analysis, practical how-to guides, and in-depth explainers across technology, finance, health, lifestyle, and global business.",
+    "BlueCreast is a premier multi-niche publication delivering expert analysis, practical how-to guides, and in-depth explainers across technology, finance, health, lifestyle, and global business.",
   defaultOgImage: `${SITE_URL}/og-default.png`,
   logo: "/logo.svg",
   email: "contact@bluecreast.in",
@@ -85,7 +85,7 @@ export const FOOTER_LINKS = {
   ],
   company: [
     { label: "Daily News Desk", href: "/news" },
-    { label: "About BlueCrest", href: "/about" },
+    { label: "About BlueCreast", href: "/about" },
     { label: "Our Services", href: "/services" },
     { label: "Careers (We're Hiring)", href: "/careers" },
     { label: "Editorial Policy", href: "/editorial-policy" },

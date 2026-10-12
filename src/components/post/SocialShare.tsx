@@ -17,7 +17,7 @@ export function SocialShare({ title, slug, url, className }: SocialShareProps) {
 
   const shareLinks = {
     whatsapp: `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      `*${title}*\n\nRead more on BlueCrest: ${fullUrl}`
+      `*${title}*\n\nRead more on BlueCreast: ${fullUrl}`
     )}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       title

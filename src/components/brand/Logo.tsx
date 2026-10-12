@@ -17,7 +17,7 @@ export function Logo({ className, showTagline = false, size = "md" }: LogoProps)
   return (
     <Link
       href="/"
-      aria-label="BlueCrest"
+      aria-label="BlueCreast"
       className={cn("group flex items-center gap-2.5 transition-transform hover:opacity-95", className)}
     >
       <div className={cn("relative aspect-square flex-shrink-0", sizeClasses[size])}>
@@ -53,7 +53,7 @@ export function Logo({ className, showTagline = false, size = "md" }: LogoProps)
             size === "sm" ? "text-xl" : size === "lg" ? "text-3xl" : "text-2xl"
           )}
         >
-          Blue<span className="text-[#1E90FF]">Crest</span>
+          Blue<span className="text-[#1E90FF]">Creast</span>
         </span>
         {showTagline && (
           <span className="text-[10px] font-semibold tracking-widest text-[#1E90FF] uppercase opacity-90">

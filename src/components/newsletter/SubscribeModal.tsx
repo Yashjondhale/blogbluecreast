@@ -53,7 +53,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
       const formData = new FormData();
       formData.append("email", email);
       formData.append("topics", selectedTopics.join(", "));
-      formData.append("_subject", "BlueCrest VIP Newsletter Subscription");
+      formData.append("_subject", "BlueCreast VIP Newsletter Subscription");
       formData.append("_source", "Website Header Subscribe Modal");
 
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -64,7 +64,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
 
       if (res.ok) {
         setStatus("success");
-        setMessage("You're subscribed! Welcome to the BlueCrest Executive Briefing.");
+        setMessage("You're subscribed! Welcome to the BlueCreast Executive Briefing.");
         setEmail("");
       } else {
         setStatus("error");
@@ -82,7 +82,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Subscribe to BlueCrest Newsletter"
+      aria-label="Subscribe to BlueCreast Newsletter"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
     >
       {/* Backdrop */}
@@ -109,7 +109,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
             <Mail className="h-4 w-4" />
           </div>
           <span className="text-xs font-bold tracking-wider text-[#1E90FF] uppercase">
-            BlueCrest Daily Briefing
+            BlueCreast Daily Briefing
           </span>
         </div>
 
@@ -127,7 +127,7 @@ export function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
               <CheckCircle2 className="h-6 w-6" />
             </div>
             <h4 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100">
-              Welcome to BlueCrest!
+              Welcome to BlueCreast!
             </h4>
             <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">
               {message}

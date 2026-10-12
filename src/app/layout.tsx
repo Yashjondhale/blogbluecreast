@@ -30,14 +30,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
-    template: "%s | BlueCrest",
+    default: "BlueCreast | Modern Tech, Finance, Health & Lifestyle Journalism",
+    template: "%s | BlueCreast",
   },
   description: DEFAULT_SITE_SETTINGS.description,
-  applicationName: "BlueCrest",
-  authors: [{ name: "BlueCrest Editorial Desk", url: SITE_URL }],
-  creator: "BlueCrest",
-  publisher: "BlueCrest",
+  applicationName: "BlueCreast",
+  authors: [{ name: "BlueCreast Editorial Desk", url: SITE_URL }],
+  creator: "BlueCreast",
+  publisher: "BlueCreast",
   formatDetection: {
     email: false,
     address: false,
@@ -56,15 +56,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "BlueCrest",
-    title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+    siteName: "BlueCreast",
+    title: "BlueCreast | Modern Tech, Finance, Health & Lifestyle Journalism",
     description: DEFAULT_SITE_SETTINGS.description,
     images: [
       {
-        url: `${SITE_URL}/api/og?title=${encodeURIComponent("BlueCrest - Modern Insights & Journalism")}`,
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent("BlueCreast - Modern Insights & Journalism")}`,
         width: 1200,
         height: 630,
-        alt: "BlueCrest Publication Cover",
+        alt: "BlueCreast Publication Cover",
       },
     ],
   },
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@bluecreast_in",
     creator: "@bluecreast_in",
-    title: "BlueCrest | Modern Tech, Finance, Health & Lifestyle Journalism",
+    title: "BlueCreast | Modern Tech, Finance, Health & Lifestyle Journalism",
     description: DEFAULT_SITE_SETTINGS.description,
-    images: [`${SITE_URL}/api/og?title=${encodeURIComponent("BlueCrest - Modern Insights & Journalism")}`],
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent("BlueCreast - Modern Insights & Journalism")}`],
   },
   icons: {
     icon: [

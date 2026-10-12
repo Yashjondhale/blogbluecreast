@@ -16,7 +16,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo size="md" showTagline />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-              BlueCrest is an independent, multi-niche publication delivering rigorous technical journalism, wealth strategy, and evidence-based living guides. Built for longevity, precision, and deep inquiry.
+              BlueCreast is an independent, multi-niche publication delivering rigorous technical journalism, wealth strategy, and evidence-based living guides. Built for longevity, precision, and deep inquiry.
             </p>
 
             {/* Social Icons */}
@@ -25,7 +25,7 @@ export function Footer() {
                 href="https://twitter.com/bluecreast_in"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BlueCrest on Twitter"
+                aria-label="BlueCreast on Twitter"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-slate-200 transition-colors hover:bg-slate-200 hover:text-black dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
                 <TwitterIcon className="h-4 w-4" />
@@ -34,7 +34,7 @@ export function Footer() {
                 href="https://linkedin.com/company/bluecreast"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BlueCrest on LinkedIn"
+                aria-label="BlueCreast on LinkedIn"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-slate-200 transition-colors hover:bg-slate-200 hover:text-[#0A66C2] dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -43,7 +43,7 @@ export function Footer() {
                 href="https://github.com/bluecreast"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BlueCrest on GitHub"
+                aria-label="BlueCreast on GitHub"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-slate-200 transition-colors hover:bg-slate-200 hover:text-black dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
                 <GithubIcon className="h-4 w-4" />
@@ -52,14 +52,14 @@ export function Footer() {
                 href="https://instagram.com/bluecreast.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BlueCrest on Instagram"
+                aria-label="BlueCreast on Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-slate-200 transition-colors hover:bg-slate-200 hover:text-pink-600 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
               <a
                 href="/rss.xml"
-                aria-label="BlueCrest RSS Feed"
+                aria-label="BlueCreast RSS Feed"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-slate-200 transition-colors hover:bg-orange-100 hover:text-orange-600 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
                 <Rss className="h-4 w-4" />
@@ -144,7 +144,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 pt-8 text-xs text-slate-700 dark:border-slate-800 dark:text-slate-300">
           <p>
-            &copy; {currentYear} BlueCrest (bluecreast.in). All rights reserved.
+            &copy; {currentYear} BlueCreast (bluecreast.in). All rights reserved.
           </p>
           <div className="mt-3 sm:mt-0 flex items-center space-x-4">
             <Link href="/privacy-policy" className="py-1 hover:text-slate-950 dark:hover:text-white">

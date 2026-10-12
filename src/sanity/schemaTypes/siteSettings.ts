@@ -16,7 +16,7 @@ export const siteSettingsType = defineType({
       title: "Site Name",
       type: "string",
       group: "general",
-      initialValue: "BlueCrest",
+      initialValue: "BlueCreast",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

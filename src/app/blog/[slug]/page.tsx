@@ -261,7 +261,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 Join the Discussion
               </div>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                BlueCrest enforces a moderated, high-signal comment policy. Share your perspective, constructive critique, or technical observations.
+                BlueCreast enforces a moderated, high-signal comment policy. Share your perspective, constructive critique, or technical observations.
               </p>
               <div className="mt-4 rounded-xl border border-dashed border-slate-200 p-6 text-center text-xs text-slate-400 dark:border-slate-800 dark:text-slate-500">
                 Sign in with GitHub or Google to participate in community discussions.

@@ -24,12 +24,12 @@ export async function generateMetadata({ searchParams }: BlogArchiveProps): Prom
       ? `All Articles in ${category} (Page ${page})`
       : `Complete Editorial Archive (Page ${page})`,
     description:
-      "Explore the complete BlueCrest publication catalog. Investigative reporting and practical frameworks across technology, personal finance, health, and modern culture.",
+      "Explore the complete BlueCreast publication catalog. Investigative reporting and practical frameworks across technology, personal finance, health, and modern culture.",
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: category ? `BlueCrest - ${category} Archive` : "Complete Editorial Archive - BlueCrest",
+      title: category ? `BlueCreast - ${category} Archive` : "Complete Editorial Archive - BlueCreast",
       description: "Investigative reporting and practical frameworks across technology, finance, and health.",
       url: canonicalUrl,
       type: "website",
@@ -54,7 +54,7 @@ export default async function BlogArchivePage({ searchParams }: BlogArchiveProps
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <CollectionPageJsonLd
-        title="BlueCrest Editorial Archive"
+        title="BlueCreast Editorial Archive"
         description="Comprehensive archive of technical analyses, finance guides, and lifestyle investigations."
         url={pageUrl}
         itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}

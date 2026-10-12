@@ -29,8 +29,8 @@ export async function generateMetadata({ params, searchParams }: TagPageProps): 
   if (!tag) return { title: "Tag Not Found" };
 
   return {
-    title: `Articles Tagged #${tag.title} (Page ${page}) - BlueCrest`,
-    description: `Read all articles and discussions tagged #${tag.title} on BlueCrest.`,
+    title: `Articles Tagged #${tag.title} (Page ${page}) - BlueCreast`,
+    description: `Read all articles and discussions tagged #${tag.title} on BlueCreast.`,
     alternates: {
       canonical: `${SITE_URL}/tag/${tag.slug}${page !== "1" ? `?page=${page}` : ""}`,
     },
@@ -52,8 +52,8 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <CollectionPageJsonLd
-        title={`Articles Tagged #${tag.title} - BlueCrest`}
-        description={`Read all articles and discussions tagged #${tag.title} on BlueCrest.`}
+        title={`Articles Tagged #${tag.title} - BlueCreast`}
+        description={`Read all articles and discussions tagged #${tag.title} on BlueCreast.`}
         url={`${SITE_URL}/tag/${tag.slug}`}
         itemUrls={posts.map((p) => `${SITE_URL}/blog/${p.slug}`)}
       />

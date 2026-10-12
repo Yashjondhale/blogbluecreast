@@ -59,7 +59,7 @@ export function NewsSubmitTip() {
       ) : (
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-          <input type="hidden" name="_subject" value="BlueCrest Daily News Desk Tip Submission" />
+          <input type="hidden" name="_subject" value="BlueCreast Daily News Desk Tip Submission" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>

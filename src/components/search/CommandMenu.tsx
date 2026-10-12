@@ -196,7 +196,7 @@ export function CommandMenu({ isOpen, onClose }: CommandMenuProps) {
             <span>Press <kbd className="rounded bg-white px-1.5 py-0.5 text-[10px] font-semibold border dark:border-slate-700 dark:bg-slate-800">↵</kbd> to search</span>
             <span><kbd className="rounded bg-white px-1.5 py-0.5 text-[10px] font-semibold border dark:border-slate-700 dark:bg-slate-800">ESC</kbd> to exit</span>
           </div>
-          <span className="font-medium text-[#1E90FF]">BlueCrest Instant Index</span>
+          <span className="font-medium text-[#1E90FF]">BlueCreast Instant Index</span>
         </div>
       </div>
     </div>

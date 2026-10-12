@@ -13,9 +13,9 @@ import { SITE_URL } from "@/lib/constants";
 export const revalidate = 60; // 60s ISR for fast daily news updates
 
 export const metadata: Metadata = {
-  title: "Daily News Desk | Real-Time Tech, Market & Policy Wire | BlueCrest",
+  title: "Daily News Desk | Real-Time Tech, Market & Policy Wire | BlueCreast",
   description:
-    "Daily breaking news, market movements, technological breakthroughs, and policy analyses updated continuously by the BlueCrest Editorial Wire.",
+    "Daily breaking news, market movements, technological breakthroughs, and policy analyses updated continuously by the BlueCreast Editorial Wire.",
   alternates: {
     canonical: `${SITE_URL}/news`,
     types: {
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Daily News Desk | BlueCrest Wire",
+    title: "Daily News Desk | BlueCreast Wire",
     description:
       "Daily breaking news, market movements, and technological breakthroughs updated continuously.",
     url: `${SITE_URL}/news`,
-    siteName: "BlueCrest",
+    siteName: "BlueCreast",
     locale: "en_IN",
     type: "website",
   },
@@ -53,7 +53,7 @@ export default async function NewsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <CollectionPageJsonLd
-        title="Daily News Desk | BlueCrest Wire"
+        title="Daily News Desk | BlueCreast Wire"
         description="Daily breaking news, market movements, technological breakthroughs, and policy analyses."
         url={`${SITE_URL}/news`}
         itemUrls={allNews.map((n) => `${SITE_URL}/news/${n.slug}`)}
@@ -78,7 +78,7 @@ export default async function NewsPage() {
         <div>
           <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-[#1E90FF] uppercase">
             <Radio className="h-4 w-4 animate-pulse text-red-500" />
-            <span>BlueCrest Daily Newsroom</span>
+            <span>BlueCreast Daily Newsroom</span>
           </div>
           <h1 className="mt-1 font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Daily News & Live Wire

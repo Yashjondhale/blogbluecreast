@@ -29,14 +29,14 @@ export function NewsletterCTA({ className }: { className?: string }) {
         body: JSON.stringify({
           email,
           formType: "Newsletter Subscription",
-          source: "The BlueCrest Dispatch",
+          source: "The BlueCreast Dispatch",
           submittedAt: new Date().toISOString(),
         }),
       });
 
       if (res.ok) {
         setStatus("success");
-        setMessage("Thank you! You've been subscribed to The BlueCrest Dispatch.");
+        setMessage("Thank you! You've been subscribed to The BlueCreast Dispatch.");
         setEmail("");
       } else {
         const data = await res.json().catch(() => ({}));
@@ -59,7 +59,7 @@ export function NewsletterCTA({ className }: { className?: string }) {
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-200 backdrop-blur-md">
           <Mail className="h-3.5 w-3.5" />
-          The BlueCrest Dispatch
+          The BlueCreast Dispatch
         </div>
 
         <h3 className="mt-4 font-serif text-2xl sm:text-4xl font-bold tracking-tight text-white">

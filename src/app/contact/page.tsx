@@ -6,14 +6,14 @@ import { ContactForm } from "./ContactForm";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Editorial Desk & Press | BlueCrest Journalism",
+  title: "Contact Editorial Desk & Press | BlueCreast Journalism",
   description:
-    "Get in touch with the BlueCrest newsroom, technical fact-checkers, and editorial leadership. Submit pitches, report corrections, or request syndication.",
+    "Get in touch with the BlueCreast newsroom, technical fact-checkers, and editorial leadership. Submit pitches, report corrections, or request syndication.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
   openGraph: {
-    title: "Contact BlueCrest | Editorial Desk & Inquiries",
+    title: "Contact BlueCreast | Editorial Desk & Inquiries",
     description:
       "Reach our editorial desk, fact-checkers, and partnerships team directly.",
     url: `${SITE_URL}/contact`,

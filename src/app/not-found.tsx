@@ -44,7 +44,7 @@ export default async function NotFound() {
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E90FF] hover:underline"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to BlueCrest Homepage
+            Back to BlueCreast Homepage
           </Link>
         </div>
       </div>

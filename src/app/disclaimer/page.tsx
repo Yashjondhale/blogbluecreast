@@ -4,8 +4,8 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Editorial & Legal Disclaimer - BlueCrest",
-  description: "Financial, medical, and general educational disclaimers for BlueCrest articles.",
+  title: "Editorial & Legal Disclaimer - BlueCreast",
+  description: "Financial, medical, and general educational disclaimers for BlueCreast articles.",
   alternates: {
     canonical: `${SITE_URL}/disclaimer`,
   },
@@ -32,7 +32,7 @@ export default function DisclaimerPage() {
             Financial & Investment Disclaimer
           </div>
           <p className="mt-2 text-sm leading-relaxed text-amber-900/90 dark:text-amber-300/90">
-            Articles in our Finance and Markets sections are published for educational and journalistic reporting purposes only. Nothing on BlueCrest constitutes investment advice, tax guidance, or a solicitation to buy or sell securities, mutual funds, or digital assets. Investing in financial markets involves risk of loss. Always consult a registered investment adviser (SEBI RIA in India, or equivalent authority in your jurisdiction) before executing financial transactions.
+            Articles in our Finance and Markets sections are published for educational and journalistic reporting purposes only. Nothing on BlueCreast constitutes investment advice, tax guidance, or a solicitation to buy or sell securities, mutual funds, or digital assets. Investing in financial markets involves risk of loss. Always consult a registered investment adviser (SEBI RIA in India, or equivalent authority in your jurisdiction) before executing financial transactions.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function DisclaimerPage() {
             Medical & Health Disclaimer
           </div>
           <p className="mt-2 text-sm leading-relaxed text-blue-900/90 dark:text-blue-300/90">
-            Health and wellness articles on BlueCrest review published peer-reviewed clinical studies and physiological protocols. They are not intended as a substitute for professional medical diagnosis, advice, or treatment by a licensed physician. Never disregard professional medical counsel or delay seeking it because of something you read on this website.
+            Health and wellness articles on BlueCreast review published peer-reviewed clinical studies and physiological protocols. They are not intended as a substitute for professional medical diagnosis, advice, or treatment by a licensed physician. Never disregard professional medical counsel or delay seeking it because of something you read on this website.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function DisclaimerPage() {
             Affiliate Links & Sponsorship Transparency
           </h2>
           <p>
-            When we review hardware, software, or tools, we may occasionally include affiliate links. If you purchase through these links, BlueCrest may earn a modest commission at zero additional cost to you. We strictly review products independently and never recommend tools solely for affiliate compensation.
+            When we review hardware, software, or tools, we may occasionally include affiliate links. If you purchase through these links, BlueCreast may earn a modest commission at zero additional cost to you. We strictly review products independently and never recommend tools solely for affiliate compensation.
           </p>
         </section>
       </div>

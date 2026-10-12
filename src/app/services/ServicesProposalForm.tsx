@@ -66,7 +66,7 @@ export function ServicesProposalForm() {
           Request a Proposal
         </span>
         <h2 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
-          Partner With the BlueCrest Desk
+          Partner With the BlueCreast Desk
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Tell us about your campaign objectives, target audience, or research requirements.

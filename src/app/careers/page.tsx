@@ -5,14 +5,14 @@ import { CareersApplicationForm } from "./CareersApplicationForm";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Careers & Fellowships | Join BlueCrest Newsroom",
+  title: "Careers & Fellowships | Join BlueCreast Newsroom",
   description:
-    "Explore open editorial, engineering, and research fellowships at BlueCrest. Fully remote, high-trust journalism team built on verified E-E-A-T standards.",
+    "Explore open editorial, engineering, and research fellowships at BlueCreast. Fully remote, high-trust journalism team built on verified E-E-A-T standards.",
   alternates: {
     canonical: `${SITE_URL}/careers`,
   },
   openGraph: {
-    title: "Careers at BlueCrest | Remote Journalism & Engineering Fellowships",
+    title: "Careers at BlueCreast | Remote Journalism & Engineering Fellowships",
     description:
       "Join our distributed newsroom. We're hiring technology editors, financial analysts, clinical health reviewers, and full-stack engineers.",
     url: `${SITE_URL}/careers`,
@@ -59,7 +59,7 @@ export default function CareersPage() {
       employmentType: role.type.includes("Full-Time") ? "FULL_TIME" : "PART_TIME",
       hiringOrganization: {
         "@type": "Organization",
-        name: "BlueCrest",
+        name: "BlueCreast",
         sameAs: SITE_URL,
         logo: `${SITE_URL}/logo.svg`,
       },
@@ -82,7 +82,7 @@ export default function CareersPage() {
       {/* Hero Header */}
       <div className="max-w-3xl mx-auto text-center mb-16">
         <span className="text-xs font-bold tracking-wider text-[#1E90FF] uppercase">
-          Work With BlueCrest
+          Work With BlueCreast
         </span>
         <h1 className="mt-2 font-serif text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100">
           Build the Gold Standard of Modern Independent Journalism.

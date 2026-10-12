@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Editorial Policy & Standards - BlueCrest",
+  title: "Editorial Policy & Standards - BlueCreast",
   description:
     "Our commitment to rigorous reporting, fact-checking methodology, transparent AI disclosures, and corrections protocol.",
   alternates: {
@@ -31,7 +31,7 @@ export default function EditorialPolicyPage() {
             1. Fact-Checking & Primary Sourcing
           </h2>
           <p>
-            At BlueCrest, accuracy is paramount. We prioritize primary source documents: audited financial statements, peer-reviewed clinical trials, GitHub repositories, official regulatory filings (such as RBI circulars or SEC 10-Ks), and on-the-record interviews with engineering architects and clinicians.
+            At BlueCreast, accuracy is paramount. We prioritize primary source documents: audited financial statements, peer-reviewed clinical trials, GitHub repositories, official regulatory filings (such as RBI circulars or SEC 10-Ks), and on-the-record interviews with engineering architects and clinicians.
           </p>
         </section>
 

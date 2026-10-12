@@ -24,18 +24,18 @@ import { AboutPageJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About BlueCrest | Our Vision, Mission & Peer-Reviewed Editorial Standards",
+  title: "About BlueCreast | Our Vision, Mission & Peer-Reviewed Editorial Standards",
   description:
-    "Discover BlueCrest's founding vision, journalistic mission, E-E-A-T peer-review framework, and the credentialed technologists, financial analysts, and physicians behind our reporting.",
+    "Discover BlueCreast's founding vision, journalistic mission, E-E-A-T peer-review framework, and the credentialed technologists, financial analysts, and physicians behind our reporting.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
-    title: "About BlueCrest | Vision, Mission & Editorial Standards",
+    title: "About BlueCreast | Vision, Mission & Editorial Standards",
     description:
       "Independent, multi-niche publication built on empirical research, technical precision, and verified practitioner expertise.",
     url: `${SITE_URL}/about`,
-    siteName: "BlueCrest",
+    siteName: "BlueCreast",
     locale: "en_IN",
     type: "website",
   },
@@ -103,20 +103,20 @@ export default async function AboutPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
       <AboutPageJsonLd />
       <div className="mb-6">
-        <Breadcrumbs items={[{ label: "About BlueCrest" }]} />
+        <Breadcrumbs items={[{ label: "About BlueCreast" }]} />
       </div>
 
       {/* Hero Header */}
       <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
         <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1E90FF] dark:bg-blue-950/60 dark:text-blue-400">
           <Sparkles className="h-3.5 w-3.5" />
-          The BlueCrest Manifesto
+          The BlueCreast Manifesto
         </div>
         <h1 className="mt-4 font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
           Clarity, Truth, and Depth in an Era of Digital Noise.
         </h1>
         <p className="mt-6 text-base sm:text-xl leading-relaxed text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-          BlueCrest was founded with a singular conviction: modern general-interest publishing should never sacrifice intellectual rigor, empirical evidence, or craftsmanship for cheap viral clicks.
+          BlueCreast was founded with a singular conviction: modern general-interest publishing should never sacrifice intellectual rigor, empirical evidence, or craftsmanship for cheap viral clicks.
         </p>
       </div>
 
@@ -185,7 +185,7 @@ export default async function AboutPage() {
             Our Core Values & Principles
           </h2>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            The immutable commitments that guide every editorial decision at BlueCrest.
+            The immutable commitments that guide every editorial decision at BlueCreast.
           </p>
         </div>
 

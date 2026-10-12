@@ -163,14 +163,14 @@ export function CareersApplicationForm() {
 
           <div>
             <label className="block text-xs font-semibold text-slate-800 uppercase dark:text-slate-200">
-              Why BlueCrest? (Brief Pitch or Introduction) *
+              Why BlueCreast? (Brief Pitch or Introduction) *
             </label>
             <textarea
               rows={4}
               required
               value={formData.coverLetter}
               onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
-              placeholder="Share 2-3 links to your best writing or code, and why you want to publish on BlueCrest..."
+              placeholder="Share 2-3 links to your best writing or code, and why you want to publish on BlueCreast..."
               className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 focus:border-[#1E90FF] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1E90FF]/20 dark:border-slate-800 dark:bg-slate-800/50 dark:text-slate-100"
             />
           </div>
