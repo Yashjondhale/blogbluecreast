@@ -48,6 +48,21 @@ export const MOCK_AUTHORS: Author[] = [
       linkedin: "https://linkedin.com/in/drananyasharma",
     },
   },
+  {
+    _id: "author-aaradhya",
+    name: "Aaradhya Pathak",
+    slug: "aaradhya-pathak",
+    role: "Editorial Desk Lead & Public Policy Analyst",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    avatarAlt: "Portrait of Aaradhya Pathak",
+    bio: "Aaradhya Pathak covers civic movements, socio-political discourse, and executive policy reforms for the BlueCrest Editorial Desk.",
+    expertise: ["Public Policy", "Civic Movements", "Governance", "Social Justice"],
+    credentials: "MA Public Policy & Governance, Former Senior Bureau Correspondent, 9+ years experience",
+    socials: {
+      twitter: "https://twitter.com/aaradhyapathak",
+      linkedin: "https://linkedin.com/in/aaradhyapathak",
+    },
+  },
 ];
 
 export const MOCK_CATEGORIES: Category[] = [
@@ -99,9 +114,151 @@ export const MOCK_TAGS: Tag[] = [
   { _id: "tag-india", title: "India Growth", slug: "india-growth" },
   { _id: "tag-hardware", title: "Hardware Review", slug: "hardware-review" },
   { _id: "tag-career", title: "Engineering Leadership", slug: "engineering-leadership" },
+  { _id: "tag-jantar-mantar", title: "Jantar Mantar", slug: "jantar-mantar" },
+  { _id: "tag-protests", title: "Protests", slug: "protests" },
+  { _id: "tag-public-policy", title: "Public Policy", slug: "public-policy" },
+  { _id: "tag-social-justice", title: "Social Justice", slug: "social-justice" },
+  { _id: "tag-new-delhi", title: "New Delhi", slug: "new-delhi" },
 ];
 
 export const MOCK_POSTS: Post[] = [
+  {
+    _id: "post-jantar-mantar",
+    title: "Jantar Mantar Protests: Unpacking the Latest Demands and Socio-Political Fallout",
+    slug: "jantar-mantar-protest-latest-updates-analysis",
+    excerpt: "Explore the latest developments from the Jantar Mantar protests: in-depth analysis of the key coalition demands, the administrative stance, and socio-political implications in New Delhi.",
+    mainImage: {
+      url: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1600&q=85",
+      alt: "Large crowd gathering peacefully at Jantar Mantar in New Delhi during evening twilight",
+      caption: "Demonstrators gather at New Delhi's historic Jantar Mantar, the epicenter of the nation's civic discourse, as dusk settles.",
+      width: 1600,
+      height: 900,
+    },
+    category: MOCK_CATEGORIES[4],
+    tags: [
+      { _id: "tag-jantar-mantar", title: "Jantar Mantar", slug: "jantar-mantar" },
+      { _id: "tag-protests", title: "Protests", slug: "protests" },
+      { _id: "tag-public-policy", title: "Public Policy", slug: "public-policy" },
+      { _id: "tag-social-justice", title: "Social Justice", slug: "social-justice" },
+    ],
+    author: MOCK_AUTHORS[3],
+    publishedAt: "2026-10-12T10:00:00.000Z",
+    updatedAt: "2026-10-12T14:30:00.000Z",
+    readingTime: 4,
+    seoTitle: "Jantar Mantar Protests: Latest Updates & Analysis",
+    seoDescription: "Explore the latest developments from the Jantar Mantar protests. In-depth analysis of the key demands, government response, and socio-political implications.",
+    canonicalUrl: "https://bluecreast.in/jantar-mantar-protest-latest-updates-analysis",
+    featured: true,
+    trending: true,
+    views: 18450,
+    body: [
+      {
+        _key: "jm-b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "jm-c1",
+            _type: "span",
+            text: "As the historic observatory of Jantar Mantar once again becomes the epicenter of civic unrest, New Delhi is witnessing a renewed wave of demonstrations. The latest protests at the designated agitation site underscore a growing friction between grassroots movements and administrative policies. With diverse groups converging to voice their grievances, the socio-political temperature in the capital is steadily rising.",
+          },
+        ],
+      },
+      {
+        _key: "jm-b2",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "jm-c2",
+            _type: "span",
+            text: "Key Highlights & Strategic Demands",
+          },
+        ],
+      },
+      {
+        _key: "jm-b3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "jm-c3",
+            _type: "span",
+            text: "• Diverse Coalitions: The current wave of protests features a unique convergence of agricultural unions, student organizations, and civic rights groups.\n• Core Demands: Primary grievances revolve around economic policy reforms, transparent governance, and accountability in recent administrative decisions.\n• Administrative Stance: Authorities have maintained heavy barricading and a strong police presence, citing the necessity of public order and traffic management in the Lutyens' zone.\n• Economic Impact: Localized disruptions have mildly affected commercial transit routes in Central Delhi, prompting business advisories.",
+          },
+        ],
+      },
+      {
+        _key: "jm-b4",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "jm-c4",
+            _type: "span",
+            text: "The Anatomy of the Current Unrest",
+          },
+        ],
+      },
+      {
+        _key: "jm-b5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "jm-c5",
+            _type: "span",
+            text: "Jantar Mantar has long served as India's premier theater for democratic dissent. However, the latest series of protests marks a significant departure from isolated, single-issue demonstrations. We are observing a synchronized effort by multiple socio-economic factions to present a united front. The logistical coordination—ranging from social media mobilization to sustained on-ground presence—indicates a highly organized civic response rather than spontaneous outrage.",
+          },
+        ],
+      },
+      {
+        _key: "jm-b6",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "jm-c6",
+            _type: "span",
+            text: "The overarching theme uniting these disparate groups is a demand for structural accountability. From calls for equitable resource distribution to the protection of fundamental civic liberties, the rhetoric at Jantar Mantar reflects a broader national anxiety regarding economic and social security.",
+          },
+        ],
+      },
+      {
+        _key: "jm-b7",
+        _type: "callout",
+        callout: {
+          tone: "warning",
+          title: "Key Insight / Editorial Takeaway",
+          text: "The convergence of multiple demographic groups at Jantar Mantar signals a shift from isolated grievances to a collective demand for systemic policy reform. Administrations must look beyond immediate crowd dispersal and address the underlying socio-economic anxieties fueling these demonstrations.",
+        },
+      },
+      {
+        _key: "jm-b8",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "jm-c8",
+            _type: "span",
+            text: "Government Response and Policy Implications",
+          },
+        ],
+      },
+      {
+        _key: "jm-b9",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "jm-c9",
+            _type: "span",
+            text: "The state's response has been characterized by a familiar playbook: extensive security deployment and restricted movement in Central Delhi. While the immediate focus of law enforcement remains on containment and maintaining the delicate balance of public order, the political establishment faces a more complex challenge.\n\nProlonged demonstrations at Jantar Mantar have historically catalyzed national discourse, often forcing legislative or executive recalibration. The current impasse presents a critical test of the government's conflict resolution mechanisms. Refusing to engage in substantive dialogue risks escalating the protests into a broader, nationwide movement, while immediate concessions could set precedents that the administration is reluctant to establish.\n\nMoving forward, the resolution will likely depend on back-channel negotiations and the appointment of credible intermediaries. Until then, Jantar Mantar remains not just a physical space for dissent, but a barometer for the health of India's democratic engagement.",
+          },
+        ],
+      },
+    ],
+  },
   {
     _id: "post-1",
     title: "The 2026 State of Generative AI in Production: Architecture, Inference Costs, and Real-World Latency",
@@ -686,6 +843,33 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
 ];
 
 export const MOCK_NEWS: NewsArticle[] = [
+  {
+    _id: "news-jantar-mantar-protest",
+    title: "Jantar Mantar Protests: Unpacking the Latest Demands and Socio-Political Fallout",
+    slug: "jantar-mantar-protest-latest-updates-analysis",
+    category: "Business & Leadership",
+    isBreaking: true,
+    publishedAt: "2026-10-12T10:00:00.000Z",
+    source: "BlueCrest Public Policy Desk",
+    sourceUrl: "https://bluecreast.in",
+    readingTime: 4,
+    summary:
+      "A renewed wave of demonstrations at New Delhi's Jantar Mantar brings together student unions, farmer coalitions, and civic rights groups pressing for structural policy reforms.",
+    highlights: [
+      "Diverse coalitions uniting agricultural, student, and civil rights groups in Central Delhi.",
+      "Primary demands target economic accountability, transparency, and public policy revisions.",
+      "Strict security cordons and traffic diversions implemented across the Lutyens' perimeter.",
+    ],
+    author: MOCK_AUTHORS[3],
+    mainImage: {
+      url: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80",
+      alt: "Large crowd gathering peacefully at Jantar Mantar in New Delhi during evening twilight",
+      caption: "Demonstrators gather at New Delhi's historic Jantar Mantar, the epicenter of civic discourse.",
+    },
+    content:
+      "As the historic observatory of Jantar Mantar once again becomes the epicenter of civic unrest, New Delhi is witnessing a renewed wave of demonstrations. The latest protests at the designated agitation site underscore a growing friction between grassroots movements and administrative policies. With diverse groups converging to voice their grievances, the socio-political temperature in the capital is steadily rising.",
+    tags: ["Jantar Mantar", "Protests", "Public Policy", "Social Justice", "New Delhi"],
+  },
   {
     _id: "news-ai-datacenter-expansion",
     title: "Global Cloud Giants Commit $18B to Next-Gen Indian AI & Clean Energy Data Hubs",
