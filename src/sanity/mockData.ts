@@ -119,9 +119,210 @@ export const MOCK_TAGS: Tag[] = [
   { _id: "tag-public-policy", title: "Public Policy", slug: "public-policy" },
   { _id: "tag-social-justice", title: "Social Justice", slug: "social-justice" },
   { _id: "tag-new-delhi", title: "New Delhi", slug: "new-delhi" },
+  { _id: "tag-diwali-2026", title: "Diwali 2026", slug: "diwali-2026" },
+  { _id: "tag-lakshmi-puja", title: "Lakshmi Puja", slug: "lakshmi-puja" },
+  { _id: "tag-dhanteras", title: "Dhanteras", slug: "dhanteras" },
+  { _id: "tag-festivals", title: "Indian Festivals", slug: "indian-festivals" },
 ];
 
 export const MOCK_POSTS: Post[] = [
+  {
+    _id: "post-diwali-2026",
+    title: "Diwali 2026 Date, Shubh Muhurat, 5-Day Calendar & Complete Puja Vidhi",
+    slug: "diwali-2026-date-lakshmi-puja-muhurat-vidhi-calendar",
+    excerpt: "When is Diwali 2026? Complete guide to Dhanteras, Choti Diwali, Lakshmi Puja shubh muhurat timings, samagri checklist, and authentic vidhi.",
+    mainImage: {
+      url: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1600&q=85",
+      alt: "Traditional burning clay diyas and floral rangoli arrangement during Diwali evening celebrations in India",
+      caption: "The timeless radiance of earthen diyas marks the celebration of Diwali, symbolizing the triumph of light and renewal.",
+      width: 1600,
+      height: 900,
+    },
+    category: MOCK_CATEGORIES[3], // Lifestyle & Travel
+    tags: [
+      { _id: "tag-diwali-2026", title: "Diwali 2026", slug: "diwali-2026" },
+      { _id: "tag-lakshmi-puja", title: "Lakshmi Puja", slug: "lakshmi-puja" },
+      { _id: "tag-dhanteras", title: "Dhanteras", slug: "dhanteras" },
+      { _id: "tag-festivals", title: "Indian Festivals", slug: "indian-festivals" },
+    ],
+    author: MOCK_AUTHORS[3],
+    publishedAt: "2026-10-12T16:00:00.000Z",
+    updatedAt: "2026-10-12T17:30:00.000Z",
+    readingTime: 6,
+    seoTitle: "Diwali 2026: Date, Shubh Lakshmi Puja Muhurat & Calendar",
+    seoDescription: "When is Diwali 2026? Complete guide to Dhanteras, Choti Diwali, Lakshmi Puja shubh muhurat timings, samagri checklist, and authentic vidhi.",
+    canonicalUrl: "https://www.bluecreast.in/blog/diwali-2026-date-lakshmi-puja-muhurat-vidhi-calendar",
+    featured: true,
+    trending: true,
+    views: 24500,
+    body: [
+      {
+        _key: "dw-b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c1",
+            _type: "span",
+            text: "As the festive season approaches, the most anticipated question across households and communities is: When is Diwali 2026? Known as Deepavali, the festival of lights is a cornerstone of Indian cultural and spiritual tradition, symbolizing the victory of light over darkness and knowledge over ignorance. This comprehensive guide brings together the verified calendar dates, astrological muhurat windows, ritual samagri checklist, and seasonal wellbeing protocols to ensure your festive preparations are seamless and fulfilling.",
+          },
+        ],
+      },
+      {
+        _key: "dw-b2",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c2",
+            _type: "span",
+            text: "The 5-Day Diwali 2026 Calendar",
+          },
+        ],
+      },
+      {
+        _key: "dw-b3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c3",
+            _type: "span",
+            text: "In 2026, Diwali (Kartik Amavasya) falls on Sunday, November 8, 2026. The celebrations span five auspicious days beginning with Dhanteras and concluding with Bhai Dooj:\n\n• Day 1: Dhanteras (Dhantrayodashi) – November 6, 2026 (Friday) | Worship of Lord Dhanvantari & Kuber\n• Day 2: Naraka Chaturdashi (Choti Diwali) – November 7, 2026 (Saturday) | Abhyanga Snan & Yama Deepam\n• Day 3: Diwali & Lakshmi Puja – November 8, 2026 (Sunday) | Main Lakshmi-Ganesha Puja\n• Day 4: Govardhan Puja / Annakut – November 9, 2026 (Monday) | Honor of nature, crops & Govardhan hill\n• Day 5: Bhai Dooj (Yama Dwitiya) – November 10, 2026 (Tuesday) | Sibling bond & sacred tika rituals",
+          },
+        ],
+      },
+      {
+        _key: "dw-b4",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c4",
+            _type: "span",
+            text: "Auspicious Lakshmi Puja Muhurat Windows",
+          },
+        ],
+      },
+      {
+        _key: "dw-b5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c5",
+            _type: "span",
+            text: "Lakshmi Puja is traditionally conducted during Pradosh Kaal (the post-sunset window) when the Sthira Lagna (fixed ascendant, primarily Vrishabha Lagna) prevails. Astrological tradition holds that worshipping Goddess Lakshmi during a fixed lagna invites enduring prosperity into the household.\n\n• Primary Puja Window (Pradosh Kaal): 05:42 PM – 08:18 PM (Subject to minor geographic variance across Indian cities)\n• Vrishabha Lagna (Fixed Window): 06:12 PM – 08:08 PM\n• Maha Nishita Kaal (Midnight Sadhana): 11:38 PM – 12:31 AM (Nov 9)",
+          },
+        ],
+      },
+      {
+        _key: "dw-b6",
+        _type: "callout",
+        callout: {
+          tone: "tip",
+          title: "Key Insight / Regional Timing",
+          text: "Because sunset times differ by longitude, metropolitan cities observe slight variations in Pradosh Kaal (e.g., Kolkata observes muhurat ~30 minutes earlier than Mumbai or Ahmedabad). Align your family puja with your local city panchang for optimum timing.",
+        },
+      },
+      {
+        _key: "dw-b7",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c7",
+            _type: "span",
+            text: "Dhanteras Checklist: Mindful Acquisitions",
+          },
+        ],
+      },
+      {
+        _key: "dw-b8",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c8",
+            _type: "span",
+            text: "Dhanteras celebrates wealth, health, and renewal. While tradition encourages purchases that elevate life and home, mindful stewardship remains key.\n\n• Precious Metals & Coins: Gold or silver coins stamped with Lakshmi-Ganesha motifs.\n• Traditional Cookware: Utensils made of brass (peetal), copper, or durable food-grade steel.\n• Sacred Broom (Jhadu): Symbolic of cleansing negative energy and welcoming Lakshmi.\n• Whole Coriander Seeds (Dhania): Offered during puja and later sown to symbolize sustained yield.",
+          },
+        ],
+      },
+      {
+        _key: "dw-b9",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c9",
+            _type: "span",
+            text: "Step-by-Step Lakshmi-Ganesha Puja Vidhi",
+          },
+        ],
+      },
+      {
+        _key: "dw-b10",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c10",
+            _type: "span",
+            text: "1. Shuddhikaran & Sthapana: Cleanse the puja room, lay the red cloth on a raised wooden chowki, and respectfully seat the idols facing east or north.\n2. Kalash Sthapana: Place the sanctified Kalash on a bed of raw grain, crown it with 5 mango leaves, and position the coconut smeared with kumkum.\n3. Sankalp: Take water, akshat, and flowers in the right palm and recite the intention of health, peace, and abundance for family and community.\n4. Vighnaharta Ganesha Pujan: Begin with Ganesh invocation using durva grass, chandan, and modak to remove all obstacles.\n5. Maha Lakshmi Archana: Offer lotus flowers, kumkum, abhir, haldi, and light the central ghee lamp. Recite the Lakshmi Suktam or Ashtalakshmi Stotram.\n6. Aarti & Naivedya: Perform the sacred aarti accompanied by bells, offering seasonal fruits, kheer, and sweets.\n7. Deepotsav: Light earthen diyas in multiples of 11, 21, or 51 and arrange them along entryways, balconies, and windows.",
+          },
+        ],
+      },
+      {
+        _key: "dw-b11",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c11",
+            _type: "span",
+            text: "Environmental & Seasonal Health Considerations",
+          },
+        ],
+      },
+      {
+        _key: "dw-b12",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c12",
+            _type: "span",
+            text: "With festive gatherings and atmospheric temperature inversions in November, regional Air Quality Index (AQI) levels frequently spike across urban centers.\n\n• Air Quality Mindfulness: Replace loud firecrackers with earthen lighting and floral rangoli. If using celebratory sparklers, strictly opt for certified green crackers (PESO-approved).\n• Vulnerable Groups: Keep high-efficiency particulate air (HEPA) purifiers running indoors for infants and elderly family members with respiratory sensitivities.\n• Clean Burning Fuel: Use pure unadulterated cold-pressed mustard or sesame oil for outdoor diyas and organic cow ghee for indoor sanctums to minimize indoor soot.",
+          },
+        ],
+      },
+      {
+        _key: "dw-b13",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "dw-c13",
+            _type: "span",
+            text: "Frequently Asked Questions (FAQ)",
+          },
+        ],
+      },
+      {
+        _key: "dw-b14",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "dw-c14",
+            _type: "span",
+            text: "Q1: What is the exact date of Diwali in 2026?\nA1: Diwali will be celebrated on Sunday, November 8, 2026, marking Kartik Amavasya across India and global diaspora communities.\n\nQ2: What is the most auspicious timing for Lakshmi Puja on Diwali 2026?\nA2: The most auspicious window is during Pradosh Kaal and Vrishabha Lagna, between approximately 05:45 PM and 08:15 PM, depending on your city's exact sunset time.\n\nQ3: When is Dhanteras celebrated in 2026?\nA3: Dhanteras falls on Friday, November 6, 2026, two days prior to the main Diwali celebration.",
+          },
+        ],
+      },
+    ],
+  },
   {
     _id: "post-jantar-mantar",
     title: "Jantar Mantar Protests: Unpacking the Latest Demands and Socio-Political Fallout",
@@ -843,6 +1044,33 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
 ];
 
 export const MOCK_NEWS: NewsArticle[] = [
+  {
+    _id: "news-diwali-2026-calendar",
+    title: "Diwali 2026 Shubh Muhurat & 5-Day Festive Calendar Announced: Key Dates and Timings",
+    slug: "diwali-2026-date-lakshmi-puja-muhurat-vidhi-calendar",
+    category: "Lifestyle & Travel",
+    isBreaking: true,
+    publishedAt: "2026-10-12T16:00:00.000Z",
+    source: "BlueCreast Culture Desk",
+    sourceUrl: "https://bluecreast.in",
+    readingTime: 6,
+    summary:
+      "Diwali 2026 will be celebrated on Sunday, November 8. Complete guide to Dhanteras, Choti Diwali, Lakshmi Puja shubh muhurat timings, and authentic rituals.",
+    highlights: [
+      "Diwali / Lakshmi Puja confirmed for Sunday, November 8, 2026 (Kartik Amavasya).",
+      "Dhanteras shopping and puja muhurat begins Friday, November 6, 2026.",
+      "Pradosh Kaal and Vrishabha Lagna muhurat window set between 05:42 PM and 08:18 PM.",
+    ],
+    author: MOCK_AUTHORS[3],
+    mainImage: {
+      url: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1200&q=80",
+      alt: "Traditional burning clay diyas and floral rangoli arrangement during Diwali evening celebrations in India",
+      caption: "The timeless radiance of earthen diyas marks the celebration of Diwali, symbolizing the triumph of light and renewal.",
+    },
+    content:
+      "As the festive season approaches, the most anticipated question across households and communities is: When is Diwali 2026? Known as Deepavali, the festival of lights is a cornerstone of Indian cultural and spiritual tradition, symbolizing the victory of light over darkness and knowledge over ignorance. This comprehensive guide brings together the verified calendar dates, astrological muhurat windows, ritual samagri checklist, and seasonal wellbeing protocols to ensure your festive preparations are seamless and fulfilling.",
+    tags: ["Diwali 2026", "Lakshmi Puja", "Indian Festivals", "Dhanteras", "Culture"],
+  },
   {
     _id: "news-jantar-mantar-protest",
     title: "Jantar Mantar Protests: Unpacking the Latest Demands and Socio-Political Fallout",
