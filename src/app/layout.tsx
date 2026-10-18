@@ -127,48 +127,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-[#061126] dark:text-slate-100 flex flex-col">
         <SiteLayout>{children}</SiteLayout>
-        {/* Monetag Ads Tag - Zone 11999639 (OnClick / Popunder) */}
-        <Script
-          id="monetag-zone-11999639"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/studio')) {
-                (function(s){s.dataset.zone='11999639',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-              }
-            `,
-          }}
-        />
-        {/* Monetag Ads Tag - Zone 11999755 (In-Page Push / MultiTag) */}
-        <Script
-          id="monetag-zone-11999755"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/studio')) {
-                (function(s){s.dataset.zone='11999755',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-              }
-            `,
-          }}
-        />
-        {/* Monetag Push Notifications Service Worker Registration */}
-        <Script
-          id="monetag-sw-registration"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined' && 'serviceWorker' in navigator && !window.location.pathname.startsWith('/studio')) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js').then(function(reg) {
-                    // Service worker registered successfully
-                  }).catch(function(err) {
-                    console.debug('Monetag SW registration error:', err);
-                  });
-                });
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   );
