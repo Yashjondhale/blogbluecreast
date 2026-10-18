@@ -104,10 +104,10 @@ export const MOCK_POSTS: Post[] = [
     excerpt: "An empirical investigation into how 8 million Indian retail traders lost over $33 billion in the options market to high-frequency trading algorithms, SEBI's probe into Jane Street, and the structural reality of modern market mechanics.",
     mainImage: {
       url: "/invisible-war-hft-retail-options.jpg",
-      alt: "High-frequency trading server racks juxtaposed against an individual retail investor checking options trading charts on a smartphone in a dark room",
-      caption: "The asymmetric battlefield: Sub-nanosecond algorithmic server racks versus the thumb-taps of individual retail traders. (Credit: BlueCrest Editorial / AI)",
-      width: 1600,
-      height: 900,
+      alt: "An Indian retail options trader in distress watching crashing market charts on three monitors, with towering high-frequency trading server racks and glowing fiber optic cables looming in the background",
+      caption: "The asymmetric battlefield: An individual Indian retail options trader in distress as crashing markets unfold across his monitors, flanked by the towering server racks and sub-microsecond optical conduits of algorithmic high-frequency trading firms. (Photo: BlueCreast Editorial)",
+      width: 1920,
+      height: 1080,
     },
     category: MOCK_CATEGORIES[1],
     tags: [
