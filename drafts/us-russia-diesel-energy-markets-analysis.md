@@ -3,7 +3,7 @@ title: "America Buying Russian Diesel: Why the Policy Shift Reshapes Global Ener
 slug: "us-russia-diesel-energy-markets-analysis"
 category: "Finance & Wealth"
 tags: ["Energy Markets", "Macroeconomics", "Oil & Gas", "Sanctions", "Geopolitics"]
-author: "Priya Sengupta"
+author: "Yash Jondhale"
 readingTime: "8 min read"
 publishedAt: "2026-10-12"
 featured: true

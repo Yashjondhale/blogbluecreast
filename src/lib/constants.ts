@@ -86,10 +86,10 @@ export const FOOTER_LINKS = {
   company: [
     { label: "Daily News Desk", href: "/news" },
     { label: "About BlueCreast", href: "/about" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Our Services", href: "/services" },
     { label: "Careers (We're Hiring)", href: "/careers" },
     { label: "Editorial Policy", href: "/editorial-policy" },
-    { label: "Our Authors & Team", href: "/about#team" },
     { label: "Contact Us", href: "/contact" },
   ],
   legal: [

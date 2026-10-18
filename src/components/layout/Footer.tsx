@@ -89,7 +89,7 @@ export function Footer() {
           {/* Editorial & Company Links */}
           <div>
             <h3 className="font-serif text-sm font-bold text-slate-950 uppercase tracking-wider dark:text-slate-100">
-              Editorial & Team
+              Editorial & Company
             </h3>
             <ul className="mt-4 space-y-1 text-sm">
               {FOOTER_LINKS.company.map((item) => (

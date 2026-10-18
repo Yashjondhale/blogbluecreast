@@ -255,14 +255,14 @@ export default async function AboutPage() {
             The Masthead
           </span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-slate-900 dark:text-slate-100">
-            Our Senior Editorial Board
+            Founder & Editorial Leadership
           </h2>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            Meet the domain specialists who lead research, code testing, and medical audits.
+            Meet Yash Jondhale — Founder, Owner, and Editor-in-Chief driving all research and reporting across BlueCreast.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {authors.map((author) => (
             <div
               key={author._id}

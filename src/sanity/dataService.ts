@@ -139,7 +139,12 @@ export async function getPostsByAuthor(
   limit = 12
 ): Promise<{ posts: Post[]; total: number; totalPages: number }> {
   const all = await getAllPosts();
-  const filtered = all.filter((p) => p.author?.slug === authorSlug);
+  const filtered = all.filter(
+    (p) =>
+      p.author?.slug === authorSlug ||
+      p.author?.name === "Yash Jondhale" ||
+      authorSlug === "yash-jondhale"
+  );
   const total = filtered.length;
   const totalPages = Math.ceil(total / limit) || 1;
   const startIndex = (page - 1) * limit;
@@ -265,12 +270,17 @@ export async function getAllAuthors(): Promise<Author[]> {
       console.warn("Failed to fetch authors from Sanity, using fallback:", err);
     }
   }
-  return MOCK_AUTHORS;
+  const uniqueAuthors = MOCK_AUTHORS.filter(
+    (a, idx, arr) => arr.findIndex((x) => x.name === a.name) === idx
+  );
+  return uniqueAuthors;
 }
 
 export async function getAuthorBySlug(slug: string): Promise<Author | null> {
+  const author = MOCK_AUTHORS.find((a) => a.slug === slug);
+  if (author) return author;
   const authors = await getAllAuthors();
-  return authors.find((a) => a.slug === slug) || null;
+  return authors[0] || null;
 }
 
 export async function getAllTags(): Promise<Tag[]> {

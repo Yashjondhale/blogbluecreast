@@ -7,6 +7,7 @@ import {
   getAllTags,
 } from "@/sanity/dataService";
 import { SITE_URL } from "@/lib/constants";
+import { FLAGSHIP_PROJECTS } from "@/data/portfolioData";
 
 export const revalidate = 60;
 
@@ -46,6 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/portfolio`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/careers`,
@@ -131,6 +138,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // 6. AI Case Studies & Portfolio
+  const caseStudyRoutes: MetadataRoute.Sitemap = FLAGSHIP_PROJECTS.map((project) => ({
+    url: `${SITE_URL}/portfolio/${project.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
   return [
     ...staticRoutes,
     ...postRoutes,
@@ -138,5 +153,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...categoryRoutes,
     ...tagRoutes,
     ...authorRoutes,
+    ...caseStudyRoutes,
   ];
 }

@@ -1,68 +1,30 @@
 import { Author, Category, NewsArticle, Post, Tag } from "@/types";
 
+export const YASH_AUTHOR: Author = {
+  _id: "author-yash",
+  name: "Yash Jondhale",
+  slug: "yash-jondhale",
+  role: "Founder, Editor-in-Chief & Lead Author",
+  avatar: "/yash-jondhale.jpg",
+  avatarAlt: "Portrait of Yash Jondhale, Founder & Editor-in-Chief of BlueCreast",
+  bio: "Yash Jondhale is the founder, owner, and editor-in-chief of BlueCreast. He authors and directs all investigative reporting, empirical analysis, and editorial coverage across Technology, Financial Markets, Geopolitics, Health, and Modern Living.",
+  expertise: ["Technology & AI Systems", "Financial Markets & Quantitative Trading", "Macroeconomics", "System Architecture", "Public Policy"],
+  credentials: "Owner, Founder & Lead Author, BlueCreast",
+  socials: {
+    twitter: "https://twitter.com/yashjondhale",
+    linkedin: "https://linkedin.com/in/yashjondhale",
+    github: "https://github.com/yashjondhale",
+    website: "https://bluecreast.in",
+  },
+};
+
 export const MOCK_AUTHORS: Author[] = [
-  {
-    _id: "author-aarav",
-    name: "Dr. Aarav Mehta",
-    slug: "aarav-mehta",
-    role: "Chief Technology Editor & AI Architect",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    avatarAlt: "Portrait of Dr. Aarav Mehta",
-    bio: "Dr. Aarav Mehta leads technical research at BlueCreast. Former Principal Engineer at AWS and PhD holder in Distributed Systems from IIT Bombay, Aarav writes about artificial intelligence, system scalability, and developer infrastructure.",
-    expertise: ["Artificial Intelligence", "Cloud Architecture", "Next.js & Frontend", "Distributed Systems"],
-    credentials: "PhD Distributed Systems (IIT Bombay), Ex-AWS Principal Engineer, 14+ years experience",
-    socials: {
-      twitter: "https://twitter.com/aaravmehta_tech",
-      linkedin: "https://linkedin.com/in/aaravmehta",
-      github: "https://github.com/aaravmehta",
-      website: "https://bluecreast.in/author/aarav-mehta",
-    },
-  },
-  {
-    _id: "author-priya",
-    name: "Priya Sengupta",
-    slug: "priya-sengupta",
-    role: "Senior Financial Markets Analyst",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-    avatarAlt: "Portrait of Priya Sengupta",
-    bio: "Priya Sengupta is a CFA Charterholder and veteran financial journalist with over a decade covering Indian equity markets, personal taxation, fintech regulation, and wealth building strategies.",
-    expertise: ["Equity Markets", "Personal Taxation", "Mutual Funds", "Fintech & Banking"],
-    credentials: "CFA Charterholder, M.Sc Finance (LSE), Former Senior Editor at Financial Express",
-    socials: {
-      twitter: "https://twitter.com/priyasengupta_fin",
-      linkedin: "https://linkedin.com/in/priyasengupta",
-    },
-  },
-  {
-    _id: "author-ananya",
-    name: "Dr. Ananya Sharma",
-    slug: "ananya-sharma",
-    role: "Medical Reviewer & Preventive Health Specialist",
-    avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
-    avatarAlt: "Portrait of Dr. Ananya Sharma",
-    bio: "Dr. Ananya Sharma is a practicing physician and preventive cardiology researcher. She consults for wellness ventures and translates complex clinical literature into actionable, evidence-based lifestyle protocols.",
-    expertise: ["Preventive Medicine", "Circadian Biology", "Cardiometabolic Health", "Longevity"],
-    credentials: "MD General Medicine (AIIMS New Delhi), Fellow American College of Physicians",
-    socials: {
-      twitter: "https://twitter.com/dr_ananyasharma",
-      linkedin: "https://linkedin.com/in/drananyasharma",
-    },
-  },
-  {
-    _id: "author-aaradhya",
-    name: "Aaradhya Pathak",
-    slug: "aaradhya-pathak",
-    role: "Editorial Desk Lead & Public Policy Analyst",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-    avatarAlt: "Portrait of Aaradhya Pathak",
-    bio: "Aaradhya Pathak covers civic movements, socio-political discourse, and executive policy reforms for the BlueCreast Editorial Desk.",
-    expertise: ["Public Policy", "Civic Movements", "Governance", "Social Justice"],
-    credentials: "MA Public Policy & Governance, Former Senior Bureau Correspondent, 9+ years experience",
-    socials: {
-      twitter: "https://twitter.com/aaradhyapathak",
-      linkedin: "https://linkedin.com/in/aaradhyapathak",
-    },
-  },
+  YASH_AUTHOR,
+  // Aliases ensuring backward compatibility for legacy routes
+  { ...YASH_AUTHOR, _id: "author-priya", slug: "priya-sengupta" },
+  { ...YASH_AUTHOR, _id: "author-aarav", slug: "aarav-mehta" },
+  { ...YASH_AUTHOR, _id: "author-ananya", slug: "ananya-sharma" },
+  { ...YASH_AUTHOR, _id: "author-aaradhya", slug: "aaradhya-pathak" },
 ];
 
 export const MOCK_CATEGORIES: Category[] = [
@@ -127,9 +89,300 @@ export const MOCK_TAGS: Tag[] = [
   { _id: "tag-macroeconomics", title: "Macroeconomics", slug: "macroeconomics" },
   { _id: "tag-oil-gas", title: "Oil & Gas", slug: "oil-gas" },
   { _id: "tag-sanctions", title: "Sanctions", slug: "sanctions" },
+  { _id: "tag-options-trading", title: "Options Trading", slug: "options-trading" },
+  { _id: "tag-hft", title: "High-Frequency Trading", slug: "high-frequency-trading" },
+  { _id: "tag-sebi", title: "SEBI", slug: "sebi" },
+  { _id: "tag-algorithmic-trading", title: "Algorithmic Trading", slug: "algorithmic-trading" },
+  { _id: "tag-retail-investing", title: "Retail Investing", slug: "retail-investing" },
 ];
 
 export const MOCK_POSTS: Post[] = [
+  {
+    _id: "post-invisible-war-hft-options",
+    title: "The Invisible War: How India’s Retail Traders Lost $33 Billion to Machines They Never Saw",
+    slug: "invisible-war-india-retail-options-losses-hft",
+    excerpt: "An empirical investigation into how 8 million Indian retail traders lost over $33 billion in the options market to high-frequency trading algorithms, SEBI's probe into Jane Street, and the structural reality of modern market mechanics.",
+    mainImage: {
+      url: "/invisible-war-hft-retail-options.jpg",
+      alt: "High-frequency trading server racks juxtaposed against an individual retail investor checking options trading charts on a smartphone in a dark room",
+      caption: "The asymmetric battlefield: Sub-nanosecond algorithmic server racks versus the thumb-taps of individual retail traders. (Credit: BlueCrest Editorial / AI)",
+      width: 1600,
+      height: 900,
+    },
+    category: MOCK_CATEGORIES[1],
+    tags: [
+      { _id: "tag-options-trading", title: "Options Trading", slug: "options-trading" },
+      { _id: "tag-hft", title: "High-Frequency Trading", slug: "high-frequency-trading" },
+      { _id: "tag-sebi", title: "SEBI", slug: "sebi" },
+      { _id: "tag-algorithmic-trading", title: "Algorithmic Trading", slug: "algorithmic-trading" },
+      { _id: "tag-retail-investing", title: "Retail Investing", slug: "retail-investing" },
+    ],
+    author: YASH_AUTHOR,
+    publishedAt: "2026-10-18T09:00:00.000Z",
+    updatedAt: "2026-10-18T11:30:00.000Z",
+    readingTime: 9,
+    seoTitle: "Inside India's $33B Options Loss: Retail vs HFT Firms",
+    seoDescription: "Discover how 8M Indian retail traders lost $33 billion in options to high-frequency trading algorithms. Read the full SEBI and Jane Street investigation.",
+    canonicalUrl: "https://bluecreast.in/blog/invisible-war-india-retail-options-losses-hft",
+    featured: true,
+    trending: true,
+    views: 31450,
+    body: [
+      {
+        _key: "hft-b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c1",
+            _type: "span",
+            text: "In a modest high-rise apartment in Pune, the ambient hum of midnight traffic is drowned out by the rhythmic tapping of thumbs against glass. The coffee in the ceramic mug has turned cold. On the screen of a mid-range Android smartphone, a chart flashes brilliant emerald green. A 26-year-old software engineer has just closed a Bank Nifty 48,000 Call option. The trade lasted four minutes; the net profit reads ₹8,400. For a young professional earning ₹65,000 a month, that four-minute windfall feels like a revelation.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b2",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c2",
+            _type: "span",
+            text: "To him, the mechanics seem simple. On YouTube and Instagram, charismatic financial influencers with millions of subscribers repeat the gospel of modern retail trading: Why wait forty years for mutual funds to compound at 12% when volatility can double your money by 3:30 PM? The derivative contracts are accessible, requiring as little as ₹2,000 to enter. The trade is executed with a casual swipe. He feels as though he has cracked an invisible code, unlocking a democratized money engine that his parents’ generation never understood.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c3",
+            _type: "span",
+            text: "What our trader cannot comprehend is that the transaction he just completed was not an even match between human intuition and economic momentum. He did not buy that contract from an equally optimistic retail trader in Bengaluru or Delhi. He was standing on the frontline of an invisible war—transacting against automated, water-cooled server stacks executing decisions at sub-nanosecond speeds inside fortified exchange data centers. He had stepped into a mathematical meat grinder engineered by the world’s most sophisticated quantitative trading minds.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b4",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "hft-c4",
+            _type: "span",
+            text: "Markets That Move Faster Than Thought: Enter the High-Frequency Titans",
+          },
+        ],
+      },
+      {
+        _key: "hft-b5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c5",
+            _type: "span",
+            text: "The romanticized image of stock trading—men in brightly colored jackets screaming over paper slips in open-outcry pits—has been dead for a generation. Modern financial markets are silent, cold, and entirely automated. More than 75% of global turnover is governed by quantitative algorithms, driven by firms whose names rarely appear in mainstream headlines: Jane Street, Citadel Securities, Jump Trading, Tower Research, and Hudson River Trading.",
+          },
+        ],
+      },
+      {
+        _key: "hft-code-1",
+        _type: "codeBlock",
+        codeBlock: {
+          language: "text",
+          code: "+----------------------------------------------------------------------------------+\n|                           THE EXECUTION GAP (LATENCY)                            |\n+----------------------------------------------------------------------------------+\n| Human Visual Reaction: ~200,000,000 Nanoseconds (200 ms)                         |\n| Mobile 5G Order Transit: ~50,000,000 Nanoseconds (50 ms)                         |\n| Fiber-Optic City Ping:  ~5,000,000 Nanoseconds (5 ms)                           |\n| HFT Colocated Server:   ~350 Nanoseconds (0.00035 ms)                            |\n+----------------------------------------------------------------------------------+",
+        },
+      },
+      {
+        _key: "hft-b6",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c6",
+            _type: "span",
+            text: "These institutions do not employ economic forecasters, political pundits, or stock-pickers. They employ Olympic gold-medalist mathematicians, particle physicists, and low-level computer engineers who write code in optimized C++ and burn logic directly onto custom Field Programmable Gate Arrays (FPGAs). Their edge is not visionary foresight; it is pure speed, colossal capital, and structural positioning.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b7",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "hft-c7",
+            _type: "span",
+            text: "The Mumbai Fruit Bazaar: Understanding Arbitrage",
+          },
+        ],
+      },
+      {
+        _key: "hft-b8",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c8",
+            _type: "span",
+            text: "Imagine the bustling Crawford Market in South Mumbai. Two fruit vendors are situated fifty meters apart: Vendor A has an oversupply of Nagpur oranges and prices them at ₹100 per kilo. Vendor B, catering to hurried shoppers near the market gate, sells the same oranges at ₹110 per kilo.\n\nAn alert, agile merchant spots this ₹10 pricing inefficiency. He rushes to Vendor A, purchases 500 kilos at ₹100, and immediately walks over to Vendor B's stall, selling them to buyers for ₹109.90. His purchases at Vendor A pull the price up toward ₹104; his sales at Vendor B pull the price down toward ₹106. The market settles into a unified price equilibrium, and the swift merchant pockets a risk-free margin of ₹5 per kilo. This is classic arbitrage—the bedrock of market liquidity.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b9",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c9",
+            _type: "span",
+            text: "In modern capital markets, the 'oranges' are equities, index futures, and options contracts. Quantitative firms do not hold stocks hoping they will rise over a decade. They position their physical hardware in the exchange’s colocation facility—inside the exact same building as the National Stock Exchange (NSE) matching engines. While a retail trader’s order travels over cellular towers, home broadband, broker firewalls, and clearing networks—a grueling journey of 150 to 400 milliseconds—an HFT algorithm identifies pricing discrepancies between the Nifty cash index and its derivative options chain, submits the order, captures the profit, and cancels residual quotes in 350 nanoseconds.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b10",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "hft-c10",
+            _type: "span",
+            text: "India’s Options Fever: A Structural Trap",
+          },
+        ],
+      },
+      {
+        _key: "hft-b11",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c11",
+            _type: "span",
+            text: "How did an emerging market become the undisputed world capital of derivative speculation? Between 2019 and 2025, active individual derivative traders skyrocketed from under one million to more than eight million. India’s National Stock Exchange surpassed the US-based CME and CBOE to become the largest derivatives exchange on earth by contract volume, accounting for more than 70% of all equity derivatives traded globally.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b12",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c12",
+            _type: "span",
+            text: "Yet the math behind this volume was devastatingly toxic. Options contracts are wasting assets. Their value is governed by theta—the mathematical quantification of time decay. Every minute a retail trader holds an Out-of-the-Money (OTM) option without a dramatic move in the underlying asset, that contract is bleeding value directly into the hands of the entity that sold it. Retail traders, operating on limited capital, predominantly bought these low-priced OTM options because they were 'cheap,' failing to realize that an option with a 95% probability of expiring worthless is an unhedged ticket in a game with negative mathematical expectation.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b13",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "hft-c13",
+            _type: "span",
+            text: "The $33 Billion Collision & The Jane Street Controversy",
+          },
+        ],
+      },
+      {
+        _key: "hft-b14",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c14",
+            _type: "span",
+            text: "In late 2024, the Securities and Exchange Board of India (SEBI) published a landmark empirical study that sent shockwaves through the country's financial establishment. Between April 2021 and March 2025, Indian retail day traders logged cumulative net losses surpassing $33 billion (₹2.75 lakh crore). In the single fiscal year ending March 2024, retail traders surrendered ₹52,400 crore ($6.3 billion) to the market.\n\nCrucially, 93% of all individual traders lost money, averaging net losses of ₹1.2 lakh each, while spending an additional 25% of their principal capital on exchange levies, brokerage fees, and stamp duties. On the other side of that ledger, a small cadre of algorithmic proprietary trading houses and foreign portfolio investors extracted $7 billion (₹58,000 crore) in gross options profits over the exact same period.",
+          },
+        ],
+      },
+      {
+        _key: "hft-table-1",
+        _type: "table",
+        table: {
+          headers: ["Parameter", "Retail Day Traders", "High-Frequency Trading (HFT) Firms"],
+          rows: [
+            ["Execution Latency", "150 – 500 Milliseconds (Internet/Mobile)", "300 – 600 Nanoseconds (Colocation/FPGA)"],
+            ["Information Edge", "Technical charts, Lagging indicators, Finfluencers", "Real-time order book tick feeds, Cross-asset engines"],
+            ["Asset Strategy", "Net Buyers of Out-of-the-Money (OTM) Options", "Systematic Option Writers & Delta-Neutral Arbitrageurs"],
+            ["Cost of Capital", "Personal savings, Personal loans, Margin leverage", "Sub-1% institutional funding lines, Deep balance sheets"],
+            ["Profit/Loss Reality", "93% Net Loss Rate (Cumulative $33B lost)", "Near-zero unprofitable trading days ($7B gross profit FY24)"],
+          ],
+        },
+      },
+      {
+        _key: "hft-callout-1",
+        _type: "callout",
+        callout: {
+          tone: "warning",
+          title: "KEY INSIGHT / EDITORIAL TAKEAWAY",
+          text: "The $33 billion retail loss is not an anomaly of market volatility; it is the structural outcome of retail participants attempting to use low-latency instruments without low-latency infrastructure. In derivatives, speed is not a convenience—it is the entire basis of the spread.",
+        },
+      },
+      {
+        _key: "hft-b15",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c15",
+            _type: "span",
+            text: "As the scale of retail devastation became undeniable, SEBI initiated extensive regulatory inquiries into algorithmic powerhouses, focusing intense scrutiny on Jane Street, one of the most profitable quantitative trading entities in history. Regulators observed instances where algorithmic firms acquired massive, concentrated volumes of specific heavyweight cash-market equities (such as HDFC Bank or Reliance Industries) within narrow trading windows, while simultaneously holding immense, highly leveraged put-option positions or short index futures contracts in the derivatives segment.\n\nBy releasing the underlying cash-market equities during illiquid afternoon sessions, the cash index could be pulled down sharply, triggering stop-loss liquidations across millions of retail option traders and driving the opposing derivative positions into explosive multi-crore profits.",
+          },
+        ],
+      },
+      {
+        _key: "hft-b16",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "hft-c16",
+            _type: "span",
+            text: "What Ordinary Investors Must Learn",
+          },
+        ],
+      },
+      {
+        _key: "hft-b17",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hft-c17",
+            _type: "span",
+            text: "The lesson of India’s $33 billion derivatives bloodbath is cold, empirical, and uncompromising: retail day-trading against automated algorithms is not an investment strategy. It is financial suicide disguised as financial empowerment.\n\nThe high-frequency machines do not get tired. They do not experience fear when an index plummets 500 points. They do not experience greed when a call option doubles. They do not read sensationalist headlines, consult astrologers, or subscribe to paid Telegram signal channels. They execute statistical probabilities millions of times per hour, governed by the cold laws of numbers and physics.\n\nReal wealth is not mined in the three-minute fluctuations of an expiry-day contract. It is accumulated along the unglamorous, patient path that algorithms cannot disrupt: owning high-quality, cash-generating businesses, holding them across economic cycles, ignoring the manufactured volatility of intraday matching engines, and letting compound interest do the heavy lifting over decades.",
+          },
+        ],
+      },
+      {
+        _key: "hft-faq-1",
+        _type: "faqBlock",
+        faq: [
+          {
+            question: "Why do individual retail day traders lose so consistently in options trading?",
+            answer: "Retail traders face structural, technological, and mathematical disadvantages. Options are decaying assets subject to time decay (theta), meaning that Out-of-the-Money options expire worthless the vast majority of the time. Additionally, retail traders suffer from substantial execution latency (150–500ms) compared to High-Frequency Trading firms (<1 microsecond) colocated directly at the exchange, ensuring that retail participants consistently buy at worse prices and sell into predatory liquidity.",
+          },
+          {
+            question: "How does High-Frequency Trading (HFT) arbitrage differ from directional market speculation?",
+            answer: "Directional traders bet on whether a stock or index will rise or fall based on fundamentals or technical analysis. HFT arbitrageurs are delta-neutral: they do not take directional views. Instead, they exploit microsecond discrepancies between mathematically linked assets—such as the difference in price between an individual stock, its futures contract, and its options basket—extracting risk-free fractional spreads millions of times a day.",
+          },
+          {
+            question: "What regulatory steps has SEBI introduced to curb retail options losses?",
+            answer: "To protect household savings, SEBI enacted sweeping structural reforms between late 2024 and 2025. These include increasing minimum derivative contract lot sizes from ~₹5 lakh to ₹15–20 lakh to prevent under-capitalized retail entry, eliminating multiple weekly index expiries to curb speculative churning, raising upfront intraday margin requirements, and increasing surveillance on institutional cash-versus-derivatives positioning.",
+          },
+        ],
+      },
+    ],
+  },
   {
     _id: "post-us-russia-diesel",
     title: "America Buying Russian Diesel: Why the Policy Shift Reshapes Global Energy Markets",
@@ -149,7 +402,7 @@ export const MOCK_POSTS: Post[] = [
       { _id: "tag-oil-gas", title: "Oil & Gas", slug: "oil-gas" },
       { _id: "tag-sanctions", title: "Sanctions", slug: "sanctions" },
     ],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-12T16:00:00.000Z",
     updatedAt: "2026-10-12T18:00:00.000Z",
     readingTime: 8,
@@ -377,7 +630,7 @@ export const MOCK_POSTS: Post[] = [
       { _id: "tag-dhanteras", title: "Dhanteras", slug: "dhanteras" },
       { _id: "tag-festivals", title: "Indian Festivals", slug: "indian-festivals" },
     ],
-    author: MOCK_AUTHORS[3],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-12T16:00:00.000Z",
     updatedAt: "2026-10-12T17:30:00.000Z",
     readingTime: 6,
@@ -574,7 +827,7 @@ export const MOCK_POSTS: Post[] = [
       { _id: "tag-public-policy", title: "Public Policy", slug: "public-policy" },
       { _id: "tag-social-justice", title: "Social Justice", slug: "social-justice" },
     ],
-    author: MOCK_AUTHORS[3],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-12T10:00:00.000Z",
     updatedAt: "2026-10-12T14:30:00.000Z",
     readingTime: 4,
@@ -706,7 +959,7 @@ export const MOCK_POSTS: Post[] = [
     },
     category: MOCK_CATEGORIES[0],
     tags: [MOCK_TAGS[0], MOCK_TAGS[1]],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-06T10:30:00.000Z",
     updatedAt: "2026-10-07T14:15:00.000Z",
     readingTime: 8,
@@ -829,7 +1082,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[1],
     tags: [MOCK_TAGS[2], MOCK_TAGS[3], MOCK_TAGS[7]],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-05T08:00:00.000Z",
     updatedAt: "2026-10-06T11:20:00.000Z",
     readingTime: 7,
@@ -913,7 +1166,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[2],
     tags: [MOCK_TAGS[4], MOCK_TAGS[5]],
-    author: MOCK_AUTHORS[2],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-04T07:15:00.000Z",
     readingTime: 6,
     seoTitle: "The Science of High-Performance Sleep: Neurobiology & Recovery Protocols",
@@ -977,7 +1230,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[3],
     tags: [MOCK_TAGS[6]],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-03T09:40:00.000Z",
     readingTime: 9,
     seoTitle: "Digital Nomad Living Guide 2026: Visas, Tax Residency & Remote Gear",
@@ -1029,7 +1282,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[4],
     tags: [MOCK_TAGS[7], MOCK_TAGS[9]],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-02T11:00:00.000Z",
     readingTime: 7,
     seoTitle: "Building Resilient Indian Startups: Unit Economics & Scale Playbook",
@@ -1072,7 +1325,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[0],
     tags: [MOCK_TAGS[0], MOCK_TAGS[8]],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     publishedAt: "2026-10-01T14:20:00.000Z",
     readingTime: 6,
     seoTitle: "M4 Pro MacBook Pro Review: Developer Benchmarks & Local LLM Tests",
@@ -1115,7 +1368,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[1],
     tags: [MOCK_TAGS[2], MOCK_TAGS[7]],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     publishedAt: "2026-09-30T10:15:00.000Z",
     readingTime: 5,
     seoTitle: "RBI Digital Rupee (CBDC) Explained: UPI Interoperability & Tech Architecture",
@@ -1158,7 +1411,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[2],
     tags: [MOCK_TAGS[5]],
-    author: MOCK_AUTHORS[2],
+    author: YASH_AUTHOR,
     publishedAt: "2026-09-28T07:45:00.000Z",
     readingTime: 6,
     seoTitle: "Zone 2 Cardio Protocols for Longevity: Mitochondrial Health & Testing Guide",
@@ -1201,7 +1454,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[3],
     tags: [MOCK_TAGS[6], MOCK_TAGS[7]],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     publishedAt: "2026-09-26T08:30:00.000Z",
     readingTime: 8,
     seoTitle: "Spiti Valley Road Trip Guide: Acclimatization, Itinerary & Monastery Circuit",
@@ -1244,7 +1497,7 @@ export async function routeInference(prompt: string, estimatedTokens: number) {
     },
     category: MOCK_CATEGORIES[4],
     tags: [MOCK_TAGS[9]],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     publishedAt: "2026-09-24T12:00:00.000Z",
     readingTime: 7,
     seoTitle: "Staff Engineer to Director: Engineering Leadership Transition Playbook",
@@ -1293,7 +1546,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "धनतेरस की शुभ ख़रीदारी व पूजन 6 नवंबर 2026 (शुक्रवार) से आरंभ।",
       "प्रदोष काल एवं स्थिर वृषभ लग्न पूजा मुहूर्त शाम 05:42 बजे से रात 08:18 बजे तक।",
     ],
-    author: MOCK_AUTHORS[3],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1577083753695-e010191bacb5?auto=format&fit=crop&w=1200&q=80",
       alt: "दिवाली पर थाली में सजे जलते हुए पारंपरिक मिट्टी के दीये और ताज़े फूलों की पंखुड़ियाँ",
@@ -1320,7 +1573,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Primary demands target economic accountability, transparency, and public policy revisions.",
       "Strict security cordons and traffic diversions implemented across the Lutyens' perimeter.",
     ],
-    author: MOCK_AUTHORS[3],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80",
       alt: "Large crowd gathering peacefully at Jantar Mantar in New Delhi during evening twilight",
@@ -1347,7 +1600,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "100% renewable power purchase agreements locked with regional green grids.",
       "Expected to generate 45,000 direct and indirect engineering and facility jobs in India.",
     ],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
       alt: "Futuristic server room with blue neon lights and optical fiber interconnects",
@@ -1373,7 +1626,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Average settlement latency reduced from 48 hours via SWIFT to under 8 seconds.",
       "Estimated $4.2B in annual transaction fees returned to micro-enterprises and families.",
     ],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
       alt: "Mobile device showing successful digital payments transaction confirmation",
@@ -1399,7 +1652,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Charges from 10% to 80% state of charge in 9 minutes without thermal runaway.",
       "Pilot automotive integration trials slated with top two EV manufacturers for 2027.",
     ],
-    author: MOCK_AUTHORS[2],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
       alt: "Electric vehicle rapid charging station with modern sleek illuminated interface",
@@ -1425,7 +1678,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Monthly mutual fund SIP collections hit an all-time monthly high of ₹31,200 Cr.",
       "FIIs turn net buyers after three consecutive quarters of defensive asset reallocation.",
     ],
-    author: MOCK_AUTHORS[1],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
       alt: "Stock market financial charts with ascending green candles and trading terminal display",
@@ -1451,7 +1704,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Permissive Apache 2.0 weights distributed for enterprise local deployment.",
       "Runs fully quantized on single 48GB GPU workstations with sub-second response times.",
     ],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       alt: "Green digital code streaming on dark monitor terminal screen",
@@ -1477,7 +1730,7 @@ export const MOCK_NEWS: NewsArticle[] = [
       "Commercial volume ramp-up scheduled to commence deliveries by Q2 2027.",
       "Reduces supply chain dependency for domestic automotive and IoT hardware makers.",
     ],
-    author: MOCK_AUTHORS[0],
+    author: YASH_AUTHOR,
     mainImage: {
       url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       alt: "Microchip processor silicon die closeup with intricate golden circuits",

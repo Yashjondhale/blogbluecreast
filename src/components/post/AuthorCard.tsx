@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Award, Globe } from "lucide-react";
+import { ArrowRight, Award, Globe, Sparkles } from "lucide-react";
 import { Author } from "@/types";
 import { LinkedinIcon, TwitterIcon } from "@/components/brand/SocialIcons";
 
@@ -139,6 +139,24 @@ export function AuthorCard({ author, compact = false }: AuthorCardProps) {
               ))}
             </div>
           )}
+
+          {/* High-Conversion Portfolio Callout */}
+          <div className="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200/70 dark:border-slate-800">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#0B3D91] px-4 py-2 text-xs font-bold text-white shadow-xs transition-colors hover:bg-blue-800 dark:bg-[#1E90FF] dark:text-slate-950 dark:hover:bg-blue-400"
+            >
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Explore AI Systems & Case Studies</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              href={`/author/${author.slug}`}
+              className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors dark:text-slate-400 dark:hover:text-white"
+            >
+              All Articles &rarr;
+            </Link>
+          </div>
         </div>
       </div>
     </div>
