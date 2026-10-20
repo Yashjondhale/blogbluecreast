@@ -7,10 +7,10 @@ import {
   ArrowRight,
   Award,
   CheckCircle2,
-  Cpu,
+  Code2,
   Download,
   ExternalLink,
-  FileText,
+  Globe,
   Sparkles,
   Terminal,
 } from "lucide-react";
@@ -41,20 +41,20 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   if (!project) return { title: "Case Study Not Found" };
 
   return {
-    title: `${project.title} | AI Case Study by Yash Jondhale`,
+    title: `${project.title} | Case Study by Prathmesh Lohar`,
     description: project.subtitle,
     alternates: {
       canonical: `${SITE_URL}/portfolio/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} — AI Architecture Case Study`,
+      title: `${project.title} — Web Engineering Case Study`,
       description: project.summary,
       url: `${SITE_URL}/portfolio/${project.slug}`,
       siteName: "BlueCreast",
       type: "article",
       images: [
         {
-          url: `${SITE_URL}/yash-jondhale.jpg`,
+          url: `${SITE_URL}/prathmesh-lohar.jpg`,
           width: 1200,
           height: 1200,
           alt: project.title,
@@ -84,10 +84,10 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     "name": project.title,
     "description": project.summary,
     "applicationCategory": project.category,
-    "operatingSystem": "Linux, Cloud, Docker",
+    "operatingSystem": "Web, Cross-Platform",
     "author": {
       "@type": "Person",
-      "name": "Yash Jondhale",
+      "name": PORTFOLIO_HERO.name,
       "url": `${SITE_URL}/portfolio`,
     },
     "url": `${SITE_URL}/portfolio/${project.slug}`,
@@ -114,26 +114,23 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#1E90FF] transition-colors dark:text-slate-400"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          <span>Back to All Case Studies</span>
+          <span>Back to All Projects</span>
         </Link>
       </div>
 
-      {/* Case Study Header with MotionFadeIn */}
+      {/* Case Study Header */}
       <MotionFadeIn className="mt-6 border-b border-slate-200 pb-10 dark:border-slate-800">
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1 text-xs font-bold text-[#1E90FF] dark:bg-blue-950/70 dark:text-blue-300">
             <Sparkles className="h-3.5 w-3.5" />
             {project.category}
           </span>
-          {project.secondaryCategories?.map((cat) => (
-            <span
-              key={cat}
-              className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300"
-            >
+          {project.isFlagship && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
               <Award className="h-3 w-3" />
-              {cat}
+              Flagship Project
             </span>
-          ))}
+          )}
         </div>
 
         <h1 className="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-tight">
@@ -156,7 +153,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 alt={PORTFOLIO_HERO.name}
                 fill
                 sizes="48px"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </Link>
             <div>
@@ -167,7 +164,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 {PORTFOLIO_HERO.name}
               </Link>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                Machine Learning Engineer & Systems Architect
+                Full Stack Web Developer &bull; SPPU B.E. &bull; IIT Bombay NEC 2025 Finalist
               </p>
             </div>
           </div>
@@ -186,22 +183,22 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </a>
             )}
 
-            {caseStudy?.paperUrl && (
+            {caseStudy?.liveDemoUrl && (
               <a
-                href={caseStudy.paperUrl}
+                href={caseStudy.liveDemoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-amber-300/80 bg-amber-50 px-4 py-2 text-xs font-bold text-amber-900 shadow-2xs hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-200"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold text-[#0B3D91] shadow-2xs hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-300"
               >
-                <FileText className="h-4 w-4" />
-                <span>IJRTI Paper</span>
+                <Globe className="h-4 w-4" />
+                <span>Project Code</span>
               </a>
             )}
           </div>
         </div>
 
         {/* Metrics Grid */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-900/50">
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-900/50">
           {project.metrics.map((m, idx) => (
             <div key={idx}>
               <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
@@ -220,7 +217,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {/* 1. Problem Statement */}
         <MotionSection aria-labelledby="problem-heading">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500">
-            <span>01 &bull; Challenge</span>
+            <span>01 &bull; Challenge & Context</span>
           </div>
           <h2
             id="problem-heading"
@@ -242,32 +239,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             id="solution-heading"
             className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100"
           >
-            Solution Architecture & Data Flow
+            Solution Architecture & Implementation
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
             {caseStudy?.solutionArchitecture}
           </p>
-
-          {/* ASCII Architecture Flowchart */}
-          {caseStudy?.asciiDiagram && (
-            <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950 p-5 shadow-xl">
-              <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3 mb-4">
-                <span className="font-mono flex items-center gap-2">
-                  <Terminal className="h-3.5 w-3.5 text-[#1E90FF]" />
-                  Architecture Diagram (Data Pipeline & Microservices)
-                </span>
-                <span className="text-[10px] text-slate-500 uppercase tracking-widest font-mono">
-                  Production Flow
-                </span>
-              </div>
-              <pre className="font-mono text-[11px] sm:text-xs leading-relaxed text-blue-200/90 whitespace-pre">
-                {caseStudy.asciiDiagram.trim()}
-              </pre>
-            </div>
-          )}
         </MotionSection>
 
-        {/* 3. Key Engineering Innovations */}
+        {/* 3. Key Innovations */}
         {caseStudy?.keyInnovations && (
           <MotionSection aria-labelledby="innovations-heading">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-500">
@@ -281,27 +260,21 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </h2>
 
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {caseStudy.keyInnovations.map((item, idx) => {
-                const parts = item.split(":");
-                const title = parts.length > 1 ? parts[0] : `Innovation ${idx + 1}`;
-                const desc = parts.length > 1 ? parts.slice(1).join(":") : item;
-
-                return (
-                  <MotionCard
-                    key={idx}
-                    index={idx}
-                    className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs dark:border-slate-800 dark:bg-slate-900/60"
-                  >
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#0B3D91] dark:text-[#1E90FF]">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
-                      <span>{title}</span>
-                    </div>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-                      {desc.trim()}
-                    </p>
-                  </MotionCard>
-                );
-              })}
+              {caseStudy.keyInnovations.map((item, idx) => (
+                <MotionCard
+                  key={idx}
+                  index={idx}
+                  className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs dark:border-slate-800 dark:bg-slate-900/60"
+                >
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#0B3D91] dark:text-[#1E90FF]">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                    <span>Highlight {idx + 1}</span>
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                    {item}
+                  </p>
+                </MotionCard>
+              ))}
             </div>
           </MotionSection>
         )}
@@ -310,13 +283,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {caseStudy?.benchmarks && (
           <MotionSection aria-labelledby="benchmarks-heading">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-500">
-              <span>04 &bull; Validation</span>
+              <span>04 &bull; Validation & Impact</span>
             </div>
             <h2
               id="benchmarks-heading"
               className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100"
             >
-              Empirical Benchmarks & Production Impact
+              Performance Metrics & Real-World Impact
             </h2>
 
             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
@@ -324,7 +297,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <thead className="bg-slate-50 font-semibold text-slate-900 dark:bg-slate-800/80 dark:text-slate-100">
                   <tr>
                     <th className="px-5 py-3.5">Metric / Dimension</th>
-                    <th className="px-5 py-3.5">Baseline / Manual</th>
+                    <th className="px-5 py-3.5">Baseline / Previous</th>
                     <th className="px-5 py-3.5">System Output</th>
                     <th className="px-5 py-3.5">Observed Impact</th>
                   </tr>
@@ -406,7 +379,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               className="group flex flex-col items-start"
             >
               <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1 group-hover:text-[#1E90FF]">
-                <ArrowLeft className="h-3 w-3" /> Previous Case Study
+                <ArrowLeft className="h-3 w-3" /> Previous Project
               </span>
               <span className="mt-1 font-serif text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-[#1E90FF]">
                 {prevProject.title}
@@ -422,7 +395,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               className="group flex flex-col items-end text-right"
             >
               <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1 group-hover:text-[#1E90FF]">
-                Next Case Study <ArrowRight className="h-3 w-3" />
+                Next Project <ArrowRight className="h-3 w-3" />
               </span>
               <span className="mt-1 font-serif text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-[#1E90FF]">
                 {nextProject.title}
@@ -434,22 +407,22 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </nav>
       </MotionFadeIn>
 
-      {/* Recruiter / Collaboration CTA Footer */}
+      {/* Direct Contact Footer */}
       <MotionSection className="mt-16 rounded-3xl border border-blue-500/20 bg-gradient-to-br from-[#0B3D91] to-slate-950 p-8 sm:p-10 text-white shadow-xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-serif text-2xl font-bold">
-              Interested in implementing a similar architecture?
+              Looking for a Full Stack MERN Developer?
             </h3>
             <p className="mt-2 text-sm text-blue-100/90 leading-relaxed max-w-xl">
-              Yash Jondhale designs production GenAI pipelines, RAG systems, and custom ML microservices with measurable latency and accuracy guarantees.
+              Prathmesh Lohar delivers end-to-end web applications with modular React architecture, responsive design, and robust RESTful backends.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href={PORTFOLIO_HERO.resumeUrl}
-              download="Yash_Jondhale_Resume.pdf"
+              download="Prathmesh_Lohar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-xs font-bold text-slate-950 hover:bg-slate-100 transition-colors shadow-md"
