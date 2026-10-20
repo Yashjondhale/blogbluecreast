@@ -89,3 +89,44 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   margin: 2rem 0;
   contain: layout;
 }
+
+/* Google Translate Seamless Integration Overrides */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.goog-te-gadget,
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Ensure brand logo and code blocks are not translated */
+.notranslate {
+  translate: no;
+}
+

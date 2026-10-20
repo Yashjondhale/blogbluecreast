@@ -9,6 +9,7 @@ import { MegaMenu } from "./MegaMenu";
 import { CommandMenu } from "@/components/search/CommandMenu";
 import { SubscribeModal } from "@/components/newsletter/SubscribeModal";
 import { NAV_ITEMS, PRIMARY_CATEGORIES } from "@/lib/constants";
+import { LanguageSelector } from "@/components/translation/LanguageSelector";
 
 export function Header() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -120,6 +121,9 @@ export function Header() {
               </kbd>
             </button>
 
+            {/* Language Selector */}
+            <LanguageSelector variant="header" />
+
             {/* Dark Mode Toggle */}
             <ThemeToggle />
 
@@ -184,6 +188,16 @@ export function Header() {
               >
                 <span>Subscribe to Newsletter</span>
               </button>
+
+              {/* Mobile Translation Bar */}
+              <div className="mb-4 rounded-xl border border-slate-200/80 bg-slate-50/80 p-3 dark:border-slate-800 dark:bg-slate-800/40">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+                    Language / भाषा
+                  </div>
+                  <LanguageSelector variant="compact" />
+                </div>
+              </div>
 
               <div className="text-xs font-bold tracking-wider text-slate-400 uppercase mb-3">
                 All Categories

@@ -20,6 +20,7 @@ import { AuthorCard } from "@/components/post/AuthorCard";
 import { SocialShare } from "@/components/post/SocialShare";
 import { AdSlot } from "@/components/post/AdSlot";
 import { NewsletterCTA } from "@/components/post/NewsletterCTA";
+import { ArticleTranslateBanner } from "@/components/translation/ArticleTranslateBanner";
 import { SITE_URL } from "@/lib/constants";
 
 interface NewsPageProps {
@@ -249,6 +250,11 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
           {/* Main Article Body */}
           <main className="lg:col-span-8">
+            {/* Translate Article Helper */}
+            <div className="mb-8">
+              <ArticleTranslateBanner />
+            </div>
+
             {/* Quick Highlights Box */}
             {article.highlights && article.highlights.length > 0 && (
               <aside

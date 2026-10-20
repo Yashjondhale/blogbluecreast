@@ -18,7 +18,7 @@ export function Logo({ className, showTagline = false, size = "md" }: LogoProps)
     <Link
       href="/"
       aria-label="BlueCreast"
-      className={cn("group flex items-center gap-2.5 transition-transform hover:opacity-95", className)}
+      className={cn("notranslate group flex items-center gap-2.5 transition-transform hover:opacity-95", className)}
     >
       <div className={cn("relative aspect-square flex-shrink-0", sizeClasses[size])}>
         <svg

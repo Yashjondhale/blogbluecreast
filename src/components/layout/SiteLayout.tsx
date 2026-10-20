@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { CookieConsent } from "./CookieConsent";
+import { GoogleTranslateProvider } from "@/components/translation/GoogleTranslateProvider";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <GoogleTranslateProvider />
       {/* WCAG Skip Link */}
       <a
         href="#main-content"
