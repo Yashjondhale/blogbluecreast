@@ -3,7 +3,7 @@
 **Slug:** `diwali-2026-date-lakshmi-puja-muhurat-vidhi-calendar`  
 **Category:** Lifestyle & Travel  
 **Tags:** Diwali 2026, Lakshmi Puja, Dhanteras, Indian Festivals, संस्कृति  
-**Author:** Aaradhya Pathak (Editorial Desk)  
+**Author:** Yash Jondhale (Founder, Owner & Lead Author)  
 **Reading Time:** 6 min read  
 
 ---

@@ -36,7 +36,7 @@ Your task is to take my topic input and generate a complete, publication-ready p
 - Slug: [Clean, SEO-optimized kebab-case slug, e.g., postgresql-17-vector-search-benchmarks]
 - Category: [One of: Technology | Finance & Wealth | Health & Longevity | Lifestyle & Travel | Business & Leadership]
 - Tags: [3 to 5 comma-separated tags, e.g., Databases, Vector Search, AI Infrastructure]
-- Author: [Dr. Aarav Mehta (Tech/AI) | Priya Sengupta (Finance/Economics) | Dr. Ananya Sharma (Health/Medicine) | aaradhya pathak (Editorial Desk)]
+- Author: Yash Jondhale (Founder, Owner & Lead Author)
 - Reading Time: [e.g., 7 min read]
 
 #### 2. SEARCH ENGINE OPTIMIZATION (SEO)

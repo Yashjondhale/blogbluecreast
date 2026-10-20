@@ -3,7 +3,7 @@
 **Slug:** `jantar-mantar-protest-latest-updates-analysis`  
 **Category:** Business & Leadership  
 **Tags:** Jantar Mantar, Protests, Public Policy, Social Justice, New Delhi  
-**Author:** Aaradhya Pathak (Editorial Desk)  
+**Author:** Yash Jondhale (Founder, Owner & Lead Author)  
 **Reading Time:** 4 min read  
 
 ---
