@@ -92,21 +92,25 @@ export function changeLanguage(targetCode: string): void {
   try {
     localStorage.setItem(STORAGE_KEY, targetCode);
 
-    if (targetCode === "en") {
-      // Clear cookie
-      const domains = [
-        window.location.hostname,
-        `.${window.location.hostname}`,
-        `.${window.location.hostname.replace(/^www\./, "")}`,
-        "",
-      ];
-      domains.forEach((dom) => {
-        const domainStr = dom ? `domain=${dom};` : "";
-        document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; ${domainStr}`;
-        document.cookie = `${COOKIE_NAME}=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; ${domainStr}`;
-      });
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1" ||
+      window.location.hostname.startsWith("192.168.");
 
-      // Also reset .goog-te-combo if present
+    const cookiePath = "path=/;";
+
+    if (targetCode === "en") {
+      // Clear cookie for standard path
+      document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${cookiePath}`;
+      document.cookie = `${COOKIE_NAME}=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${cookiePath}`;
+      document.cookie = `${COOKIE_NAME}=/auto/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${cookiePath}`;
+
+      if (!isLocalhost) {
+        const rootDomain = window.location.hostname.replace(/^www\./, "");
+        document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${cookiePath} domain=.${rootDomain};`;
+        document.cookie = `${COOKIE_NAME}=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${cookiePath} domain=.${rootDomain};`;
+      }
+
       const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
       if (select) {
         select.value = "en";
@@ -114,44 +118,42 @@ export function changeLanguage(targetCode: string): void {
       }
 
       window.dispatchEvent(
-        new CustomEvent("bluecreast_language_changed", {
-          detail: { code: "en" },
-        })
+        new CustomEvent("bluecreast_language_changed", { detail: { code: "en" } })
       );
 
-      // Reloading is the cleanest way to clear Google Translate's DOM mutations
+      // Clean reload to restore original DOM
       window.location.reload();
       return;
     }
 
-    // Set cookie for Google Translate
-    const cookieValue = `/en/${targetCode}`;
-    const domains = [
-      "",
-      window.location.hostname,
-      `.${window.location.hostname}`,
-      `.${window.location.hostname.replace(/^www\./, "")}`,
-    ];
+    // Set cookie for target language
+    const cookieVal = `/en/${targetCode}`;
+    const autoCookieVal = `/auto/${targetCode}`;
 
-    domains.forEach((dom) => {
-      const domainStr = dom ? `domain=${dom};` : "";
-      document.cookie = `${COOKIE_NAME}=${cookieValue}; path=/; ${domainStr}`;
-    });
+    // Always set on base path
+    document.cookie = `${COOKIE_NAME}=${cookieVal}; ${cookiePath}`;
+    document.cookie = `${COOKIE_NAME}=${autoCookieVal}; ${cookiePath}`;
 
-    // Notify components
+    if (!isLocalhost) {
+      const rootDomain = window.location.hostname.replace(/^www\./, "");
+      document.cookie = `${COOKIE_NAME}=${cookieVal}; ${cookiePath} domain=.${rootDomain};`;
+      document.cookie = `${COOKIE_NAME}=${autoCookieVal}; ${cookiePath} domain=.${rootDomain};`;
+    }
+
+    // Notify listeners
     window.dispatchEvent(
       new CustomEvent("bluecreast_language_changed", {
         detail: { code: targetCode },
       })
     );
 
-    // Try triggering the Google Translate combo element directly
+    // Try triggering Google Translate select combo directly
     const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
     if (select) {
       select.value = targetCode;
       select.dispatchEvent(new Event("change"));
     } else {
-      // If combo isn't directly in DOM yet, reload so the cookie triggers Google Translate init
+      // Reload so Google Translate initializes with the new cookie
       window.location.reload();
     }
   } catch (err) {

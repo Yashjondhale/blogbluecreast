@@ -134,30 +134,34 @@ export function LanguageSelector({
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-label={`Translate Blog. Current language: ${activeLanguage.name}`}
-        className={`group flex items-center gap-1.5 sm:gap-2 rounded-xl border border-slate-200 bg-slate-50/80 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs transition-all hover:border-[#1E90FF] hover:bg-white dark:border-slate-800 dark:bg-slate-800/60 dark:text-slate-300 dark:hover:border-[#1E90FF] dark:hover:bg-slate-800 cursor-pointer ${
+        className={`group flex items-center gap-1.5 sm:gap-2 rounded-xl border border-blue-200/90 bg-blue-50/80 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-[#0B3D91] shadow-2xs transition-all hover:border-[#1E90FF] hover:bg-blue-100 dark:border-blue-800/80 dark:bg-blue-950/60 dark:text-blue-200 dark:hover:border-[#1E90FF] dark:hover:bg-blue-900/60 cursor-pointer ${
           currentCode !== "en"
-            ? "border-[#1E90FF] bg-blue-50/50 text-[#0B3D91] dark:border-blue-500/50 dark:bg-blue-950/40 dark:text-blue-300"
+            ? "border-[#1E90FF] bg-blue-100 text-[#0B3D91] dark:border-blue-400 dark:bg-blue-900/80 dark:text-white ring-2 ring-blue-400/30"
             : ""
         }`}
       >
-        <Languages className={`h-4 w-4 ${currentCode !== "en" ? "text-[#1E90FF]" : "text-slate-400 group-hover:text-[#1E90FF]"} transition-colors`} />
+        <Languages className={`h-4 w-4 ${currentCode !== "en" ? "text-[#1E90FF]" : "text-blue-600 dark:text-blue-400"} transition-colors`} />
         
-        <span className="flex items-center gap-1 text-xs">
+        <span className="inline font-bold tracking-tight">
+          Translate
+        </span>
+
+        <span className="flex items-center gap-1 rounded-md bg-white/80 dark:bg-slate-800/90 px-1.5 py-0.5 text-[11px] font-bold text-slate-800 dark:text-slate-100 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
           <span>{activeLanguage.flag}</span>
-          <span className="font-bold tracking-wide uppercase">
+          <span className="uppercase">
             {activeLanguage.code.split("-")[0]}
           </span>
         </span>
 
         {currentCode !== "en" && (
-          <span className="hidden md:inline-block max-w-[70px] truncate text-[11px] font-medium text-slate-500 dark:text-slate-400">
+          <span className="hidden sm:inline-block max-w-[80px] truncate text-[11px] font-bold text-[#0B3D91] dark:text-[#38bdf8]">
             {activeLanguage.nativeName}
           </span>
         )}
 
         <ChevronDown
-          className={`h-3.5 w-3.5 text-slate-400 transition-transform duration-200 ${
-            isOpen ? "rotate-180 text-[#1E90FF]" : "group-hover:text-slate-600 dark:group-hover:text-slate-300"
+          className={`h-3.5 w-3.5 text-blue-600 dark:text-blue-400 transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-[#1E90FF]" : ""
           }`}
         />
       </button>
@@ -167,7 +171,9 @@ export function LanguageSelector({
         <div
           role="dialog"
           aria-label="Language selection"
-          className="absolute right-0 top-full mt-2 w-80 sm:w-96 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/95 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+          className={`absolute ${
+            variant === "compact" ? "bottom-full mb-2 left-0 sm:left-auto sm:right-0" : "top-full mt-2 right-0"
+          } w-[min(23rem,calc(100vw-2rem))] rounded-2xl border border-slate-200 bg-white/98 p-4 shadow-2xl backdrop-blur-2xl dark:border-slate-800 dark:bg-slate-900/98 z-[9999] animate-in fade-in slide-in-from-top-2 duration-150`}
         >
           {/* Header */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">

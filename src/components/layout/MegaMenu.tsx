@@ -4,8 +4,8 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { MOCK_CATEGORIES, MOCK_POSTS } from "@/sanity/mockData";
 
 export function MegaMenu({ onClose }: { onClose: () => void }) {
-  const featuredTechPost = MOCK_POSTS.find((p) => p.category.slug === "technology") || MOCK_POSTS[0];
-  const featuredFinPost = MOCK_POSTS.find((p) => p.category.slug === "finance") || MOCK_POSTS[1];
+  const featuredEntertainmentPost = MOCK_POSTS.find((p) => p.category.slug === "entertainment") || MOCK_POSTS[0];
+  const featuredTechPost = MOCK_POSTS.find((p) => p.category.slug === "technology") || MOCK_POSTS[1];
 
   return (
     <div
@@ -63,7 +63,7 @@ export function MegaMenu({ onClose }: { onClose: () => void }) {
             </span>
 
             <div className="space-y-4">
-              {[featuredTechPost, featuredFinPost].map((post) => (
+              {[featuredEntertainmentPost, featuredTechPost].map((post) => (
                 <Link
                   key={post._id}
                   href={`/blog/${post.slug}`}

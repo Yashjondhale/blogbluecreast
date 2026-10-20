@@ -34,9 +34,9 @@ Your task is to take my topic input and generate a complete, publication-ready p
 #### 1. EDITORIAL & METADATA
 - Title: [Engaging, high-authority title under 100 characters]
 - Slug: [Clean, SEO-optimized kebab-case slug, e.g., postgresql-17-vector-search-benchmarks]
-- Category: [One of: Technology | Finance & Wealth | Health & Longevity | Lifestyle & Travel | Business & Leadership]
-- Tags: [3 to 5 comma-separated tags, e.g., Databases, Vector Search, AI Infrastructure]
-- Author: Yash Jondhale (Founder, Owner & Lead Author)
+- Category: [One of: Technology | Finance & Wealth | Entertainment & Cinema | Health & Longevity | Lifestyle & Travel | Business & Leadership]
+- Tags: [3 to 5 comma-separated tags, e.g., Cinema, Movie Reviews, Kollywood]
+- Author: [Unique Subject-Matter Expert: specify Name, Domain Role, Bio, Expertise topics, and generated AI portrait photo]
 - Reading Time: [e.g., 7 min read]
 
 #### 2. SEARCH ENGINE OPTIMIZATION (SEO)

@@ -16,30 +16,21 @@ export function GoogleTranslateProvider() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Setup the initialization callback for Google Translate
-    window.googleTranslateElementInit = () => {
-      try {
-        if (window.google?.translate?.TranslateElement) {
-          new window.google.translate.TranslateElement(
-            {
-              pageLanguage: "en",
-              includedLanguages:
-                "en,hi,es,fr,de,ar,ja,zh-CN,mr,bn,ta,te,gu,kn,ml,pa,ur,pt,ru,it,ko,nl,tr,id,vi,th,pl,sv",
-              autoDisplay: false,
-              layout:
-                window.google.translate.TranslateElement.InlineLayout?.SIMPLE || 0,
-            },
-            "google_translate_element"
-          );
-        }
-      } catch (err) {
-        console.debug("Google Translate init error:", err);
-      }
-    };
-
-    // If script was already loaded on previous navigations
+    // If google translate is already loaded from previous navigation
     if (window.google?.translate?.TranslateElement) {
-      window.googleTranslateElementInit();
+      try {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages:
+              "en,hi,es,fr,de,ar,ja,zh-CN,mr,bn,ta,te,gu,kn,ml,pa,ur,pt,ru,it,ko,nl,tr,id,vi,th,pl,sv",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      } catch (err) {
+        console.debug("Re-init Google Translate:", err);
+      }
     }
   }, []);
 
@@ -59,7 +50,7 @@ export function GoogleTranslateProvider() {
         } catch (err) {
           console.debug("Error re-syncing language on route change:", err);
         }
-      }, 300);
+      }, 400);
 
       return () => clearTimeout(timer);
     }
@@ -67,20 +58,42 @@ export function GoogleTranslateProvider() {
 
   return (
     <>
-      {/* Hidden element for Google Translate combo box */}
+      {/* Hidden element for Google Translate combo box - NOT display:none so script renders it */}
       <div
         id="google_translate_element"
         className="notranslate"
         style={{
-          display: "none",
-          position: "absolute",
+          position: "fixed",
           top: "-9999px",
           left: "-9999px",
+          width: "1px",
+          height: "1px",
+          opacity: 0.01,
           pointerEvents: "none",
         }}
         aria-hidden="true"
       />
-      {/* Google Translate Script */}
+
+      {/* Callback defined before or alongside element.js */}
+      <Script
+        id="google-translate-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.googleTranslateElementInit = function() {
+              if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+                new window.google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,hi,es,fr,de,ar,ja,zh-CN,mr,bn,ta,te,gu,kn,ml,pa,ur,pt,ru,it,ko,nl,tr,id,vi,th,pl,sv',
+                  autoDisplay: false
+                }, 'google_translate_element');
+              }
+            };
+          `,
+        }}
+      />
+
+      {/* Google Translate API Script */}
       <Script
         id="google-translate-script"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"

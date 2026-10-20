@@ -18,8 +18,26 @@ export const YASH_AUTHOR: Author = {
   },
 };
 
+export const KARTHIK_AUTHOR: Author = {
+  _id: "author-karthik",
+  name: "Karthik Ramaswamy",
+  slug: "karthik-ramaswamy",
+  role: "Senior Film Critic & Cinema Editor",
+  avatar: "/karthik-ramaswamy.jpg",
+  avatarAlt: "Portrait of Karthik Ramaswamy, Senior Cinema Critic at BlueCreast",
+  bio: "Karthik Ramaswamy is an experienced cinema journalist and film critic at BlueCreast specializing in Tamil, Telugu, and pan-Indian commercial blockbusters. With deep expertise in mass storytelling mechanics, directorial craft, and box office analytics, his critiques offer sharp, balanced perspectives on modern South Asian cinema.",
+  expertise: ["South Indian Cinema", "Blockbuster Aesthetics", "Directorial Craft", "Box Office Analytics", "Screenplay Structure"],
+  credentials: "Lead Cinema Critic & Entertainment Editor, BlueCreast",
+  socials: {
+    twitter: "https://twitter.com/karthik_cinema",
+    linkedin: "https://linkedin.com/in/karthikramaswamy",
+    website: "https://bluecreast.in",
+  },
+};
+
 export const MOCK_AUTHORS: Author[] = [
   YASH_AUTHOR,
+  KARTHIK_AUTHOR,
   // Aliases ensuring backward compatibility for legacy routes
   { ...YASH_AUTHOR, _id: "author-priya", slug: "priya-sengupta" },
   { ...YASH_AUTHOR, _id: "author-aarav", slug: "aarav-mehta" },
@@ -63,9 +81,21 @@ export const MOCK_CATEGORIES: Category[] = [
     description: "Venture building, product leadership, startup fundraising in India, career transitions, and management mental models.",
     color: "#C2410C",
   },
+  {
+    _id: "cat-entertainment",
+    title: "Entertainment & Cinema",
+    slug: "entertainment",
+    description: "In-depth film critiques, blockbuster reviews, box office tracking, streaming recommendations, and pop culture analysis.",
+    color: "#E11D48",
+  },
 ];
 
 export const MOCK_TAGS: Tag[] = [
+  { _id: "tag-movie-reviews", title: "Movie Reviews", slug: "movie-reviews" },
+  { _id: "tag-jailer-2", title: "Jailer 2", slug: "jailer-2" },
+  { _id: "tag-rajinikanth", title: "Rajinikanth", slug: "rajinikanth" },
+  { _id: "tag-kollywood", title: "Kollywood", slug: "kollywood" },
+  { _id: "tag-cinema", title: "Indian Cinema", slug: "cinema" },
   { _id: "tag-ai", title: "Artificial Intelligence", slug: "ai" },
   { _id: "tag-nextjs", title: "Next.js", slug: "nextjs" },
   { _id: "tag-investing", title: "Investing", slug: "investing" },
@@ -97,6 +127,231 @@ export const MOCK_TAGS: Tag[] = [
 ];
 
 export const MOCK_POSTS: Post[] = [
+  {
+    _id: "post-jailer-2-movie-review",
+    title: "Jailer 2 Movie Review: Rajinikanth & Nelson Deliver an Explosive, Dark-Humored Masterclass in Mass Cinema",
+    slug: "jailer-2-movie-review-rajinikanth-nelson",
+    excerpt: "Our definitive critical review of Jailer 2: Superstar Rajinikanth reprises his iconic role as Tiger Muthuvel Pandian in Nelson Dilipkumar's high-octane sequel featuring thunderous mass sequences, biting dark comedy, and an electrifying Anirudh score.",
+    mainImage: {
+      url: "/jailer-2-movie-review.png",
+      alt: "Superstar Rajinikanth adjusting his glasses with blood on his shirt as massive fireball explosions erupt behind him in Jailer 2",
+      caption: "Superstar Rajinikanth as Tiger Muthuvel Pandian adjusting his glasses amidst blazing explosions in Nelson Dilipkumar's blockbuster sequel 'Jailer 2'. (Photo: Sun Pictures / BlueCreast Cinema Desk)",
+      width: 1920,
+      height: 1080,
+    },
+    category: MOCK_CATEGORIES[5],
+    tags: [
+      { _id: "tag-movie-reviews", title: "Movie Reviews", slug: "movie-reviews" },
+      { _id: "tag-jailer-2", title: "Jailer 2", slug: "jailer-2" },
+      { _id: "tag-rajinikanth", title: "Rajinikanth", slug: "rajinikanth" },
+      { _id: "tag-kollywood", title: "Kollywood", slug: "kollywood" },
+      { _id: "tag-cinema", title: "Indian Cinema", slug: "cinema" },
+    ],
+    author: KARTHIK_AUTHOR,
+    publishedAt: "2026-10-20T10:00:00.000Z",
+    updatedAt: "2026-10-20T16:30:00.000Z",
+    readingTime: 7,
+    seoTitle: "Jailer 2 Movie Review: Rajinikanth & Nelson Sequel Rating & Verdict",
+    seoDescription: "Comprehensive movie review of Jailer 2 starring Superstar Rajinikanth, Mohanlal, and Shiva Rajkumar. Read our analysis of the plot, music, direction, and final rating.",
+    canonicalUrl: "https://bluecreast.in/blog/jailer-2-movie-review-rajinikanth-nelson",
+    featured: true,
+    trending: true,
+    views: 52400,
+    body: [
+      {
+        _key: "j2-b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c1",
+            _type: "span",
+            text: "Sequels to gigantic box office blockbusters carry a double-edged sword. On one hand, you inherit an eager, primed audience; on the other, you are burdened with the near-impossible task of outdoing organic lightning captured in a bottle. With 'Jailer 2', director Nelson Dilipkumar and Superstar Rajinikanth achieve what few franchises in Indian cinema manage: they double down on the idiosyncrasies of the original while expanding the emotional stakes, delivering an adrenaline-charged, unapologetically entertaining cinematic spectacle.",
+          },
+        ],
+      },
+      {
+        _key: "j2-card",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-card-text",
+            _type: "span",
+            text: "🎬 QUICK MOVIE FACTSHEET:\n• Movie: Jailer 2 (Hukum Returns)\n• Director: Nelson Dilipkumar\n• Lead Cast: Superstar Rajinikanth, Mohanlal, Shiva Rajkumar, Jackie Shroff, Ramya Krishnan, Yogi Babu\n• Music Composer: Anirudh Ravichander\n• Production Banner: Sun Pictures\n• Genre: Action / Crime Drama / Dark Comedy\n• BlueCreast Critical Rating: ⭐⭐⭐⭐½ (4.5 / 5 Stars)",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-1",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c2",
+            _type: "span",
+            text: "The Premise: The Reawakening of Tiger Muthuvel Pandian",
+          },
+        ],
+      },
+      {
+        _key: "j2-b2",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c3",
+            _type: "span",
+            text: "Picking up in the aftermath of the harrowing moral crossroads Muthuvel Pandian faced at the climax of Jailer, the sequel finds the former Tihar prison warden living in deliberate quietude. But in Nelson's universe, peaceful retirement is a fragile illusion. When an international smuggling syndicate orchestrates a targeted vendetta against Muthuvel's extended surviving kin and seeks vengeance for fallen syndicates across South India, Tiger is forced to step back out of the shadows.",
+          },
+        ],
+      },
+      {
+        _key: "j2-b3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c4",
+            _type: "span",
+            text: "Unlike conventional revenge dramas, Nelson structures the narrative like an elaborate game of high-stakes chess. Muthuvel Pandian isn't merely an unstoppable physical force; he is an institutional mastermind who leverages his vintage contacts, tactical prison psychology, and clandestine underworld ties across state borders to dismantle his adversaries before they even realize they are encircled.",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-2",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c5",
+            _type: "span",
+            text: "Performance Breakdown: The Incomparable Swagger of Rajinikanth",
+          },
+        ],
+      },
+      {
+        _key: "j2-b4",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c6",
+            _type: "span",
+            text: "At an age where most veteran superstars lean into body doubles and muted action choreography, Rajinikanth commands every single frame with mesmerizing screen presence. His portrayal of Muthuvel Pandian is a masterclass in controlled minimalism: slow, deliberate strides, a chilling deadpan glare through his signature wire-rimmed glasses, and abrupt, explosive bursts of sheer violence that send theater decibels through the roof.",
+          },
+        ],
+      },
+      {
+        _key: "j2-b5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c7",
+            _type: "span",
+            text: "What makes this performance extraordinary is the vulnerability beneath the swagger. Muthuvel is older, weary of bloodletting, yet resolute in his code of honor. When the script demands emotional resonance in scenes opposite Ramya Krishnan, Rajinikanth delivers poignant depth before snapping back into lethal survivalist mode with a slight tilt of his spectacles.",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-3",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c8",
+            _type: "span",
+            text: "Nelson's Directorial Edge: Dark Comedy, Precision Staging, and Bloodshed",
+          },
+        ],
+      },
+      {
+        _key: "j2-b6",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c9",
+            _type: "span",
+            text: "Nelson Dilipkumar's singular directorial voice remains the beating heart of Jailer 2. His mastery over deadpan, pitch-black humor seamlessly cuts through relentless tension. Rather than disrupting high-stakes shootouts with misplaced comedic tracks, Nelson weaves absurdity directly into the action: cold-blooded henchmen engaged in everyday domestic squabbles, bureaucratic absurdities inside interrogation rooms, and Yogi Babu's impeccably timed dry quips.",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-4",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c10",
+            _type: "span",
+            text: "The Cameo Conundrum: Mohanlal & Shiva Rajkumar Bring the House Down",
+          },
+        ],
+      },
+      {
+        _key: "j2-b7",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c11",
+            _type: "span",
+            text: "If the first installment proved that pan-Indian crossovers work best when treated as organic, high-impact tactical alliances rather than gratuitous fan-service, Jailer 2 elevates this concept into an art form. Mohanlal reprises his role as Mathew with an aura of aristocratic menace, lighting up the screen with effortless Kerala underworld royalty. Meanwhile, Shiva Rajkumar returns as Narasimha, armed with a cigar, a vintage rifle, and ruthless Kannada gangster machismo that triggers pure euphoria.",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-5",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c12",
+            _type: "span",
+            text: "Technical Craft: Anirudh's Roaring BGM & Cinematic Canvas",
+          },
+        ],
+      },
+      {
+        _key: "j2-b8",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c13",
+            _type: "span",
+            text: "It is impossible to discuss Jailer 2 without recognizing Rockstar Anirudh Ravichander as the film's second hero. Anirudh's background score is nothing short of operatic violence: heavy industrial brass, distorted synth basslines, and hypnotic chants that elevate simple walking shots into mythic coronation rituals. The cinematography by Vijay Kartik Kannan bathes the production in smoky amber, neo-noir shadows, and sharp symmetric framing that rewards theatrical projection.",
+          },
+        ],
+      },
+      {
+        _key: "j2-h2-6",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "j2-c14",
+            _type: "span",
+            text: "The Final Verdict: An Unmissable Theatrical Feast",
+          },
+        ],
+      },
+      {
+        _key: "j2-b9",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "j2-c15",
+            _type: "span",
+            text: "Jailer 2 is not just a worthy successor to one of Tamil cinema's highest-grossing epics; it is a testament to how mass entertainment should be engineered in modern cinema. By combining Rajinikanth's peerless aura, Nelson's razor-sharp storytelling, and Anirudh's thunderous orchestration, the film delivers a pulsating theatrical high that lingers long after the credits roll.\n\nRating: 4.5 / 5 Stars — A triumphant, unmissable celebration of mass cinema at its zenith.",
+          },
+        ],
+      },
+    ],
+  },
   {
     _id: "post-invisible-war-hft-options",
     title: "The Invisible War: How India’s Retail Traders Lost $33 Billion to Machines They Never Saw",

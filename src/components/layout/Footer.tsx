@@ -3,7 +3,6 @@ import { Rss } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { FOOTER_LINKS } from "@/lib/constants";
 import { GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "@/components/brand/SocialIcons";
-import { LanguageSelector } from "@/components/translation/LanguageSelector";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -143,32 +142,27 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 pt-8 text-xs text-slate-700 dark:border-slate-800 dark:text-slate-300 gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 pt-8 text-xs text-slate-700 dark:border-slate-800 dark:text-slate-300">
           <p>
             &copy; {currentYear} BlueCreast (bluecreast.in). All rights reserved.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center space-x-4">
-              <Link href="/privacy-policy" className="py-1 hover:text-slate-950 dark:hover:text-white">
-                Privacy
-              </Link>
-              <span>&bull;</span>
-              <Link href="/terms" className="py-1 hover:text-slate-950 dark:hover:text-white">
-                Terms
-              </Link>
-              <span>&bull;</span>
-              <Link href="/sitemap.xml" className="py-1 hover:text-slate-950 dark:hover:text-white">
-                Sitemap
-              </Link>
-              <span>&bull;</span>
-              <Link href="/rss.xml" className="py-1 hover:text-slate-950 dark:hover:text-white">
-                RSS
-              </Link>
-            </div>
-
-            {/* Language Selector in Footer */}
-            <LanguageSelector variant="compact" />
+          <div className="mt-3 sm:mt-0 flex items-center space-x-4">
+            <Link href="/privacy-policy" className="py-1 hover:text-slate-950 dark:hover:text-white">
+              Privacy
+            </Link>
+            <span>&bull;</span>
+            <Link href="/terms" className="py-1 hover:text-slate-950 dark:hover:text-white">
+              Terms
+            </Link>
+            <span>&bull;</span>
+            <Link href="/sitemap.xml" className="py-1 hover:text-slate-950 dark:hover:text-white">
+              Sitemap
+            </Link>
+            <span>&bull;</span>
+            <Link href="/rss.xml" className="py-1 hover:text-slate-950 dark:hover:text-white">
+              RSS
+            </Link>
           </div>
         </div>
       </div>

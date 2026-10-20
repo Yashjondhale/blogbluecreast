@@ -139,12 +139,12 @@ export async function getPostsByAuthor(
   limit = 12
 ): Promise<{ posts: Post[]; total: number; totalPages: number }> {
   const all = await getAllPosts();
-  const filtered = all.filter(
-    (p) =>
-      p.author?.slug === authorSlug ||
-      p.author?.name === "Yash Jondhale" ||
-      authorSlug === "yash-jondhale"
-  );
+  const filtered = all.filter((p) => {
+    if (authorSlug === "yash-jondhale") {
+      return p.author?.slug === "yash-jondhale" || !p.author?.slug;
+    }
+    return p.author?.slug === authorSlug;
+  });
   const total = filtered.length;
   const totalPages = Math.ceil(total / limit) || 1;
   const startIndex = (page - 1) * limit;

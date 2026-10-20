@@ -14,7 +14,6 @@ import { PortableTextRenderer } from "@/components/post/PortableTextRenderer";
 import { PostCard } from "@/components/post/PostCard";
 import { NewsletterCTA } from "@/components/post/NewsletterCTA";
 import { AdSlot } from "@/components/post/AdSlot";
-import { ArticleTranslateBanner } from "@/components/translation/ArticleTranslateBanner";
 import { formatDate, slugify } from "@/lib/utils";
 import { SITE_URL } from "@/lib/constants";
 import { TOCHeading } from "@/types";
@@ -217,11 +216,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <TableOfContents headings={headings} />
               </div>
             )}
-
-            {/* Translate Article Helper */}
-            <div className="mb-8">
-              <ArticleTranslateBanner />
-            </div>
 
             {/* Article Portable Text content */}
             <PortableTextRenderer blocks={post.body} />

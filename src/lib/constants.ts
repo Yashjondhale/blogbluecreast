@@ -58,6 +58,13 @@ export const PRIMARY_CATEGORIES = [
     accent: "#A855F7",
   },
   {
+    title: "Entertainment",
+    slug: "entertainment",
+    description: "Cinema critiques, blockbuster movie reviews, box office insights, streaming guides, and pop culture analysis.",
+    color: "#E11D48",
+    accent: "#FB7185",
+  },
+  {
     title: "Business & Education",
     slug: "business",
     description: "Startup playbooks, career growth, executive insights, and continuous learning.",
@@ -69,6 +76,7 @@ export const PRIMARY_CATEGORIES = [
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Articles", href: "/blog" },
+  { label: "Entertainment", href: "/category/entertainment" },
   { label: "News", href: "/news" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
@@ -79,6 +87,7 @@ export const FOOTER_LINKS = {
   categories: [
     { label: "Technology", href: "/category/technology" },
     { label: "Finance & Wealth", href: "/category/finance" },
+    { label: "Entertainment & Cinema", href: "/category/entertainment" },
     { label: "Health & Nutrition", href: "/category/health" },
     { label: "Lifestyle & Travel", href: "/category/lifestyle" },
     { label: "Business & Startups", href: "/category/business" },
