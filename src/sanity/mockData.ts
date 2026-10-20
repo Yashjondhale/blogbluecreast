@@ -35,8 +35,26 @@ export const KARTHIK_AUTHOR: Author = {
   },
 };
 
+export const PRATHMESH_AUTHOR: Author = {
+  _id: "author-prathmesh",
+  name: "Prathmesh Lohar",
+  slug: "prathmesh-lohar",
+  role: "Full Stack Web Developer & Contributor",
+  avatar: "/prathmesh-lohar.jpg",
+  avatarAlt: "Portrait of Prathmesh Lohar, Full Stack Web Developer & Contributor at BlueCreast",
+  bio: "Prathmesh Lohar is a Full Stack Web Developer proficient in MERN stack (MongoDB, Express.js, React.js, Node.js) and Java DSA. National Finalist at IIT Bombay NEC 2025 and GWSWeb Intern.",
+  expertise: ["Full-Stack MERN", "React.js & Frontend", "RESTful APIs", "Java DSA", "Web Performance"],
+  credentials: "IIT Bombay NEC 2025 Finalist & Full Stack Developer",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/prathmesh-lohar-375376259",
+    github: "https://github.com/prathmeshlohar",
+    website: "https://bluecreast.in/portfolio?profile=prathmesh",
+  },
+};
+
 export const MOCK_AUTHORS: Author[] = [
   YASH_AUTHOR,
+  PRATHMESH_AUTHOR,
   KARTHIK_AUTHOR,
   // Aliases ensuring backward compatibility for legacy routes
   { ...YASH_AUTHOR, _id: "author-priya", slug: "priya-sengupta" },

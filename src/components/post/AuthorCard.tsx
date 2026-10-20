@@ -143,11 +143,21 @@ export function AuthorCard({ author, compact = false }: AuthorCardProps) {
           {/* High-Conversion Portfolio Callout */}
           <div className="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200/70 dark:border-slate-800">
             <Link
-              href="/portfolio"
+              href={
+                author.slug === "prathmesh-lohar"
+                  ? "/portfolio?profile=prathmesh"
+                  : author.slug === "yash-jondhale"
+                  ? "/portfolio?profile=yash"
+                  : "/portfolio"
+              }
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#0B3D91] px-4 py-2 text-xs font-bold text-white shadow-xs transition-colors hover:bg-blue-800 dark:bg-[#1E90FF] dark:text-slate-950 dark:hover:bg-blue-400"
             >
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Explore AI Systems & Case Studies</span>
+              <span>
+                {author.slug === "prathmesh-lohar"
+                  ? "Explore Full-Stack Portfolio"
+                  : "Explore AI Systems & Case Studies"}
+              </span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <Link

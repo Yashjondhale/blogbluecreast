@@ -97,6 +97,13 @@ export function Header() {
                 Services
               </Link>
               <Link
+                href="/portfolio"
+                className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+              >
+                <span>Portfolios</span>
+                <span className="flex h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              </Link>
+              <Link
                 href="/about"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
               >

@@ -78,6 +78,7 @@ export const NAV_ITEMS = [
   { label: "Articles", href: "/blog" },
   { label: "Entertainment", href: "/category/entertainment" },
   { label: "News", href: "/news" },
+  { label: "Portfolios", href: "/portfolio" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -95,7 +96,9 @@ export const FOOTER_LINKS = {
   company: [
     { label: "Daily News Desk", href: "/news" },
     { label: "About BlueCreast", href: "/about" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Engineering Portfolios", href: "/portfolio" },
+    { label: "Prathmesh Lohar (Web Dev)", href: "/portfolio?profile=prathmesh" },
+    { label: "Yash Jondhale (AI/ML)", href: "/portfolio?profile=yash" },
     { label: "Our Services", href: "/services" },
     { label: "Careers (We're Hiring)", href: "/careers" },
     { label: "Editorial Policy", href: "/editorial-policy" },

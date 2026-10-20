@@ -255,10 +255,10 @@ export default async function AboutPage() {
             The Masthead
           </span>
           <h2 className="mt-2 font-serif text-3xl font-bold text-slate-900 dark:text-slate-100">
-            Founder & Editorial Leadership
+            Founder, Leadership & Engineering Contributors
           </h2>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            Meet Yash Jondhale — Founder, Owner, and Editor-in-Chief driving all research and reporting across BlueCreast.
+            Meet the editorial leadership, AI researchers, and full-stack web developers driving research, engineering, and reporting across BlueCreast.
           </p>
         </div>
 
@@ -266,33 +266,80 @@ export default async function AboutPage() {
           {authors.map((author) => (
             <div
               key={author._id}
-              className="group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-xs transition-all hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/60"
+              className="group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-xs transition-all hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/60 flex flex-col justify-between"
             >
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-100 mb-5 dark:bg-slate-800">
-                <Image
-                  src={author.avatar}
-                  alt={author.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-slate-100">
-                <Link href={`/author/${author.slug}`} className="hover:text-[#1E90FF] transition-colors">
-                  {author.name}
+              <div>
+                <Link
+                  href={
+                    author.slug === "prathmesh-lohar"
+                      ? "/portfolio?profile=prathmesh"
+                      : author.slug === "yash-jondhale"
+                      ? "/portfolio?profile=yash"
+                      : `/author/${author.slug}`
+                  }
+                  title={`View ${author.name}'s Portfolio`}
+                  className="block relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-100 mb-5 dark:bg-slate-800 cursor-pointer group"
+                >
+                  <Image
+                    src={author.avatar}
+                    alt={author.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/10 transition-colors" />
                 </Link>
-              </h3>
-              <p className="text-xs font-semibold text-[#1E90FF] mt-1">
-                {author.role}
-              </p>
-              <p className="mt-3 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                {author.bio}
-              </p>
-              {author.credentials && (
-                <div className="mt-4 border-t border-slate-100 pt-3 text-[11px] font-medium text-slate-500 dark:border-slate-800 dark:text-slate-400">
-                  {author.credentials}
-                </div>
-              )}
+                <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-slate-100">
+                  <Link
+                    href={
+                      author.slug === "prathmesh-lohar"
+                        ? "/portfolio?profile=prathmesh"
+                        : author.slug === "yash-jondhale"
+                        ? "/portfolio?profile=yash"
+                        : `/author/${author.slug}`
+                    }
+                    className="hover:text-[#1E90FF] transition-colors"
+                  >
+                    {author.name}
+                  </Link>
+                </h3>
+                <p className="text-xs font-semibold text-[#1E90FF] mt-1">
+                  {author.role}
+                </p>
+                <p className="mt-3 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                  {author.bio}
+                </p>
+              </div>
+
+              <div>
+                {author.credentials && (
+                  <div className="mt-4 border-t border-slate-100 pt-3 text-[11px] font-medium text-slate-500 dark:border-slate-800 dark:text-slate-400">
+                    {author.credentials}
+                  </div>
+                )}
+                {author.slug === "yash-jondhale" && (
+                  <div className="mt-3 pt-2">
+                    <Link
+                      href="/portfolio?profile=yash"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-purple-600 hover:text-purple-700 dark:text-purple-400"
+                    >
+                      <span>Explore AI/ML Portfolio</span>
+                      <span>&rarr;</span>
+                    </Link>
+                  </div>
+                )}
+                {author.slug === "prathmesh-lohar" && (
+                  <div className="mt-3 pt-2">
+                    <Link
+                      href="/portfolio?profile=prathmesh"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#1E90FF] hover:text-blue-700 dark:text-cyan-400"
+                    >
+                      <span>Explore Full-Stack Portfolio</span>
+                      <span>&rarr;</span>
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
